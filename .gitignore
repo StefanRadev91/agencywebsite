@@ -11,3 +11,4 @@ test-results
 .lighthouseci
 .vercel
 .DS_Store
+node_modules

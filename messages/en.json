@@ -3,6 +3,12 @@
     "title": "{name} — web studio",
     "description": "From idea to launch and support. Websites and systems with quality built in."
   },
+  "Common": {
+    "language": "Language",
+    "languageName": { "bg": "Български", "en": "English" },
+    "switchToLight": "Switch to light theme",
+    "switchToDark": "Switch to dark theme"
+  },
   "Home": {
     "title": "From idea to launch and support",
     "placeholder": "Site skeleton — Phase 1."

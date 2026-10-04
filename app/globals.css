@@ -1,12 +1,143 @@
 @import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
 
-/* Design tokens are defined in Phase 2. */
+/* ==========================================================================
+   Design tokens
+   Dark is the default theme. Light applies via [data-theme='light'] (set by
+   ThemeToggle / the inline script in the locale layout).
+   ========================================================================== */
 :root {
-  --background: #ffffff;
-  --foreground: #0a0a0a;
+  color-scheme: dark;
+
+  /* Colors — dark */
+  --background: #0a0a0b;
+  --surface: #141416;
+  --surface-2: #1d1d20;
+  --foreground: #f5f5f2;
+  --muted: #a1a1aa;
+  --border: #2c2c31;
+  --accent: #c8ff2e;
+  --accent-foreground: #0a0a0b;
+  --accent-ink: #c8ff2e; /* accent used as text/icon on the page background */
+  --danger: #ff7b7b;
+  --success: #4ade80;
+  --shadow-color: rgb(0 0 0 / 0.55);
+  --glow: 0 0 0 1px rgb(200 255 46 / 0.35), 0 8px 40px -8px rgb(200 255 46 / 0.35);
+
+  /* Layout */
+  --container-max: 80rem;
+  --gutter: clamp(1rem, 4vw, 2.5rem);
+  --section-y: clamp(4.5rem, 10vw, 9rem);
+  --header-h: 4.5rem;
+
+  /* Motion (mirrored in lib/motion.ts for Framer Motion) */
+  --dur-fast: 150ms;
+  --dur-base: 300ms;
+  --dur-slow: 700ms;
+}
+
+[data-theme='light'] {
+  color-scheme: light;
+  --background: #fafaf7;
+  --surface: #ffffff;
+  --surface-2: #f0f0ea;
+  --foreground: #0a0a0b;
+  --muted: #52525b;
+  --border: #d9d9d0;
+  --accent-ink: #4d6b00; /* AA on light backgrounds (≈6:1) */
+  --danger: #b91c1c;
+  --success: #166534;
+  --shadow-color: rgb(10 10 11 / 0.18);
+  --glow: 0 0 0 1px rgb(77 107 0 / 0.35), 0 8px 30px -10px rgb(77 107 0 / 0.35);
+}
+
+@theme inline {
+  --font-display: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), ui-monospace, 'SFMono-Regular', monospace;
+
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent-ink: var(--accent-ink);
+  --color-danger: var(--danger);
+  --color-success: var(--success);
+
+  --shadow-card: 0 18px 50px -20px var(--shadow-color);
+  --shadow-pop: 0 30px 80px -24px var(--shadow-color);
+}
+
+@theme {
+  /* Type scale: large fluid display sizes */
+  --text-display: clamp(2.75rem, 1.2rem + 7.2vw, 8rem);
+  --text-display--line-height: 0.96;
+  --text-display--letter-spacing: -0.035em;
+  --text-h1: clamp(2.25rem, 1rem + 4.6vw, 5rem);
+  --text-h1--line-height: 1;
+  --text-h1--letter-spacing: -0.03em;
+  --text-h2: clamp(1.875rem, 1rem + 3vw, 3.5rem);
+  --text-h2--line-height: 1.05;
+  --text-h2--letter-spacing: -0.025em;
+  --text-h3: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  --text-h3--line-height: 1.2;
+  --text-h3--letter-spacing: -0.015em;
+
+  /* Radii */
+  --radius-sm: 0.375rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 2rem;
+
+  /* Easing */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+html {
+  scroll-padding-top: var(--header-h);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background: var(--accent);
+  color: var(--accent-foreground);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent-ink);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.container-page {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
