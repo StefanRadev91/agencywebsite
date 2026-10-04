@@ -5,13 +5,16 @@ type Props = {
   eyebrow?: string;
   title?: React.ReactNode;
   intro?: React.ReactNode;
+  /** Render the title as the page's <h1> (use once per page). */
+  h1?: boolean;
   className?: string;
   children?: React.ReactNode;
 };
 
 /** Page section with the shared container, vertical rhythm and optional heading block. */
-export function Section({ id, eyebrow, title, intro, className, children }: Props) {
+export function Section({ id, eyebrow, title, intro, h1, className, children }: Props) {
   const headingId = id ? `${id}-title` : undefined;
+  const Heading = h1 ? 'h1' : 'h2';
   return (
     <section
       id={id}
@@ -27,9 +30,15 @@ export function Section({ id, eyebrow, title, intro, className, children }: Prop
               </p>
             )}
             {title && (
-              <h2 id={headingId} className="font-display text-h2 font-extrabold text-balance">
+              <Heading
+                id={headingId}
+                className={cn(
+                  'font-display font-extrabold text-balance',
+                  h1 ? 'text-h1' : 'text-h2',
+                )}
+              >
                 {title}
-              </h2>
+              </Heading>
             )}
             {intro && <p className="text-muted mt-5 text-lg text-pretty">{intro}</p>}
           </header>

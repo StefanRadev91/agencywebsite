@@ -1,0 +1,56 @@
+{
+  "slug": "concept-dental-clinic",
+  "kind": "concept",
+  "categories": ["website"],
+  "featured": true,
+  "order": 4,
+  "hue": 175,
+  "title": {
+    "bg": "Зъболекарска клиника",
+    "en": "Dental clinic"
+  },
+  "summary": {
+    "bg": "Концептуален уебсайт с онлайн записване на час.",
+    "en": "A concept website with online appointment booking."
+  },
+  "client": null,
+  "role": {
+    "bg": "Дизайн и структура на концепцията",
+    "en": "Concept design and structure"
+  },
+  "challenge": {
+    "bg": "Пациентите да намират лесно услугите, цените и свободен час — от телефона, за по-малко от минута, и без да се чувстват изгубени в медицински термини.",
+    "en": "Let patients find services, prices and a free slot easily — from a phone, in under a minute, without getting lost in medical jargon."
+  },
+  "solution": {
+    "bg": "Спокойна визия, ясна структура по услуги и кратък формуляр за записване на час, с ударение върху достъпността и скоростта.",
+    "en": "A calm visual style, a clear structure by service and a short appointment form, with emphasis on accessibility and speed."
+  },
+  "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Playwright"],
+  "screens": [
+    {
+      "caption": {
+        "bg": "Начална страница",
+        "en": "Home page"
+      },
+      "hue": 175
+    },
+    {
+      "caption": {
+        "bg": "Услуги и цени",
+        "en": "Services and prices"
+      },
+      "hue": 190
+    },
+    {
+      "caption": {
+        "bg": "Записване на час",
+        "en": "Appointment booking"
+      },
+      "hue": 160
+    }
+  ],
+  "results": [],
+  "quality": null,
+  "liveUrl": null
+}

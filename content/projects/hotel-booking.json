@@ -1,0 +1,26 @@
+{
+  "slug": "hotel-booking",
+  "kind": "client",
+  "status": "in-progress",
+  "categories": ["webapp"],
+  "featured": true,
+  "order": 2,
+  "hue": 35,
+  "title": { "bg": "Система за хотелски резервации", "en": "Hotel booking system" },
+  "summary": {
+    "bg": "Управление на стаи и резервации за 50-стайно хотелско крило на манастир.",
+    "en": "Room management and booking for a 50-room monastery hotel wing."
+  },
+  "client": {
+    "name": "[TODO]",
+    "industry": { "bg": "Хотелиерство", "en": "Hospitality" }
+  },
+  "role": "[TODO]",
+  "challenge": "[TODO]",
+  "solution": "[TODO]",
+  "stack": "[TODO]",
+  "screens": "[TODO]",
+  "results": "[TODO]",
+  "quality": "[TODO]",
+  "liveUrl": null
+}

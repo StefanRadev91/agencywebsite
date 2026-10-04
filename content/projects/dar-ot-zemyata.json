@@ -1,0 +1,29 @@
+{
+  "slug": "dar-ot-zemyata",
+  "kind": "client",
+  "status": "live",
+  "categories": ["website", "ecommerce"],
+  "featured": true,
+  "order": 1,
+  "hue": 95,
+  "title": { "bg": "Дар от Земята", "en": "Дар от Земята" },
+  "summary": {
+    "bg": "Натурални продукти от български ферми — директно от производителя.",
+    "en": "Natural products from Bulgarian farms — straight from the producer."
+  },
+  "client": {
+    "name": "[TODO]",
+    "industry": {
+      "bg": "Натурални храни и земеделски продукти",
+      "en": "Natural food & farm products"
+    }
+  },
+  "role": "[TODO]",
+  "challenge": "[TODO]",
+  "solution": "[TODO]",
+  "stack": "[TODO]",
+  "screens": "[TODO]",
+  "results": "[TODO]",
+  "quality": "[TODO]",
+  "liveUrl": "https://darotzemqta.bg"
+}

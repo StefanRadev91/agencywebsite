@@ -6,7 +6,10 @@
   "Common": {
     "skip": "Skip to content",
     "language": "Language",
-    "languageName": { "bg": "Български", "en": "English" },
+    "languageName": {
+      "bg": "Български",
+      "en": "English"
+    },
     "switchToLight": "Switch to light theme",
     "switchToDark": "Switch to dark theme"
   },
@@ -31,7 +34,8 @@
       "privacy": "Privacy Policy",
       "terms": "Terms of Service"
     },
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "quality": "Quality"
   },
   "Services": {
     "items": {
@@ -90,35 +94,55 @@
     }
   },
   "Work": {
-    "categories": {
-      "website": "Website",
-      "webApp": "Web app",
-      "ecommerce": "E-commerce",
-      "websiteEcommerce": "Website / E-commerce",
-      "concept": "Concept"
-    },
     "conceptLabel": "Concept",
     "status": {
       "inProgress": "In progress",
       "ownProduct": "Own product"
     },
-    "featured": {
-      "dar-ot-zemyata": {
-        "title": "Дар от Земята",
-        "summary": "Natural products from Bulgarian farms — straight from the producer."
+    "categories": {
+      "website": "Website",
+      "webapp": "Web app",
+      "ecommerce": "E-commerce"
+    },
+    "page": {
+      "eyebrow": "Work",
+      "title": "Selected work",
+      "intro": "Real projects, our own products and clearly labeled concepts.",
+      "filterLabel": "Filter by category",
+      "filters": {
+        "all": "All",
+        "website": "Website",
+        "webapp": "Web app",
+        "ecommerce": "E-commerce",
+        "concept": "Concepts"
       },
-      "hotel-booking": {
-        "title": "Hotel booking system",
-        "summary": "Room management and booking for a 50-room monastery hotel wing."
+      "count": "{count, plural, one {# project} other {# projects}}",
+      "legend": "Labels are honest: \"Concept\" is a Studio Labs project with no real client, \"Own product\" is ours, and \"In progress\" projects are not finished yet."
+    },
+    "case": {
+      "back": "All projects",
+      "liveSite": "Visit live site",
+      "client": "Client",
+      "industry": "Industry",
+      "role": "Our role",
+      "stack": "Tech stack",
+      "stackProposed": "Proposed stack",
+      "challenge": "Challenge",
+      "solution": "Solution",
+      "brief": "The brief",
+      "approach": "The approach",
+      "screens": "Key screens",
+      "results": "Results",
+      "quality": "Quality",
+      "lh": {
+        "performance": "Performance",
+        "accessibility": "Accessibility",
+        "bestPractices": "Best practices",
+        "seo": "SEO"
       },
-      "price-monitoring": {
-        "title": "Price monitoring",
-        "summary": "Our own SaaS product for tracking prices."
-      },
-      "concept-dental-clinic": {
-        "title": "Dental clinic",
-        "summary": "A concept website with online appointment booking."
-      }
+      "tests": "{count, plural, one {# automated test} other {# automated tests}}",
+      "next": "Next project",
+      "conceptNote": "This is a concept we made ourselves — there is no real client, live site or real results."
     }
   },
   "Home": {
@@ -189,6 +213,54 @@
       "title": "Got an idea? Let's make it real.",
       "text": "Tell us about your project and we'll get back to you.",
       "primary": "Start a project"
+    }
+  },
+  "Quality": {
+    "eyebrow": "Quality",
+    "title": "Quality you can verify",
+    "intro": "We don't just say we test — we show how. Here are the targets we enforce and the checklist every project launches with.",
+    "lh": {
+      "performance": "Performance",
+      "accessibility": "Accessibility",
+      "bestPractices": "Best practices",
+      "seo": "SEO"
+    },
+    "latest": {
+      "title": "Latest measured results for this site",
+      "pending": "Results are published automatically after the first run of the CI checks. Until then we don't show any numbers.",
+      "e2e": "{count, plural, one {# e2e test} other {# e2e tests}}",
+      "unit": "{count, plural, one {# unit test} other {# unit tests}}",
+      "date": "Measured on {date}"
+    },
+    "budgets": {
+      "eyebrow": "Budgets",
+      "title": "The targets we enforce in CI",
+      "lighthouse": {
+        "value": "≥ 90",
+        "label": "Lighthouse in all four categories"
+      },
+      "lcp": {
+        "value": "< 2.5 s",
+        "label": "Largest Contentful Paint on mobile"
+      },
+      "cls": {
+        "value": "< 0.1",
+        "label": "Cumulative Layout Shift on mobile"
+      }
+    },
+    "checklist": {
+      "eyebrow": "Checklist",
+      "title": "What we check before every launch",
+      "items": {
+        "accessibility": "Accessibility (WCAG AA): contrast, keyboard, focus, semantics",
+        "performance": "Performance: page weight, images, fonts",
+        "seo": "SEO: metadata, canonical, hreflang, sitemap, structured data",
+        "responsive": "Responsive from 360px to 1920px",
+        "forms": "Forms: validation, error and success states, spam protection",
+        "security": "Security: HTTPS, secrets only in environment, no unnecessary data",
+        "errors": "Error pages and redirects",
+        "monitoring": "Monitoring and a support plan after launch"
+      }
     }
   }
 }

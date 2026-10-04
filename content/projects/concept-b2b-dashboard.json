@@ -1,0 +1,56 @@
+{
+  "slug": "concept-b2b-dashboard",
+  "kind": "concept",
+  "categories": ["webapp"],
+  "featured": false,
+  "order": 6,
+  "hue": 230,
+  "title": {
+    "bg": "B2B SaaS табло",
+    "en": "B2B SaaS dashboard"
+  },
+  "summary": {
+    "bg": "Концептуално административно табло с графики, таблици и филтри.",
+    "en": "A concept admin dashboard with charts, tables and filters."
+  },
+  "client": null,
+  "role": {
+    "bg": "Дизайн и структура на концепцията",
+    "en": "Concept design and structure"
+  },
+  "challenge": {
+    "bg": "Плътна с данни интерфейс, която остава четлива, бърза и използваема с клавиатура.",
+    "en": "A data-dense interface that stays readable, fast and usable with a keyboard."
+  },
+  "solution": {
+    "bg": "Модулно табло с обобщения, таблици с филтри и ясна визуална йерархия, проектирано за светла и тъмна тема.",
+    "en": "A modular dashboard with summaries, filterable tables and a clear visual hierarchy, designed for both light and dark themes."
+  },
+  "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Playwright"],
+  "screens": [
+    {
+      "caption": {
+        "bg": "Общ преглед",
+        "en": "Overview"
+      },
+      "hue": 230
+    },
+    {
+      "caption": {
+        "bg": "Таблица с филтри",
+        "en": "Filterable table"
+      },
+      "hue": 250
+    },
+    {
+      "caption": {
+        "bg": "Настройки",
+        "en": "Settings"
+      },
+      "hue": 210
+    }
+  ],
+  "results": [],
+  "quality": null,
+  "liveUrl": null
+}

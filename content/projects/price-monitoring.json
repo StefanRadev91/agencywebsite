@@ -1,0 +1,22 @@
+{
+  "slug": "price-monitoring",
+  "kind": "internal",
+  "categories": ["webapp"],
+  "featured": true,
+  "order": 3,
+  "hue": 265,
+  "title": { "bg": "Мониторинг на цени", "en": "Price monitoring" },
+  "summary": {
+    "bg": "Наш собствен SaaS продукт за проследяване на цени.",
+    "en": "Our own SaaS product for tracking prices."
+  },
+  "client": null,
+  "role": "[TODO]",
+  "challenge": "[TODO]",
+  "solution": "[TODO]",
+  "stack": "[TODO]",
+  "screens": "[TODO]",
+  "results": "[TODO]",
+  "quality": "[TODO]",
+  "liveUrl": "[TODO]"
+}

@@ -69,6 +69,11 @@ export async function Footer() {
               </Link>
             </li>
             <li>
+              <Link href="/quality" className={linkClass}>
+                {t('quality')}
+              </Link>
+            </li>
+            <li>
               <Link href="/contact" className={linkClass}>
                 {tNav('contact')}
               </Link>

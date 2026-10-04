@@ -1,0 +1,56 @@
+{
+  "slug": "concept-restaurant",
+  "kind": "concept",
+  "categories": ["website"],
+  "featured": false,
+  "order": 5,
+  "hue": 15,
+  "title": {
+    "bg": "Ресторант с онлайн резервации",
+    "en": "Restaurant with online reservations"
+  },
+  "summary": {
+    "bg": "Концептуален сайт на ресторант с меню и резервация на маса.",
+    "en": "A concept restaurant site with a menu and table reservations."
+  },
+  "client": null,
+  "role": {
+    "bg": "Дизайн и структура на концепцията",
+    "en": "Concept design and structure"
+  },
+  "challenge": {
+    "bg": "Менюто да е лесно за четене на телефон, а резервацията на маса — възможна само с няколко докосвания.",
+    "en": "A menu that reads well on a phone and a table reservation that takes just a few taps."
+  },
+  "solution": {
+    "bg": "Силна типографска визия, меню по категории и резервационен поток със ясни състояния за успех и грешка.",
+    "en": "A bold typographic look, a menu by category and a reservation flow with clear success and error states."
+  },
+  "stack": ["Next.js", "TypeScript", "Tailwind CSS", "Playwright"],
+  "screens": [
+    {
+      "caption": {
+        "bg": "Начална страница",
+        "en": "Home page"
+      },
+      "hue": 15
+    },
+    {
+      "caption": {
+        "bg": "Меню",
+        "en": "Menu"
+      },
+      "hue": 30
+    },
+    {
+      "caption": {
+        "bg": "Резервация на маса",
+        "en": "Table reservation"
+      },
+      "hue": 0
+    }
+  ],
+  "results": [],
+  "quality": null,
+  "liveUrl": null
+}
