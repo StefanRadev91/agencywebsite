@@ -36,6 +36,7 @@ export function toWorkItem(project: Project, locale: string, t: T): WorkItem {
     summary: pick(project.summary, locale),
     category: project.categories.map((c) => t(`categories.${c}`)).join(' / '),
     hue: project.hue,
+    image: project.cover,
     conceptLabel: isConcept ? t('conceptLabel') : undefined,
     statusLabel: statusKey ? t(`status.${statusKey}`) : undefined,
     badge: floor === undefined ? undefined : `Lighthouse ≥ ${floor}`,

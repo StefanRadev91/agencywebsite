@@ -8,6 +8,14 @@ const orTodo = <T extends z.ZodType>(schema: T) => z.union([schema, todo]);
 
 const score = z.number().int().min(0).max(100);
 
+/** A real screenshot stored under /public (served as a static asset). */
+export const imageSchema = z.object({
+  src: z.string().startsWith('/'),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+});
+export type ProjectImage = z.infer<typeof imageSchema>;
+
 export const categorySchema = z.enum(['website', 'webapp', 'ecommerce']);
 export type Category = z.infer<typeof categorySchema>;
 
@@ -22,6 +30,8 @@ export const projectSchema = z
     order: z.number().int(),
     /** Hue (0–360) for the placeholder visual until real screenshots exist. */
     hue: z.number().min(0).max(360),
+    /** Optional real cover screenshot; falls back to the placeholder visual. */
+    cover: imageSchema.optional(),
 
     title: localized,
     summary: localized,
@@ -31,7 +41,15 @@ export const projectSchema = z
     challenge: orTodo(localized),
     solution: orTodo(localized),
     stack: orTodo(z.array(z.string().min(1))),
-    screens: orTodo(z.array(z.object({ caption: localized, hue: z.number().min(0).max(360) }))),
+    screens: orTodo(
+      z.array(
+        z.object({
+          caption: localized,
+          hue: z.number().min(0).max(360),
+          image: imageSchema.optional(),
+        }),
+      ),
+    ),
     results: orTodo(z.array(z.object({ label: localized, value: z.string().min(1) }))),
     quality: orTodo(
       z

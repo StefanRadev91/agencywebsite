@@ -1,6 +1,7 @@
 import { Link } from '@/i18n/navigation';
 import { cn } from '@/lib/utils/cn';
-import { PlaceholderVisual } from './placeholder-visual';
+import type { ProjectImage } from '@/lib/schemas/project';
+import { ProjectMedia } from './project-media';
 import { Tag } from './tag';
 
 export type ProjectCardProps = {
@@ -14,6 +15,8 @@ export type ProjectCardProps = {
   /** e.g. "Lighthouse 100" — only pass real, measured values. */
   badge?: string;
   hue?: number;
+  /** Real cover screenshot; placeholder is used when absent. */
+  image?: ProjectImage;
   className?: string;
 };
 
@@ -26,6 +29,7 @@ export function ProjectCard({
   statusLabel,
   badge,
   hue,
+  image,
   className,
 }: ProjectCardProps) {
   return (
@@ -37,9 +41,11 @@ export function ProjectCard({
       )}
     >
       <div className="relative overflow-hidden">
-        <PlaceholderVisual
+        <ProjectMedia
+          image={image}
           hue={hue}
           label={title}
+          sizes="(min-width: 768px) 50vw, 100vw"
           className="ease-out-expo transition-transform duration-(--dur-slow) group-hover:scale-105"
         />
         <div className="absolute top-3 left-3 flex flex-wrap gap-2">

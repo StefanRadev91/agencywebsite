@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from '@/components/ui/icons';
 import { LighthouseBadge } from '@/components/ui/lighthouse-badge';
-import { PlaceholderVisual } from '@/components/ui/placeholder-visual';
+import { ProjectMedia } from '@/components/ui/project-media';
 import { Reveal } from '@/components/ui/reveal';
 import { Tag } from '@/components/ui/tag';
 import { Link } from '@/i18n/navigation';
@@ -103,7 +103,14 @@ export default async function CaseStudyPage({ params }: Props) {
 
       <div className="container-page">
         <div className="overflow-hidden rounded-xl">
-          <PlaceholderVisual hue={project.hue} label={title} className="aspect-[16/8]" />
+          <ProjectMedia
+            image={project.cover}
+            hue={project.hue}
+            label={title}
+            sizes="(min-width: 1280px) 1200px, 100vw"
+            priority
+            className="aspect-[16/8]"
+          />
         </div>
       </div>
 
@@ -176,13 +183,18 @@ export default async function CaseStudyPage({ params }: Props) {
           {isTodo(project.screens) ? (
             <TodoSlot slug={slug} />
           ) : (
-            <ul className="grid gap-6 md:grid-cols-3">
+            <ul className="grid items-start gap-6 md:grid-cols-3">
               {project.screens.map((screen, i) => (
                 <li key={screen.caption.en}>
                   <Reveal delay={0.08 * i}>
                     <figure>
                       <div className="border-border overflow-hidden rounded-lg border">
-                        <PlaceholderVisual hue={screen.hue} label={pick(screen.caption, locale)} />
+                        <ProjectMedia
+                          image={screen.image}
+                          hue={screen.hue}
+                          label={pick(screen.caption, locale)}
+                          sizes="(min-width: 768px) 33vw, 100vw"
+                        />
                       </div>
                       <figcaption className="text-muted mt-3 text-sm">
                         {pick(screen.caption, locale)}

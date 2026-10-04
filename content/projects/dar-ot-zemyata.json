@@ -6,24 +6,75 @@
   "featured": true,
   "order": 1,
   "hue": 95,
-  "title": { "bg": "Дар от Земята", "en": "Дар от Земята" },
+  "title": {
+    "bg": "Дар от Земята",
+    "en": "Дар от Земята"
+  },
   "summary": {
     "bg": "Натурални продукти от български ферми — директно от производителя.",
     "en": "Natural products from Bulgarian farms — straight from the producer."
   },
   "client": {
-    "name": "[TODO]",
+    "name": "Дар от Земята",
     "industry": {
       "bg": "Натурални храни и земеделски продукти",
       "en": "Natural food & farm products"
     }
   },
   "role": "[TODO]",
-  "challenge": "[TODO]",
-  "solution": "[TODO]",
-  "stack": "[TODO]",
-  "screens": "[TODO]",
+  "challenge": {
+    "bg": "Да представим продукти от български ферми в много категории — от зеленчуци и плодове до вино, ядки и млечни продукти — така, че и домакинства, и ресторанти да поръчват лесно.",
+    "en": "To present products from Bulgarian farms across many categories — from vegetables and fruit to wine, nuts and dairy — so that both households and restaurants can order with ease."
+  },
+  "solution": {
+    "bg": "Онлайн магазин с категории, търсене, любими продукти и количка, цени в евро и промо отстъпки, и два отделни входа за поръчка: за дома или офиса и за ресторанти и търговски обекти.",
+    "en": "An online store with categories, search, favourites and a cart, prices in euro and promotional discounts, and two separate ordering paths: for home or office, and for restaurants and commercial venues."
+  },
+  "stack": ["React", "Vite", "Vercel", "Schema.org (JSON-LD)"],
+  "screens": [
+    {
+      "caption": {
+        "bg": "Начална страница с категории и промо продукти",
+        "en": "Home page with categories and promo products"
+      },
+      "hue": 95,
+      "image": {
+        "src": "/projects/dar-ot-zemyata/home.jpg",
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "caption": {
+        "bg": "Категория „Зеленчуци“ с филтър за промо и сортиране",
+        "en": "“Vegetables” category with promo filter and sorting"
+      },
+      "hue": 95,
+      "image": {
+        "src": "/projects/dar-ot-zemyata/category.jpg",
+        "width": 1440,
+        "height": 900
+      }
+    },
+    {
+      "caption": {
+        "bg": "Мобилен изглед",
+        "en": "Mobile view"
+      },
+      "hue": 95,
+      "image": {
+        "src": "/projects/dar-ot-zemyata/mobile.jpg",
+        "width": 390,
+        "height": 844
+      }
+    }
+  ],
   "results": "[TODO]",
   "quality": "[TODO]",
-  "liveUrl": "https://darotzemqta.bg"
+  "liveUrl": "https://darotzemqta.bg",
+  "cover": {
+    "src": "/projects/dar-ot-zemyata/home.jpg",
+    "width": 1440,
+    "height": 900
+  }
 }
