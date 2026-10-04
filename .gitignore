@@ -1,0 +1,13 @@
+node_modules
+.next
+out
+next-env.d.ts
+*.tsbuildinfo
+.env
+.env.local
+.env*.local
+playwright-report
+test-results
+.lighthouseci
+.vercel
+.DS_Store
