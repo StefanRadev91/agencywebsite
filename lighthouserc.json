@@ -3,17 +3,28 @@
     "collect": {
       "startServerCommand": "npm run start",
       "startServerReadyPattern": "Ready",
-      "url": ["http://localhost:3000/bg", "http://localhost:3000/en"],
-      "numberOfRuns": 1
+      "url": [
+        "http://localhost:3000/bg",
+        "http://localhost:3000/en",
+        "http://localhost:3000/bg/work",
+        "http://localhost:3000/bg/work/concept-dental-clinic",
+        "http://localhost:3000/bg/services/websites",
+        "http://localhost:3000/bg/pricing",
+        "http://localhost:3000/bg/contact"
+      ],
+      "numberOfRuns": 3,
+      "settings": { "chromeFlags": "--no-sandbox --headless=new" }
     },
     "assert": {
       "assertions": {
-        "categories:performance": ["warn", { "minScore": 0.9 }],
+        "categories:performance": ["error", { "minScore": 0.9 }],
         "categories:accessibility": ["error", { "minScore": 0.9 }],
         "categories:best-practices": ["error", { "minScore": 0.9 }],
-        "categories:seo": ["error", { "minScore": 0.9 }]
+        "categories:seo": ["error", { "minScore": 0.9 }],
+        "largest-contentful-paint": ["warn", { "maxNumericValue": 2500 }],
+        "cumulative-layout-shift": ["error", { "maxNumericValue": 0.1 }]
       }
     },
-    "upload": { "target": "temporary-public-storage" }
+    "upload": { "target": "filesystem", "outputDir": ".lighthouseci" }
   }
 }

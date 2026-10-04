@@ -47,6 +47,25 @@ export default async function LocaleLayout({ children, params }: Props) {
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'Common' });
+  const tNav = await getTranslations({ locale, namespace: 'Nav' });
+  const headerLabels = {
+    nav: {
+      main: tNav('main'),
+      services: tNav('services'),
+      work: tNav('work'),
+      process: tNav('process'),
+      pricing: tNav('pricing'),
+      about: tNav('about'),
+      cta: tNav('cta'),
+      openMenu: tNav('openMenu'),
+      closeMenu: tNav('closeMenu'),
+    },
+    language: {
+      label: t('language'),
+      names: { bg: t('languageName.bg'), en: t('languageName.en') },
+    },
+    theme: { toLight: t('switchToLight'), toDark: t('switchToDark') },
+  };
 
   return (
     <html lang={locale} className={fontVariables} suppressHydrationWarning>
@@ -54,7 +73,8 @@ export default async function LocaleLayout({ children, params }: Props) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
-        <NextIntlClientProvider>
+        {/* Client components get their strings as props; pages add the namespaces they need. */}
+        <NextIntlClientProvider messages={{}}>
           <Providers>
             <a
               href="#main"
@@ -62,7 +82,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             >
               {t('skip')}
             </a>
-            <Header />
+            <Header labels={headerLabels} />
             <main id="main">{children}</main>
             <Footer />
           </Providers>

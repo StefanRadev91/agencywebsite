@@ -23,6 +23,8 @@ type CommonProps = {
   variant?: Variant;
   size?: Size;
   magnetic?: boolean;
+  /** Set false for links visible on first paint, so route chunks don't compete with the LCP. */
+  prefetch?: boolean;
   className?: string;
   children: React.ReactNode;
 };
@@ -45,6 +47,7 @@ export function Button(props: ButtonProps | LinkProps) {
       variant: _v,
       size: _s,
       magnetic: _m,
+      prefetch,
       className: _c,
       children: _ch,
       ...rest
@@ -56,13 +59,21 @@ export function Button(props: ButtonProps | LinkProps) {
         {children}
       </a>
     ) : (
-      <Link href={href} className={classes} {...rest}>
+      <Link href={href} prefetch={prefetch} className={classes} {...rest}>
         {children}
       </Link>
     );
   } else {
-    const { variant: _v, size: _s, magnetic: _m, className: _c, children: _ch, ...rest } = props;
-    void [_v, _s, _m, _c, _ch];
+    const {
+      variant: _v,
+      size: _s,
+      magnetic: _m,
+      prefetch: _p,
+      className: _c,
+      children: _ch,
+      ...rest
+    } = props;
+    void [_v, _s, _m, _p, _c, _ch];
     node = (
       <button type="button" className={classes} {...rest}>
         {children}

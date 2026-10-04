@@ -6,13 +6,8 @@ import { Button } from '@/components/ui/button';
 import { Checkbox, Input, Select, Textarea } from '@/components/ui/form-fields';
 import { Link } from '@/i18n/navigation';
 import { siteConfig } from '@/lib/config';
-import {
-  budgets,
-  contactSchema,
-  fieldErrors,
-  projectTypes,
-  timelines,
-} from '@/lib/schemas/contact';
+import { validateContact } from '@/lib/contact-validation';
+import { budgets, projectTypes, timelines } from '@/lib/schemas/contact-options';
 
 type Status = 'idle' | 'submitting' | 'success' | 'error' | 'rate-limited';
 
@@ -60,9 +55,9 @@ export function ContactForm() {
 
   async function onSubmit(event: React.FormEvent) {
     event.preventDefault();
-    const parsed = contactSchema.safeParse({ ...values, locale });
-    if (!parsed.success) {
-      setErrors(fieldErrors(parsed.error));
+    const found = validateContact(values);
+    if (Object.keys(found).length > 0) {
+      setErrors(found);
       setStatus('idle');
       return;
     }
@@ -72,7 +67,7 @@ export function ContactForm() {
       const response = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(parsed.data),
+        body: JSON.stringify({ ...values, locale }),
       });
       if (response.ok) {
         setStatus('success');

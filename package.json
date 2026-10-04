@@ -11,7 +11,8 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:e2e": "playwright test",
-    "lhci": "lhci autorun"
+    "lhci": "lhci autorun",
+    "quality:report": "node scripts/quality-report.mjs"
   },
   "private": true,
   "dependencies": {
@@ -27,6 +28,7 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
+    "@axe-core/playwright": "^4.13.0",
     "@fontsource/onest": "^5.3.1",
     "@lhci/cli": "^0.15.1",
     "@playwright/test": "^1.63.0",

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
-import { setRequestLocale } from 'next-intl/server';
+import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
 import { ThemeToggle } from '@/components/layout/theme-toggle';
 import { Accordion } from '@/components/ui/accordion';
@@ -48,14 +48,20 @@ export default async function StyleguidePage({ params }: { params: Promise<{ loc
   if (process.env.NODE_ENV === 'production') notFound();
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations('Common');
 
   return (
     <div>
       <div className="container-page flex items-center justify-between py-6">
         <span className="text-muted font-mono text-sm">/styleguide — dev only</span>
         <div className="flex items-center gap-3">
-          <LanguageSwitcher />
-          <ThemeToggle />
+          <LanguageSwitcher
+            labels={{
+              label: t('language'),
+              names: { bg: t('languageName.bg'), en: t('languageName.en') },
+            }}
+          />
+          <ThemeToggle labels={{ toLight: t('switchToLight'), toDark: t('switchToDark') }} />
         </div>
       </div>
 

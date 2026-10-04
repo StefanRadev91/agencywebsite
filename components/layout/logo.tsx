@@ -3,7 +3,12 @@ import { siteConfig } from '@/lib/config';
 
 export function Logo() {
   return (
-    <Link href="/" className="flex items-center gap-3" aria-label={siteConfig.name}>
+    <Link
+      href="/"
+      prefetch={false}
+      className="flex items-center gap-3"
+      aria-label={siteConfig.name}
+    >
       <span
         aria-hidden
         className="bg-accent text-accent-foreground font-display flex size-9 items-center justify-center rounded-md text-sm font-extrabold"

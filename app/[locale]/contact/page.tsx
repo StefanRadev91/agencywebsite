@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { ContactForm } from '@/components/contact/contact-form';
 import { siteConfig } from '@/lib/config';
+import { pickMessages } from '@/lib/utils/pick-messages';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -79,7 +81,9 @@ export default async function ContactPage({ params }: Props) {
         </div>
       </div>
 
-      <ContactForm />
+      <NextIntlClientProvider messages={pickMessages(await getMessages(), ['Contact'])}>
+        <ContactForm />
+      </NextIntlClientProvider>
     </div>
   );
 }

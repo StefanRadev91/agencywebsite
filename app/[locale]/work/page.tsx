@@ -1,9 +1,11 @@
 import type { Metadata } from 'next';
-import { getTranslations, setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
+import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { Section } from '@/components/ui/section';
 import { WorkGrid } from '@/components/work/work-grid';
 import { toWorkItem } from '@/lib/content/card';
 import { getProjects } from '@/lib/content/projects';
+import { pickMessages } from '@/lib/utils/pick-messages';
 
 type Props = { params: Promise<{ locale: string }> };
 
@@ -25,7 +27,9 @@ export default async function WorkPage({ params }: Props) {
 
   return (
     <Section h1 eyebrow={t('page.eyebrow')} title={t('page.title')} intro={t('page.intro')}>
-      <WorkGrid items={items} />
+      <NextIntlClientProvider messages={pickMessages(await getMessages(), ['Work'])}>
+        <WorkGrid items={items} />
+      </NextIntlClientProvider>
       <p className="text-muted mt-12 max-w-2xl text-sm">{t('page.legend')}</p>
     </Section>
   );

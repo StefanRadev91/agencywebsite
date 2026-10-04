@@ -2,8 +2,9 @@ import { getTranslations } from 'next-intl/server';
 import { AnimatedHeadline } from '@/components/ui/animated-headline';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from '@/components/ui/icons';
-import { Reveal } from '@/components/ui/reveal';
 import { HeroBackdrop } from './hero-backdrop';
+
+const delay = (seconds: number) => ({ '--delay': `${seconds}s` }) as React.CSSProperties;
 
 export async function Hero() {
   const t = await getTranslations('Home.hero');
@@ -20,18 +21,22 @@ export async function Hero() {
           accentWords={[Number(t('accentIndex'))]}
           className="text-display max-w-5xl"
         />
-        <Reveal delay={0.5} className="mt-8 max-w-2xl">
-          <p className="text-muted text-lg md:text-xl">{t('subtitle')}</p>
-        </Reveal>
-        <Reveal delay={0.65} className="mt-10 flex flex-wrap items-center gap-4">
-          <Button href="/contact" size="lg">
+        {/* Above the fold: transform-only entrance so the text is painted immediately (LCP). */}
+        <p
+          className="animate-rise text-muted mt-8 max-w-2xl text-lg md:text-xl"
+          style={delay(0.35)}
+        >
+          {t('subtitle')}
+        </p>
+        <div className="animate-rise mt-10 flex flex-wrap items-center gap-4" style={delay(0.45)}>
+          <Button href="/contact" size="lg" prefetch={false}>
             {t('primaryCta')}
             <ArrowRight />
           </Button>
-          <Button href="/work" size="lg" variant="secondary">
+          <Button href="/work" size="lg" variant="secondary" prefetch={false}>
             {t('secondaryCta')}
           </Button>
-        </Reveal>
+        </div>
       </div>
     </section>
   );

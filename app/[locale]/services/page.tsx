@@ -36,6 +36,7 @@ export default async function ServicesPage({ params }: Props) {
             <li key={service.slug}>
               <Reveal delay={0.06 * i} className="h-full">
                 <ServiceCard
+                  headingLevel={2}
                   href={`/services/${service.slug}`}
                   title={pick(service.title, locale)}
                   description={pick(service.summary, locale)}

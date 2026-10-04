@@ -1,6 +1,6 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
+import { AnimatePresence, LazyMotion, MotionConfig, m } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { ProjectCard } from '@/components/ui/project-card';
@@ -9,6 +9,13 @@ import { duration, easeOutExpo } from '@/lib/motion';
 import { cn } from '@/lib/utils/cn';
 
 export type FilterKey = 'all' | 'website' | 'webapp' | 'ecommerce' | 'concept';
+// Framer Motion powers the filter transitions. Its features load lazily after first paint, so the
+// grid is fully visible and usable without it (initial={false}); animations simply start later.
+const loadFeatures = () =>
+  new Promise<void>((resolve) => setTimeout(resolve, 1500))
+    .then(() => import('@/lib/motion-features'))
+    .then((mod) => mod.default);
+
 const filters: FilterKey[] = ['all', 'website', 'webapp', 'ecommerce', 'concept'];
 
 function matches(item: WorkItem, filter: FilterKey) {
@@ -49,22 +56,26 @@ export function WorkGrid({ items }: { items: WorkItem[] }) {
         {t('count', { count: visible.length })}
       </p>
 
-      <ul className="grid gap-8 md:grid-cols-2">
-        <AnimatePresence mode="popLayout">
-          {visible.map(({ slug, card }) => (
-            <motion.li
-              key={slug}
-              layout
-              initial={{ opacity: 0, scale: 0.97 }}
-              animate={{ opacity: 1, scale: 1 }}
-              exit={{ opacity: 0, scale: 0.97 }}
-              transition={{ duration: duration.base, ease: easeOutExpo }}
-            >
-              <ProjectCard {...card} />
-            </motion.li>
-          ))}
-        </AnimatePresence>
-      </ul>
+      <LazyMotion features={loadFeatures}>
+        <MotionConfig reducedMotion="user">
+          <ul className="grid gap-8 md:grid-cols-2">
+            <AnimatePresence mode="popLayout" initial={false}>
+              {visible.map(({ slug, card }) => (
+                <m.li
+                  key={slug}
+                  layout
+                  initial={{ opacity: 0, scale: 0.97 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.97 }}
+                  transition={{ duration: duration.base, ease: easeOutExpo }}
+                >
+                  <ProjectCard {...card} headingLevel={2} />
+                </m.li>
+              ))}
+            </AnimatePresence>
+          </ul>
+        </MotionConfig>
+      </LazyMotion>
     </div>
   );
 }

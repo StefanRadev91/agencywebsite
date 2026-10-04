@@ -1,28 +1,25 @@
 import { z } from 'zod';
 
-export const projectTypes = ['website', 'webapp', 'ecommerce', 'qa', 'hosting', 'other'] as const;
-export const budgets = [
-  'lt-1000',
-  '1000-3000',
-  '3000-7000',
-  '7000-15000',
-  'gt-15000',
-  'unsure',
-] as const;
-export const timelines = ['asap', '1-month', '1-3-months', '3-plus-months', 'flexible'] as const;
+import { budgets, limits, projectTypes, timelines } from './contact-options';
+
+export { budgets, projectTypes, timelines };
 
 /**
  * Shared by the form (client) and the API route (server).
  * Error messages are translation keys under Contact.errors.
  */
 export const contactSchema = z.object({
-  name: z.string('name').trim().min(2, 'name').max(100, 'name'),
-  email: z.string('email').trim().max(200, 'email').pipe(z.email('email')),
-  company: z.string('company').trim().max(150, 'company').default(''),
+  name: z.string('name').trim().min(limits.nameMin, 'name').max(limits.nameMax, 'name'),
+  email: z.string('email').trim().max(limits.emailMax, 'email').pipe(z.email('email')),
+  company: z.string('company').trim().max(limits.companyMax, 'company').default(''),
   projectType: z.enum(projectTypes, 'projectType'),
   budget: z.enum(budgets, 'budget'),
   timeline: z.enum(timelines, 'timeline'),
-  message: z.string('message').trim().min(10, 'message').max(5000, 'messageLong'),
+  message: z
+    .string('message')
+    .trim()
+    .min(limits.messageMin, 'message')
+    .max(limits.messageMax, 'messageLong'),
   consent: z.literal(true, 'consent'),
   /** Honeypot — real users never see or fill this. */
   hp: z.string().default(''),

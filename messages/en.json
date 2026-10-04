@@ -274,7 +274,8 @@
       "pending": "Results are published automatically after the first run of the CI checks. Until then we don't show any numbers.",
       "e2e": "{count, plural, one {# e2e test} other {# e2e tests}}",
       "unit": "{count, plural, one {# unit test} other {# unit tests}}",
-      "date": "Measured on {date}"
+      "date": "Measured on {date}",
+      "lighthouseNote": "Lighthouse: mobile, simulated slow 4G, lowest score across the audited pages."
     },
     "budgets": {
       "eyebrow": "Budgets",

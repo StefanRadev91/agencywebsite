@@ -3,7 +3,7 @@ import { getFormatter, getTranslations, setRequestLocale } from 'next-intl/serve
 import { notFound } from 'next/navigation';
 import { Accordion } from '@/components/ui/accordion';
 import { Button } from '@/components/ui/button';
-import { ArrowRight, serviceIcons } from '@/components/ui/icons';
+import { ArrowLeft, ArrowRight, serviceIcons } from '@/components/ui/icons';
 import { Reveal } from '@/components/ui/reveal';
 import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
@@ -44,8 +44,12 @@ export default async function ServicePage({ params }: Props) {
   return (
     <article>
       <header className="container-page pt-12 pb-10 md:pt-20">
-        <Link href="/services" className="text-muted hover:text-foreground text-sm">
-          ← {t('back')}
+        <Link
+          href="/services"
+          className="text-muted hover:text-foreground inline-flex items-center gap-2 text-sm"
+        >
+          <ArrowLeft />
+          {t('back')}
         </Link>
         <span
           aria-hidden

@@ -1,17 +1,30 @@
 'use client';
 
-import { MotionConfig } from 'framer-motion';
-import Lenis from 'lenis';
 import { useEffect } from 'react';
 
-/** Respects prefers-reduced-motion for Framer Motion and disables Lenis when reduced. */
+// Lenis loads well after first paint so it stays out of the critical path; it only enhances scrolling.
+const DEFER_MS = 1500;
+
+/** Smooth scroll, skipped for prefers-reduced-motion. */
 export function Providers({ children }: { children: React.ReactNode }) {
   useEffect(() => {
-    const query = window.matchMedia('(prefers-reduced-motion: reduce)');
-    if (query.matches) return;
-    const lenis = new Lenis({ autoRaf: true, anchors: true });
-    return () => lenis.destroy();
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+    let destroy: (() => void) | undefined;
+    let cancelled = false;
+    const timer = setTimeout(() => {
+      import('lenis').then(({ default: Lenis }) => {
+        if (cancelled) return;
+        const lenis = new Lenis({ autoRaf: true, anchors: true });
+        destroy = () => lenis.destroy();
+      });
+    }, DEFER_MS);
+    return () => {
+      cancelled = true;
+      clearTimeout(timer);
+      destroy?.();
+    };
   }, []);
 
-  return <MotionConfig reducedMotion="user">{children}</MotionConfig>;
+  return children;
 }

@@ -62,7 +62,7 @@ export default async function ProcessPage({ params }: Props) {
   return (
     <>
       <Section h1 eyebrow={t('eyebrow')} title={t('title')} intro={t('intro')}>
-        <Timeline steps={steps} />
+        <Timeline steps={steps} headingLevel={2} />
       </Section>
       <section className="container-page pb-(--section-y)" aria-labelledby="process-cta">
         <h2 id="process-cta" className="font-display text-h2 mb-6 font-extrabold">

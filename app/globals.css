@@ -53,8 +53,8 @@
 
 @theme inline {
   --font-display: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-mono: var(--font-jetbrains), ui-monospace, 'SFMono-Regular', monospace;
+  --font-sans: var(--font-onest), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', 'Cascadia Code', Menlo, Consolas, monospace;
 
   --color-background: var(--background);
   --color-surface: var(--surface);
@@ -93,6 +93,13 @@
   --radius-lg: 1.25rem;
   --radius-xl: 2rem;
 
+  /* Animations (CSS-only, transform-based) */
+  --animate-rise: rise 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s) both;
+  --animate-fade-in: fade-in 0.3s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-rise-fade: rise-fade 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--delay, 0s) both;
+  --animate-drift-a: drift-a 16s ease-in-out infinite;
+  --animate-drift-b: drift-b 20s ease-in-out infinite;
+
   /* Easing */
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in-out-quart: cubic-bezier(0.76, 0, 0.24, 1);
@@ -124,11 +131,67 @@ body {
   border-radius: var(--radius-sm);
 }
 
+/* Mono system fonts (e.g. Consolas) render Bulgarian-localized cursive forms in upright text. */
+.font-mono {
+  font-feature-settings: 'locl' 0;
+}
+
 .container-page {
   width: 100%;
   max-width: var(--container-max);
   margin-inline: auto;
   padding-inline: var(--gutter);
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(var(--y, 24px));
+  transition:
+    opacity 0.7s var(--ease-out-expo) var(--delay, 0s),
+    transform 0.7s var(--ease-out-expo) var(--delay, 0s);
+}
+
+.reveal-in {
+  opacity: 1;
+  transform: none;
+}
+
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes rise {
+  from {
+    transform: translateY(1.25rem);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes rise-fade {
+  from {
+    opacity: 0;
+    transform: translateY(1.5rem);
+  }
+}
+
+@keyframes drift-a {
+  50% {
+    transform: translate(-50px, 40px);
+  }
+}
+
+@keyframes drift-b {
+  50% {
+    transform: translate(60px, -30px);
+  }
 }
 
 @keyframes marquee {

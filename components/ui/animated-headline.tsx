@@ -1,7 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { duration, easeOutExpo } from '@/lib/motion';
 import { cn } from '@/lib/utils/cn';
 
 type Props = {
@@ -12,22 +8,24 @@ type Props = {
   accentWords?: number[];
 };
 
-/** Word-by-word masked reveal. The full text stays available to assistive tech. */
+/**
+ * Word-by-word rise. Pure CSS (transform only, text always visible), so it runs before
+ * hydration and never delays the largest contentful paint. The full text stays available
+ * to assistive tech.
+ */
 export function AnimatedHeadline({ text, as: Tag = 'h1', className, accentWords = [] }: Props) {
   const words = text.split(' ');
   return (
     <Tag className={cn('font-display font-extrabold text-balance', className)} aria-label={text}>
       {words.map((word, i) => (
-        <span key={i} aria-hidden className="inline-block overflow-hidden pb-[0.12em] align-bottom">
-          <motion.span
-            className={cn('inline-block', accentWords.includes(i) && 'text-accent-ink')}
-            initial={{ y: '110%' }}
-            animate={{ y: 0 }}
-            transition={{ duration: duration.slow, ease: easeOutExpo, delay: 0.06 * i }}
-          >
-            {word}
-            {i < words.length - 1 ? ' ' : ''}
-          </motion.span>
+        <span
+          key={i}
+          aria-hidden
+          className={cn('animate-rise inline-block', accentWords.includes(i) && 'text-accent-ink')}
+          style={{ '--delay': `${0.06 * i}s` } as React.CSSProperties}
+        >
+          {word}
+          {i < words.length - 1 ? ' ' : ''}
         </span>
       ))}
     </Tag>

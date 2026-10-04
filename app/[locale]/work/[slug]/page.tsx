@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Button } from '@/components/ui/button';
-import { ArrowRight } from '@/components/ui/icons';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from '@/components/ui/icons';
 import { LighthouseBadge } from '@/components/ui/lighthouse-badge';
 import { ProjectMedia } from '@/components/ui/project-media';
 import { Reveal } from '@/components/ui/reveal';
@@ -90,8 +90,12 @@ export default async function CaseStudyPage({ params }: Props) {
     <article>
       <JsonLd data={creativeWork} />
       <header className="container-page pt-12 pb-10 md:pt-20">
-        <Link href="/work" className="text-muted hover:text-foreground text-sm">
-          ← {tc('back')}
+        <Link
+          href="/work"
+          className="text-muted hover:text-foreground inline-flex items-center gap-2 text-sm"
+        >
+          <ArrowLeft />
+          {tc('back')}
         </Link>
         <div className="mt-8 flex flex-wrap gap-2">
           {isConcept && <Tag variant="accent">{t('conceptLabel')}</Tag>}
@@ -111,7 +115,7 @@ export default async function CaseStudyPage({ params }: Props) {
           <div className="mt-8">
             <Button href={liveUrl} target="_blank" rel="noopener noreferrer">
               {tc('liveSite')}
-              <span aria-hidden>↗</span>
+              <ArrowUpRight />
             </Button>
           </div>
         )}
@@ -209,6 +213,7 @@ export default async function CaseStudyPage({ params }: Props) {
                           image={screen.image}
                           hue={screen.hue}
                           label={pick(screen.caption, locale)}
+                          decorative
                           sizes="(min-width: 768px) 33vw, 100vw"
                         />
                       </div>

@@ -10,6 +10,8 @@ export function ProjectMedia({
   label,
   sizes = '(min-width: 1024px) 50vw, 100vw',
   priority,
+  quality,
+  decorative,
   className,
 }: {
   image?: ProjectImage;
@@ -17,6 +19,9 @@ export function ProjectMedia({
   label: string;
   sizes?: string;
   priority?: boolean;
+  quality?: 60 | 75;
+  /** The surrounding <figcaption> already names the image, so it gets an empty alt. */
+  decorative?: boolean;
   className?: string;
 }) {
   if (!image) return <PlaceholderVisual hue={hue} label={label} className={className} />;
@@ -26,9 +31,10 @@ export function ProjectMedia({
       src={image.src}
       width={image.width}
       height={image.height}
-      alt={label}
+      alt={decorative ? '' : label}
       sizes={sizes}
       priority={priority}
+      quality={quality}
       className={cn('h-auto w-full object-cover object-top', className)}
     />
   );

@@ -1,7 +1,4 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import { duration, easeOutExpo } from '@/lib/motion';
+import { Reveal } from '@/components/ui/reveal';
 
 /** Illustrative test-run mock. Lines reveal one by one; contains no measured numbers. */
 export function QaTerminal({ title, lines }: { title: string; lines: string[] }) {
@@ -15,19 +12,14 @@ export function QaTerminal({ title, lines }: { title: string; lines: string[] })
       </div>
       <ul className="space-y-3 p-5 md:p-6">
         {lines.map((line, i) => (
-          <motion.li
-            key={line}
-            className="flex gap-3"
-            initial={{ opacity: 0, x: -12 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, margin: '0px 0px -15% 0px' }}
-            transition={{ duration: duration.base, ease: easeOutExpo, delay: 0.15 * i }}
-          >
-            <span aria-hidden className="text-accent-ink">
-              ✓
-            </span>
-            <span>{line}</span>
-          </motion.li>
+          <li key={line}>
+            <Reveal delay={0.15 * i} y={10} className="flex gap-3">
+              <span aria-hidden className="text-accent-ink">
+                ✓
+              </span>
+              <span>{line}</span>
+            </Reveal>
+          </li>
         ))}
       </ul>
     </div>

@@ -64,6 +64,9 @@ export default async function QualityPage({ params }: Props) {
                 }}
               />
             )}
+            {report.lighthouse && (
+              <p className="text-muted text-sm">{t('latest.lighthouseNote')}</p>
+            )}
             <ul className="text-muted flex flex-wrap gap-x-8 gap-y-2 font-mono text-sm">
               {report.e2eTests !== null && <li>{t('latest.e2e', { count: report.e2eTests })}</li>}
               {report.unitTests !== null && (

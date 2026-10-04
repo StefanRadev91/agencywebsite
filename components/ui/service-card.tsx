@@ -1,16 +1,21 @@
 import { Link } from '@/i18n/navigation';
+import { ArrowRight } from './icons';
 
 export function ServiceCard({
   href,
   title,
   description,
   icon,
+  headingLevel = 3,
 }: {
   href: string;
   title: string;
   description: string;
   icon?: React.ReactNode;
+  /** Heading level for the title; use 2 when the card sits directly under the page <h1>. */
+  headingLevel?: 2 | 3;
 }) {
+  const Heading = `h${headingLevel}` as const;
   return (
     <Link
       href={href}
@@ -24,13 +29,13 @@ export function ServiceCard({
           {icon}
         </span>
       )}
-      <h3 className="font-display text-h3 font-extrabold">{title}</h3>
+      <Heading className="font-display text-h3 font-extrabold">{title}</Heading>
       <p className="text-muted mt-3 flex-1">{description}</p>
       <span
         aria-hidden
         className="text-accent-ink ease-out-expo mt-6 inline-block transition-transform duration-(--dur-base) group-hover:translate-x-1"
       >
-        →
+        <ArrowRight />
       </span>
     </Link>
   );

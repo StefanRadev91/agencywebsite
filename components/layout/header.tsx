@@ -1,19 +1,23 @@
 'use client';
 
-import { AnimatePresence, motion } from 'framer-motion';
-import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Link, usePathname } from '@/i18n/navigation';
-import { duration, easeOutExpo } from '@/lib/motion';
 import { navItems } from '@/lib/site-nav';
 import { cn } from '@/lib/utils/cn';
-import { LanguageSwitcher } from './language-switcher';
+import { LanguageSwitcher, type LanguageLabels } from './language-switcher';
 import { Logo } from './logo';
-import { ThemeToggle } from './theme-toggle';
+import { ThemeToggle, type ThemeLabels } from './theme-toggle';
 
-export function Header() {
-  const t = useTranslations('Nav');
+export type HeaderLabels = {
+  nav: Record<'main' | 'cta' | 'openMenu' | 'closeMenu' | (typeof navItems)[number]['key'], string>;
+  language: LanguageLabels;
+  theme: ThemeLabels;
+};
+
+/** Labels come from the server so this client component needs no i18n runtime (keeps JS small). */
+export function Header({ labels }: { labels: HeaderLabels }) {
+  const t = (key: keyof HeaderLabels['nav']) => labels.nav[key];
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -62,6 +66,7 @@ export function Header() {
             <Link
               key={key}
               href={href}
+              prefetch={false}
               aria-current={isActive(href) ? 'page' : undefined}
               className={cn(
                 'rounded-full px-4 py-2 text-sm font-medium transition-colors duration-(--dur-fast)',
@@ -75,9 +80,11 @@ export function Header() {
 
         <div className="flex items-center gap-3">
           <div className="hidden items-center gap-3 lg:flex">
-            <LanguageSwitcher />
-            <ThemeToggle />
-            <Button href="/contact">{t('cta')}</Button>
+            <LanguageSwitcher labels={labels.language} />
+            <ThemeToggle labels={labels.theme} />
+            <Button href="/contact" prefetch={false}>
+              {t('cta')}
+            </Button>
           </div>
           <button
             type="button"
@@ -105,49 +112,43 @@ export function Header() {
         </div>
       </div>
 
-      <AnimatePresence>
-        {open && (
-          <motion.div
-            id="mobile-menu"
-            data-lenis-prevent
-            className="bg-background fixed inset-x-0 top-(--header-h) bottom-0 overflow-y-auto lg:hidden"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: duration.base, ease: easeOutExpo }}
-          >
-            <nav aria-label={t('main')} className="container-page flex flex-col py-8">
-              {navItems.map(({ key, href }, i) => (
-                <motion.div
-                  key={key}
-                  initial={{ opacity: 0, y: 24 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: duration.slow, ease: easeOutExpo, delay: 0.05 * i }}
+      {open && (
+        <div
+          id="mobile-menu"
+          data-lenis-prevent
+          className="animate-fade-in bg-background fixed inset-x-0 top-(--header-h) bottom-0 overflow-y-auto lg:hidden"
+        >
+          <nav aria-label={t('main')} className="container-page flex flex-col py-8">
+            {navItems.map(({ key, href }, i) => (
+              <div
+                key={key}
+                className="animate-rise-fade"
+                style={{ '--delay': `${0.05 * i}s` } as React.CSSProperties}
+              >
+                <Link
+                  href={href}
+                  prefetch={false}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive(href) ? 'page' : undefined}
+                  className={cn(
+                    'border-border font-display text-h2 block border-b py-4 font-extrabold',
+                    isActive(href) && 'text-accent-ink',
+                  )}
                 >
-                  <Link
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    aria-current={isActive(href) ? 'page' : undefined}
-                    className={cn(
-                      'border-border font-display text-h2 block border-b py-4 font-extrabold',
-                      isActive(href) && 'text-accent-ink',
-                    )}
-                  >
-                    {t(key)}
-                  </Link>
-                </motion.div>
-              ))}
-              <div className="mt-8 flex flex-wrap items-center gap-4">
-                <Button href="/contact" size="lg" onClick={() => setOpen(false)}>
-                  {t('cta')}
-                </Button>
-                <LanguageSwitcher />
-                <ThemeToggle />
+                  {t(key)}
+                </Link>
               </div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            ))}
+            <div className="mt-8 flex flex-wrap items-center gap-4">
+              <Button href="/contact" size="lg" prefetch={false} onClick={() => setOpen(false)}>
+                {t('cta')}
+              </Button>
+              <LanguageSwitcher labels={labels.language} />
+              <ThemeToggle labels={labels.theme} />
+            </div>
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

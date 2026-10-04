@@ -56,3 +56,19 @@ export function ArrowRight({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function ArrowLeft({ className }: { className?: string }) {
+  return (
+    <svg {...svg} className={className} width={16} height={16}>
+      <path d="M19 12H5M11 6l-6 6 6 6" />
+    </svg>
+  );
+}
+
+export function ArrowUpRight({ className }: { className?: string }) {
+  return (
+    <svg {...svg} className={className} width={20} height={20}>
+      <path d="M7 17L17 7M8 7h9v9" />
+    </svg>
+  );
+}

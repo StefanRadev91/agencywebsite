@@ -1,7 +1,12 @@
 {
-  "generatedAt": null,
-  "lighthouse": null,
-  "e2eTests": null,
-  "unitTests": null,
+  "generatedAt": "2026-10-04T19:12:00.136Z",
+  "lighthouse": {
+    "performance": 95,
+    "accessibility": 100,
+    "bestPractices": 100,
+    "seo": 100
+  },
+  "e2eTests": 180,
+  "unitTests": 49,
   "runUrl": null
 }

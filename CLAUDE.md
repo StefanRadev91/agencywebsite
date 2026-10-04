@@ -31,3 +31,15 @@ This version has breaking changes — APIs, conventions, and file structure may 
 This block is written and re-added by `next dev` — verify at `node_modules/next/dist/server/lib/generate-agent-files.js`. Removing it from a diff only re-creates the uncommitted change; committing it with your work keeps the tree clean.
 
 <!-- END:nextjs-agent-rules -->
+
+## Performance rules (Lighthouse CI: all categories >= 90, LCP target < 2.5 s on simulated mobile)
+
+Lighthouse's mobile LCP counts every byte requested before first paint (~10 ms per KB), so:
+
+- Keep the critical path small: one font family (Onest variable), no Framer Motion in layout/shared components, no zod in client components (use `lib/contact-validation.ts`), pass labels to client components as props instead of loading the next-intl client runtime.
+- Framer Motion is used only where it adds real value (Work filter transitions) and loads lazily after ~1.5 s. Everything above the fold uses CSS (`animate-rise`, `Reveal`).
+- Never use text arrow glyphs (→ ← ↗) — they pull an extra font file. Use the SVG icons in `components/ui/icons.tsx`.
+- Above-the-fold content must be visible without JS (transform-only entrance, no opacity:0).
+- Links visible on first paint use `prefetch={false}`.
+- Headings must not skip levels (cards under an h1 need `headingLevel={2}`); axe tests enforce this.
+- `npm run quality:report` writes measured results to `content/quality-report.json`; never edit those numbers by hand.
