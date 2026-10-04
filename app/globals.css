@@ -131,6 +131,12 @@ body {
   padding-inline: var(--gutter);
 }
 
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

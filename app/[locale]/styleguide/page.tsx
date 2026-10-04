@@ -50,7 +50,7 @@ export default async function StyleguidePage({ params }: { params: Promise<{ loc
   setRequestLocale(locale);
 
   return (
-    <main>
+    <div>
       <div className="container-page flex items-center justify-between py-6">
         <span className="text-muted font-mono text-sm">/styleguide — dev only</span>
         <div className="flex items-center gap-3">
@@ -177,6 +177,6 @@ export default async function StyleguidePage({ params }: { params: Promise<{ loc
           <Card>Fades and slides in once when scrolled into view.</Card>
         </Reveal>
       </Section>
-    </main>
+    </div>
   );
 }

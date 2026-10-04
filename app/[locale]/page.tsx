@@ -1,16 +1,28 @@
-import { useTranslations } from 'next-intl';
 import { setRequestLocale } from 'next-intl/server';
-import { use } from 'react';
+import { FinalCta } from '@/components/sections/final-cta';
+import { Hero } from '@/components/sections/hero';
+import { ProcessSection } from '@/components/sections/process-section';
+import { QaFirst } from '@/components/sections/qa-first';
+import { SelectedWork } from '@/components/sections/selected-work';
+import { ServicesOverview } from '@/components/sections/services-overview';
+import { Testimonials } from '@/components/sections/testimonials';
+import { TrustStrip } from '@/components/sections/trust-strip';
+import { testimonials } from '@/lib/testimonials';
 
-export default function HomePage({ params }: { params: Promise<{ locale: string }> }) {
-  const { locale } = use(params);
+export default async function HomePage({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
   setRequestLocale(locale);
-  const t = useTranslations('Home');
 
   return (
-    <main className="p-8">
-      <h1 className="text-4xl font-bold">{t('title')}</h1>
-      <p>{t('placeholder')}</p>
-    </main>
+    <>
+      <Hero />
+      <TrustStrip />
+      <ServicesOverview />
+      <SelectedWork />
+      <ProcessSection />
+      <QaFirst />
+      <Testimonials items={testimonials} />
+      <FinalCta />
+    </>
   );
 }

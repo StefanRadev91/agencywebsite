@@ -1,16 +1,194 @@
 {
   "Meta": {
     "title": "{name} — web studio",
-    "description": "From idea to launch and support. Websites and systems with quality built in."
+    "description": "From idea to launch and support. Websites and systems with quality built in and automated tests."
   },
   "Common": {
+    "skip": "Skip to content",
     "language": "Language",
     "languageName": { "bg": "Български", "en": "English" },
     "switchToLight": "Switch to light theme",
     "switchToDark": "Switch to dark theme"
   },
+  "Nav": {
+    "main": "Main navigation",
+    "services": "Services",
+    "work": "Work",
+    "process": "Process",
+    "pricing": "Pricing",
+    "about": "About",
+    "contact": "Contact",
+    "cta": "Start a project",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu"
+  },
+  "Footer": {
+    "tagline": "Websites and systems with quality built in — from idea to support.",
+    "services": "Services",
+    "contact": "Contact",
+    "company": "Company",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    },
+    "rights": "All rights reserved."
+  },
+  "Services": {
+    "items": {
+      "websites": {
+        "title": "Business websites",
+        "description": "Fast, accessible, easy-to-maintain sites that represent your business and bring in enquiries."
+      },
+      "webapps": {
+        "title": "Web apps & custom systems",
+        "description": "Booking systems, admin panels and dashboards — built around your processes, not a template."
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Stores that load fast and sell — with payments, inventory and shipping."
+      },
+      "qa": {
+        "title": "QA & test automation",
+        "description": "Playwright tests, CI checks and quality control as a service — for our projects and yours."
+      },
+      "hosting": {
+        "title": "Hosting & maintenance",
+        "description": "Monitoring, updates and quick response after launch — you focus on your business."
+      }
+    }
+  },
+  "Process": {
+    "steps": {
+      "discovery": {
+        "title": "Discovery call",
+        "short": "We learn about your idea, goals and constraints. No commitment."
+      },
+      "requirements": {
+        "title": "Requirements & scope",
+        "short": "We write down exactly what will be built, with timeline and price."
+      },
+      "design": {
+        "title": "UX/UI design",
+        "short": "Structure, prototypes and visuals that we agree with you before writing code."
+      },
+      "development": {
+        "title": "Development",
+        "short": "We build the site or system in short iterations you can follow."
+      },
+      "qa": {
+        "title": "QA & automated testing",
+        "short": "Playwright tests, performance and accessibility checks before launch."
+      },
+      "launch": {
+        "title": "Launch & hosting",
+        "short": "We publish using a checklist and set up domain, hosting and monitoring."
+      },
+      "support": {
+        "title": "Maintenance & support",
+        "short": "Updates, fixes and growth — long after the project is live."
+      }
+    }
+  },
+  "Work": {
+    "categories": {
+      "website": "Website",
+      "webApp": "Web app",
+      "ecommerce": "E-commerce",
+      "websiteEcommerce": "Website / E-commerce",
+      "concept": "Concept"
+    },
+    "conceptLabel": "Concept",
+    "status": {
+      "inProgress": "In progress",
+      "ownProduct": "Own product"
+    },
+    "featured": {
+      "dar-ot-zemyata": {
+        "title": "Дар от Земята",
+        "summary": "Natural products from Bulgarian farms — straight from the producer."
+      },
+      "hotel-booking": {
+        "title": "Hotel booking system",
+        "summary": "Room management and booking for a 50-room monastery hotel wing."
+      },
+      "price-monitoring": {
+        "title": "Price monitoring",
+        "summary": "Our own SaaS product for tracking prices."
+      },
+      "concept-dental-clinic": {
+        "title": "Dental clinic",
+        "summary": "A concept website with online appointment booking."
+      }
+    }
+  },
   "Home": {
-    "title": "From idea to launch and support",
-    "placeholder": "Site skeleton — Phase 1."
+    "hero": {
+      "eyebrow": "Web studio · Sofia",
+      "title": "From idea to launch — and everything after",
+      "accentIndex": "3",
+      "subtitle": "We build websites and systems with quality built in — from the first call to support after launch. Every project ships with automated tests.",
+      "primaryCta": "Start a project",
+      "secondaryCta": "See our work"
+    },
+    "trust": {
+      "title": "Built with"
+    },
+    "services": {
+      "eyebrow": "Services",
+      "title": "The full cycle in one place",
+      "intro": "From the first idea to a working product, and looking after it afterwards."
+    },
+    "work": {
+      "eyebrow": "Work",
+      "title": "Selected work",
+      "intro": "Real projects, our own products and clearly labeled concepts.",
+      "all": "All projects"
+    },
+    "process": {
+      "eyebrow": "Process",
+      "title": "Seven steps, zero surprises",
+      "intro": "A clear process where you know what you get at every step.",
+      "details": "See the process in detail"
+    },
+    "qa": {
+      "badge": "QA-first",
+      "title": "Quality isn't the last step. It's built in.",
+      "intro": "Every project ships with automated tests, performance budgets and a launch checklist.",
+      "pillars": {
+        "tests": {
+          "title": "Automated Playwright tests",
+          "text": "The key user journeys are checked automatically on every change."
+        },
+        "budgets": {
+          "title": "Performance budgets",
+          "text": "LCP, CLS and Lighthouse are targets we enforce in CI — not wishes."
+        },
+        "checklist": {
+          "title": "Pre-launch checklist",
+          "text": "Accessibility, SEO, mobile, forms and security — verified before we publish."
+        }
+      },
+      "cta": "Learn more about our QA service",
+      "terminal": {
+        "title": "playwright test",
+        "caption": "Illustrative example — not real results.",
+        "lines": [
+          "home page loads in Bulgarian and English",
+          "language switch keeps the current page",
+          "contact form validates and submits",
+          "no console errors",
+          "performance budget is met"
+        ]
+      }
+    },
+    "testimonials": {
+      "eyebrow": "Testimonials",
+      "title": "What clients say"
+    },
+    "cta": {
+      "title": "Got an idea? Let's make it real.",
+      "text": "Tell us about your project and we'll get back to you.",
+      "primary": "Start a project"
+    }
   }
 }
