@@ -1,0 +1,75 @@
+{
+  "slug": "hosting",
+  "order": 5,
+  "title": {
+    "bg": "Хостинг и поддръжка",
+    "en": "Hosting & maintenance"
+  },
+  "summary": {
+    "bg": "Мониторинг, обновления и бърза реакция след старта — вие се занимавате с бизнеса.",
+    "en": "Monitoring, updates and quick response after launch — you focus on your business."
+  },
+  "intro": {
+    "bg": "Грижим се сайтът ви да е онлайн, бърз и сигурен — след пускането.",
+    "en": "We make sure your site stays online, fast and secure — after launch."
+  },
+  "included": [
+    {
+      "bg": "Хостинг и настройка на домейн",
+      "en": "Hosting and domain setup"
+    },
+    {
+      "bg": "Мониторинг на достъпността",
+      "en": "Availability monitoring"
+    },
+    {
+      "bg": "Обновления и сигурност",
+      "en": "Updates and security"
+    },
+    {
+      "bg": "Резервни копия",
+      "en": "Backups"
+    },
+    {
+      "bg": "Малки корекции по заявка",
+      "en": "Small fixes on request"
+    }
+  ],
+  "timeline": {
+    "bg": "Настройката обикновено отнема няколко дни",
+    "en": "Setup usually takes a few days"
+  },
+  "startingFrom": "[TODO]",
+  "faq": [
+    {
+      "question": {
+        "bg": "Хоствате ли сайтове, които не сте правили?",
+        "en": "Do you host sites you didn't build?"
+      },
+      "answer": {
+        "bg": "Да, след кратък преглед.",
+        "en": "Yes, after a short review."
+      }
+    },
+    {
+      "question": {
+        "bg": "Какво става при проблем?",
+        "en": "What happens if something goes wrong?"
+      },
+      "answer": {
+        "bg": "Мониторингът ни известява, а времето за реакция зависи от избрания план.",
+        "en": "Monitoring alerts us, and the response time depends on the chosen plan."
+      }
+    },
+    {
+      "question": {
+        "bg": "Мога ли да прекратя?",
+        "en": "Can I cancel?"
+      },
+      "answer": {
+        "bg": "Да, условията за прекратяване са част от договора.",
+        "en": "Yes, the cancellation terms are part of the agreement."
+      }
+    }
+  ]
+}

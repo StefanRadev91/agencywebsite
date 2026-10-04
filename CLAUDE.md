@@ -10,7 +10,8 @@ Next.js (App Router) + TypeScript strict, Tailwind v4 (tokens as CSS variables),
 
 - Studio identity (name, contacts, socials) lives only in `lib/config.ts`.
 - All UI strings go in `messages/bg.json` and `messages/en.json` — always update both.
-- Content lives in `content/` and is validated by zod schemas in `lib/schemas/`.
+- Content lives in `content/` (projects, services, pricing.json, team.json) and is validated by zod schemas in `lib/schemas/`. Prices are `[TODO]` until decided and render as "price after consultation".
+- Sales model: free consultation → free skeleton + design preview → quote by complexity (see `FreeStart` section). CTAs say "Free consultation".
 - Next 16: routing middleware is `proxy.ts`, not `middleware.ts`. `params` are Promises.
 - Animate only transform/opacity; respect `prefers-reduced-motion`.
 - Concept projects must be labeled "Concept"; never invent clients, testimonials or metrics.

@@ -1,5 +1,6 @@
 import { setRequestLocale } from 'next-intl/server';
 import { FinalCta } from '@/components/sections/final-cta';
+import { FreeStart } from '@/components/sections/free-start';
 import { Hero } from '@/components/sections/hero';
 import { ProcessSection } from '@/components/sections/process-section';
 import { QaFirst } from '@/components/sections/qa-first';
@@ -20,6 +21,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
       <ServicesOverview />
       <SelectedWork />
       <ProcessSection />
+      <FreeStart />
       <QaFirst />
       <Testimonials items={testimonials} />
       <FinalCta />

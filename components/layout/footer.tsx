@@ -1,13 +1,15 @@
-import { getTranslations } from 'next-intl/server';
+import { getLocale, getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/navigation';
 import { siteConfig } from '@/lib/config';
-import { legalLinks, serviceSlugs } from '@/lib/site-nav';
+import { pick } from '@/lib/content/projects';
+import { getServices } from '@/lib/content/site-content';
+import { legalLinks } from '@/lib/site-nav';
 import { Logo } from './logo';
 
 export async function Footer() {
   const t = await getTranslations('Footer');
   const tNav = await getTranslations('Nav');
-  const tServices = await getTranslations('Services.items');
+  const locale = await getLocale();
   const socials = Object.entries(siteConfig.socials).filter(([, url]) => url);
 
   const linkClass = 'text-muted hover:text-foreground transition-colors duration-(--dur-fast)';
@@ -24,10 +26,10 @@ export async function Footer() {
         <div>
           <h2 className={headingClass}>{t('services')}</h2>
           <ul className="space-y-2 text-sm">
-            {serviceSlugs.map((slug) => (
-              <li key={slug}>
-                <Link href={`/services/${slug}`} className={linkClass}>
-                  {tServices(`${slug}.title`)}
+            {getServices().map((service) => (
+              <li key={service.slug}>
+                <Link href={`/services/${service.slug}`} className={linkClass}>
+                  {pick(service.title, locale)}
                 </Link>
               </li>
             ))}

@@ -21,7 +21,10 @@
       "en": "Natural food & farm products"
     }
   },
-  "role": "[TODO]",
+  "role": {
+    "bg": "Цялостно изпълнение: от идеята и дизайна до разработката, хостинга и поддръжката",
+    "en": "End to end: from the idea and design to development, hosting and ongoing support"
+  },
   "challenge": {
     "bg": "Да представим продукти от български ферми в много категории — от зеленчуци и плодове до вино, ядки и млечни продукти — така, че и домакинства, и ресторанти да поръчват лесно.",
     "en": "To present products from Bulgarian farms across many categories — from vegetables and fruit to wine, nuts and dairy — so that both households and restaurants can order with ease."

@@ -1,0 +1,38 @@
+{
+  "members": [
+    {
+      "slug": "martin-lichev",
+      "name": "Martin Lichev",
+      "role": {
+        "bg": "Full-stack разработчик и съосновател",
+        "en": "Full-stack developer and co-founder"
+      },
+      "experience": {
+        "bg": "Около 10 години опит в разработката",
+        "en": "About 10 years of development experience"
+      },
+      "bio": "[TODO]",
+      "links": {
+        "github": null,
+        "linkedin": null
+      }
+    },
+    {
+      "slug": "stefan-radev",
+      "name": "Stefan Radev",
+      "role": {
+        "bg": "Full-stack разработчик и съосновател",
+        "en": "Full-stack developer and co-founder"
+      },
+      "experience": {
+        "bg": "Около 10 години опит в разработката",
+        "en": "About 10 years of development experience"
+      },
+      "bio": "[TODO]",
+      "links": {
+        "github": null,
+        "linkedin": null
+      }
+    }
+  ]
+}

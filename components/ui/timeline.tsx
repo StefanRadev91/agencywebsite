@@ -3,8 +3,16 @@
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { useRef } from 'react';
 import { Reveal } from './reveal';
+import { Tag } from './tag';
 
-export type TimelineStep = { title: string; description: string };
+export type TimelineStep = {
+  title: string;
+  description: string;
+  /** Small highlighted label next to the title, e.g. "Free". */
+  badge?: string;
+  /** Extra content rendered under the description (server-rendered nodes are fine). */
+  extra?: React.ReactNode;
+};
 
 /** Vertical process timeline; the accent line grows with scroll (scaleY only). */
 export function Timeline({ steps }: { steps: TimelineStep[] }) {
@@ -29,8 +37,12 @@ export function Timeline({ steps }: { steps: TimelineStep[] }) {
             {String(i + 1).padStart(2, '0')}
           </span>
           <Reveal y={16}>
-            <h3 className="font-display text-h3 font-extrabold">{step.title}</h3>
+            <h3 className="font-display text-h3 flex flex-wrap items-center gap-3 font-extrabold">
+              {step.title}
+              {step.badge && <Tag variant="accent">{step.badge}</Tag>}
+            </h3>
             <p className="text-muted mt-2 max-w-2xl">{step.description}</p>
+            {step.extra}
           </Reveal>
         </li>
       ))}

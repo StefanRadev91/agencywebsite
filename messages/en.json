@@ -21,7 +21,7 @@
     "pricing": "Pricing",
     "about": "About",
     "contact": "Contact",
-    "cta": "Start a project",
+    "cta": "Free consultation",
     "openMenu": "Open menu",
     "closeMenu": "Close menu"
   },
@@ -38,59 +38,103 @@
     "quality": "Quality"
   },
   "Services": {
-    "items": {
-      "websites": {
-        "title": "Business websites",
-        "description": "Fast, accessible, easy-to-maintain sites that represent your business and bring in enquiries."
-      },
-      "webapps": {
-        "title": "Web apps & custom systems",
-        "description": "Booking systems, admin panels and dashboards — built around your processes, not a template."
-      },
-      "ecommerce": {
-        "title": "E-commerce",
-        "description": "Stores that load fast and sell — with payments, inventory and shipping."
-      },
-      "qa": {
-        "title": "QA & test automation",
-        "description": "Playwright tests, CI checks and quality control as a service — for our projects and yours."
-      },
-      "hosting": {
-        "title": "Hosting & maintenance",
-        "description": "Monitoring, updates and quick response after launch — you focus on your business."
-      }
+    "page": {
+      "eyebrow": "Services",
+      "title": "The full cycle in one place",
+      "intro": "From the first call to support after launch — with automated tests at every step."
+    },
+    "case": {
+      "back": "All services",
+      "included": "What's included",
+      "timeline": "Typical timeline",
+      "startingFrom": "Starting from",
+      "onRequest": "Price after consultation",
+      "process": "How we work",
+      "processText": "Every service follows our seven-step process, which starts with a free consultation.",
+      "processLink": "See the process",
+      "faq": "Frequently asked questions",
+      "ctaTitle": "Let's talk about your project",
+      "ctaText": "A free consultation and, if we agree, a free skeleton and design preview.",
+      "cta": "Free consultation"
     }
   },
   "Process": {
     "steps": {
       "discovery": {
         "title": "Discovery call",
-        "short": "We learn about your idea, goals and constraints. No commitment."
+        "short": "We learn about your idea, goals and constraints. No commitment.",
+        "details": "A free consultation where we learn about your business, goals and audience and tell you honestly what is worth building.",
+        "gets": [
+          "Written goals and priorities",
+          "An honest assessment of approach and complexity",
+          "Clear next steps, no commitment"
+        ]
       },
       "requirements": {
         "title": "Requirements & scope",
-        "short": "We write down exactly what will be built, with timeline and price."
+        "short": "We write down exactly what will be built, with timeline and price.",
+        "details": "We turn the conversation into a concrete scope, so both sides know exactly what will be built.",
+        "gets": [
+          "A list of pages and features",
+          "Technical approach and technologies",
+          "Timeline and price range based on complexity"
+        ]
       },
       "design": {
         "title": "UX/UI design",
-        "short": "Structure, prototypes and visuals that we agree with you before writing code."
+        "short": "Structure, prototypes and visuals that we agree with you before writing code.",
+        "details": "First we build a free skeleton — the structure of the site — and a design preview of key screens, so you see the direction before committing. The full design is part of the project.",
+        "gets": [
+          "Site structure (skeleton)",
+          "Design preview of key screens",
+          "Feedback and adjustments to the direction"
+        ]
       },
       "development": {
         "title": "Development",
-        "short": "We build the site or system in short iterations you can follow."
+        "short": "We build the site or system in short iterations you can follow.",
+        "details": "We build in short iterations, and you have access to a working version throughout.",
+        "gets": [
+          "Access to a working test version",
+          "Regular reviews with you",
+          "Clean, maintainable code"
+        ]
       },
       "qa": {
         "title": "QA & automated testing",
-        "short": "Playwright tests, performance and accessibility checks before launch."
+        "short": "Playwright tests, performance and accessibility checks before launch.",
+        "details": "Quality is part of development, not a last step: we check automatically and manually before anything reaches your visitors.",
+        "gets": [
+          "Automated Playwright tests for key journeys",
+          "Performance and accessibility checks",
+          "Pre-launch checklist"
+        ]
       },
       "launch": {
         "title": "Launch & hosting",
-        "short": "We publish using a checklist and set up domain, hosting and monitoring."
+        "short": "We publish using a checklist and set up domain, hosting and monitoring.",
+        "details": "We publish using a checklist and make sure everything works in the real environment.",
+        "gets": ["Publishing and domain setup", "Hosting and monitoring", "Post-launch review"]
       },
       "support": {
         "title": "Maintenance & support",
-        "short": "Updates, fixes and growth — long after the project is live."
+        "short": "Updates, fixes and growth — long after the project is live.",
+        "details": "After launch we stay with you: we maintain, fix and grow the project.",
+        "gets": [
+          "Updates and fixes",
+          "Monitoring and quick response",
+          "Further development on request"
+        ]
       }
+    },
+    "page": {
+      "eyebrow": "Process",
+      "title": "Seven steps, zero surprises",
+      "intro": "At every step you know what we do and what you get.",
+      "youGet": "What you get",
+      "free": "Free",
+      "ctaTitle": "Ready for the first step?",
+      "cta": "Free consultation"
     }
   },
   "Work": {
@@ -151,7 +195,7 @@
       "title": "From idea to launch — and everything after",
       "accentIndex": "3",
       "subtitle": "We build websites and systems with quality built in — from the first call to support after launch. Every project ships with automated tests.",
-      "primaryCta": "Start a project",
+      "primaryCta": "Free consultation",
       "secondaryCta": "See our work"
     },
     "trust": {
@@ -210,9 +254,9 @@
       "title": "What clients say"
     },
     "cta": {
-      "title": "Got an idea? Let's make it real.",
-      "text": "Tell us about your project and we'll get back to you.",
-      "primary": "Start a project"
+      "title": "Got an idea? Start for free.",
+      "text": "A free consultation and, if we agree, a free skeleton and design preview — before we talk about price.",
+      "primary": "Free consultation"
     }
   },
   "Quality": {
@@ -261,6 +305,108 @@
         "errors": "Error pages and redirects",
         "monitoring": "Monitoring and a support plan after launch"
       }
+    }
+  },
+  "FreeStart": {
+    "eyebrow": "Free start",
+    "title": "We start without risk for you",
+    "intro": "First we get to know you and show you a real result. We talk about price only once you can see the direction.",
+    "steps": {
+      "consult": {
+        "title": "Free consultation",
+        "text": "A conversation about your idea, goals and budget. No commitment."
+      },
+      "preview": {
+        "title": "Skeleton & design preview",
+        "text": "If we agree, we build the site structure and show the design direction — for free."
+      },
+      "decide": {
+        "title": "Decision & quote",
+        "text": "You see a real result and get a price based on complexity. Then you decide whether we continue."
+      }
+    },
+    "conditions": {
+      "title": "How the free start works",
+      "scope": {
+        "title": "Limited scope and time",
+        "text": "The skeleton and preview cover the structure and key screens. Scope and timeframe are put in writing before we begin."
+      },
+      "preview": {
+        "title": "Preview only",
+        "text": "We show the result for review. Code and files are not handed over until the project is agreed."
+      },
+      "rights": {
+        "title": "Rights on payment",
+        "text": "Rights to the design and code transfer upon payment for the agreed project."
+      },
+      "note": "Everything is agreed in writing before we start."
+    },
+    "cta": "Request a free consultation"
+  },
+  "Pricing": {
+    "eyebrow": "Pricing",
+    "title": "Clear packages, priced by complexity",
+    "intro": "The price depends on the scope and complexity of the project. That's why we start for free — and give you an exact quote once you've seen the result.",
+    "from": "from {price}",
+    "perMonth": "{price} / month",
+    "onRequest": "Price after consultation",
+    "highlighted": "Most popular",
+    "websites": {
+      "title": "Website packages",
+      "intro": "Every package includes automated tests and a pre-launch checklist."
+    },
+    "maintenance": {
+      "title": "Maintenance plans",
+      "intro": "After launch we keep your site fast, secure and up to date."
+    },
+    "custom": {
+      "title": "Something special?",
+      "text": "A web app, a booking system or an online store — tell us about it and we will propose the right solution.",
+      "cta": "Talk to us"
+    },
+    "choose": "Request a quote"
+  },
+  "About": {
+    "eyebrow": "About",
+    "title": "Two engineers who own everything",
+    "intro": "We're New Wave Web Intelligence — a small studio from Sofia. You work directly with the people who write the code.",
+    "team": {
+      "title": "The founders"
+    },
+    "photoAlt": "Photo of {name} (coming soon)",
+    "links": {
+      "github": "GitHub",
+      "linkedin": "LinkedIn"
+    },
+    "designer": {
+      "title": "And an experienced designer on the team",
+      "text": "When a project needs design and visual direction, an experienced designer joins us. Development, testing, hosting and support are our own work."
+    },
+    "values": {
+      "title": "Values",
+      "items": {
+        "quality": {
+          "title": "Quality built in",
+          "text": "Automated tests and a checklist in every project, not as an add-on."
+        },
+        "honest": {
+          "title": "Honesty",
+          "text": "We say what's worth doing and what isn't, and clearly label what is a real project and what is a concept."
+        },
+        "direct": {
+          "title": "Direct contact",
+          "text": "You talk to the people building your project, with no middlemen."
+        },
+        "longterm": {
+          "title": "Long-term care",
+          "text": "We stay with you after launch — maintenance and growth."
+        }
+      }
+    },
+    "how": {
+      "title": "How we work",
+      "text": "We start with a free consultation and a free skeleton with a design preview. We work in short iterations, test automatically and look after the project after launch.",
+      "cta": "See the process"
     }
   }
 }

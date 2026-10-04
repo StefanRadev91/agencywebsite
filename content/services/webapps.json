@@ -1,0 +1,75 @@
+{
+  "slug": "webapps",
+  "order": 2,
+  "title": {
+    "bg": "Уеб приложения и системи",
+    "en": "Web apps & custom systems"
+  },
+  "summary": {
+    "bg": "Резервации, админ панели и табла — изградени по вашите процеси, а не по шаблон.",
+    "en": "Booking systems, admin panels and dashboards — built around your processes, not a template."
+  },
+  "intro": {
+    "bg": "Системи по вашите процеси: резервации, админ панели, табла и вътрешни инструменти.",
+    "en": "Systems built around your processes: bookings, admin panels, dashboards and internal tools."
+  },
+  "included": [
+    {
+      "bg": "Анализ на процесите и изисквания",
+      "en": "Process analysis and requirements"
+    },
+    {
+      "bg": "Роли и права за достъп",
+      "en": "Roles and access rights"
+    },
+    {
+      "bg": "Админ панел и отчети",
+      "en": "Admin panel and reports"
+    },
+    {
+      "bg": "Интеграции с външни услуги",
+      "en": "Integrations with external services"
+    },
+    {
+      "bg": "Автоматизирани e2e тестове на критичните процеси",
+      "en": "Automated e2e tests for critical flows"
+    }
+  ],
+  "timeline": {
+    "bg": "6–12 седмици и повече, според сложността",
+    "en": "6–12+ weeks, depending on complexity"
+  },
+  "startingFrom": "[TODO]",
+  "faq": [
+    {
+      "question": {
+        "bg": "Работите ли поетапно?",
+        "en": "Do you work in stages?"
+      },
+      "answer": {
+        "bg": "Да — започваме с най-важното и надграждаме на кратки итерации.",
+        "en": "Yes — we start with what matters most and build on it in short iterations."
+      }
+    },
+    {
+      "question": {
+        "bg": "Чии са данните и кодът?",
+        "en": "Who owns the data and the code?"
+      },
+      "answer": {
+        "bg": "Вашите. Правата се уговарят писмено и се прехвърлят при плащане.",
+        "en": "Yours. Rights are agreed in writing and transferred on payment."
+      }
+    },
+    {
+      "question": {
+        "bg": "Как гарантирате качеството?",
+        "en": "How do you ensure quality?"
+      },
+      "answer": {
+        "bg": "Автоматизирани тестове на критичните процеси, преглед на кода и работеща тестова версия през целия процес.",
+        "en": "Automated tests for critical flows, code review and a working test version throughout the process."
+      }
+    }
+  ]
+}

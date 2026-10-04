@@ -1,0 +1,75 @@
+{
+  "slug": "qa",
+  "order": 4,
+  "title": {
+    "bg": "QA и автоматизация на тестове",
+    "en": "QA & test automation"
+  },
+  "summary": {
+    "bg": "Playwright тестове, проверки в CI и контрол на качеството като услуга — за нашите и за вашите проекти.",
+    "en": "Playwright tests, CI checks and quality control as a service — for our projects and yours."
+  },
+  "intro": {
+    "bg": "Контрол на качеството като услуга: автоматизирани тестове, CI проверки и одит — за нашите и за вашите проекти.",
+    "en": "Quality control as a service: automated tests, CI checks and audits — for our projects and yours."
+  },
+  "included": [
+    {
+      "bg": "Playwright e2e тестове за уеб приложения",
+      "en": "Playwright e2e tests for web applications"
+    },
+    {
+      "bg": "Интеграция в CI (GitHub Actions)",
+      "en": "CI integration (GitHub Actions)"
+    },
+    {
+      "bg": "Проверки за производителност и достъпност",
+      "en": "Performance and accessibility checks"
+    },
+    {
+      "bg": "Одит на съществуващ сайт с препоръки",
+      "en": "Audit of an existing site with recommendations"
+    },
+    {
+      "bg": "Документиран тестов план",
+      "en": "Documented test plan"
+    }
+  ],
+  "timeline": {
+    "bg": "От около седмица, според обема",
+    "en": "From about a week, depending on scope"
+  },
+  "startingFrom": "[TODO]",
+  "faq": [
+    {
+      "question": {
+        "bg": "Работите ли с вече съществуващ проект?",
+        "en": "Do you work with an existing project?"
+      },
+      "answer": {
+        "bg": "Да — започваме с кратък одит и предлагаме тестов план.",
+        "en": "Yes — we start with a short audit and propose a test plan."
+      }
+    },
+    {
+      "question": {
+        "bg": "Само Playwright ли?",
+        "en": "Playwright only?"
+      },
+      "answer": {
+        "bg": "Основно Playwright и TypeScript, а при нужда и Python.",
+        "en": "Mainly Playwright and TypeScript, and Python when needed."
+      }
+    },
+    {
+      "question": {
+        "bg": "Какво получавам?",
+        "en": "What do I get?"
+      },
+      "answer": {
+        "bg": "Работещи тестове във вашето репо, CI конфигурация и кратък отчет.",
+        "en": "Working tests in your repo, a CI configuration and a short report."
+      }
+    }
+  ]
+}

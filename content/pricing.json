@@ -1,0 +1,193 @@
+{
+  "currency": "EUR",
+  "websites": [
+    {
+      "id": "starter",
+      "name": {
+        "bg": "Starter",
+        "en": "Starter"
+      },
+      "tagline": {
+        "bg": "За бизнеси, които се нуждаят от ясно и бързо онлайн присъствие.",
+        "en": "For businesses that need a clear, fast online presence."
+      },
+      "from": "[TODO]",
+      "highlighted": false,
+      "features": [
+        {
+          "bg": "Едностраничен сайт или до 3 страници",
+          "en": "One-page site or up to 3 pages"
+        },
+        {
+          "bg": "Респонсив дизайн за мобилни и десктоп",
+          "en": "Responsive design for mobile and desktop"
+        },
+        {
+          "bg": "Контактна форма и основно SEO",
+          "en": "Contact form and basic SEO"
+        },
+        {
+          "bg": "Автоматизирани smoke тестове и чеклист преди пускане",
+          "en": "Automated smoke tests and a pre-launch checklist"
+        },
+        {
+          "bg": "Настройка на хостинг",
+          "en": "Hosting setup"
+        }
+      ]
+    },
+    {
+      "id": "business",
+      "name": {
+        "bg": "Business",
+        "en": "Business"
+      },
+      "tagline": {
+        "bg": "За фирми, които искат сайт, който продава и расте.",
+        "en": "For companies that want a site that sells and grows."
+      },
+      "from": "[TODO]",
+      "highlighted": true,
+      "features": [
+        {
+          "bg": "Индивидуален дизайн",
+          "en": "Custom design"
+        },
+        {
+          "bg": "Многостраничен сайт, по уговорка",
+          "en": "Multi-page site, as agreed"
+        },
+        {
+          "bg": "Двуезичен сайт (BG/EN)",
+          "en": "Bilingual site (BG/EN)"
+        },
+        {
+          "bg": "SEO и аналитика без бисквитки",
+          "en": "SEO and cookieless analytics"
+        },
+        {
+          "bg": "Playwright тестове на ключовите пътеки и бюджет за производителност",
+          "en": "Playwright tests for key journeys and a performance budget"
+        }
+      ]
+    },
+    {
+      "id": "premium",
+      "name": {
+        "bg": "Premium",
+        "en": "Premium"
+      },
+      "tagline": {
+        "bg": "За по-сложни проекти с интеграции и анимации.",
+        "en": "For more complex projects with integrations and animations."
+      },
+      "from": "[TODO]",
+      "highlighted": false,
+      "features": [
+        {
+          "bg": "Индивидуален дизайн с анимации",
+          "en": "Custom design with animations"
+        },
+        {
+          "bg": "Интеграции (плащания, CRM, API)",
+          "en": "Integrations (payments, CRM, APIs)"
+        },
+        {
+          "bg": "Разширено покритие с тестове и CI проверки",
+          "en": "Extended test coverage and CI checks"
+        },
+        {
+          "bg": "Админ част или каталог, по уговорка",
+          "en": "Admin area or catalogue, as agreed"
+        },
+        {
+          "bg": "Планиране на развитието след пускане",
+          "en": "Post-launch roadmap planning"
+        }
+      ]
+    }
+  ],
+  "maintenance": [
+    {
+      "id": "basic",
+      "name": {
+        "bg": "Basic",
+        "en": "Basic"
+      },
+      "tagline": {
+        "bg": "Сайтът да е онлайн и сигурен.",
+        "en": "Keep the site online and secure."
+      },
+      "from": "[TODO]",
+      "highlighted": false,
+      "features": [
+        {
+          "bg": "Хостинг и мониторинг",
+          "en": "Hosting and monitoring"
+        },
+        {
+          "bg": "Обновления и сигурност",
+          "en": "Updates and security"
+        },
+        {
+          "bg": "Резервни копия",
+          "en": "Backups"
+        }
+      ]
+    },
+    {
+      "id": "plus",
+      "name": {
+        "bg": "Plus",
+        "en": "Plus"
+      },
+      "tagline": {
+        "bg": "Сайтът да се развива постоянно.",
+        "en": "Keep the site improving."
+      },
+      "from": "[TODO]",
+      "highlighted": true,
+      "features": [
+        {
+          "bg": "Всичко от Basic",
+          "en": "Everything in Basic"
+        },
+        {
+          "bg": "Малки промени по сайта всеки месец",
+          "en": "Small site changes every month"
+        },
+        {
+          "bg": "Месечен отчет за производителността",
+          "en": "Monthly performance report"
+        }
+      ]
+    },
+    {
+      "id": "pro",
+      "name": {
+        "bg": "Pro",
+        "en": "Pro"
+      },
+      "tagline": {
+        "bg": "За сайтове, от които зависи бизнесът ви.",
+        "en": "For sites your business depends on."
+      },
+      "from": "[TODO]",
+      "highlighted": false,
+      "features": [
+        {
+          "bg": "Всичко от Plus",
+          "en": "Everything in Plus"
+        },
+        {
+          "bg": "Приоритетна реакция при проблем",
+          "en": "Priority response to incidents"
+        },
+        {
+          "bg": "Автоматизирани тестове срещу регресии след всяка промяна",
+          "en": "Automated regression tests after every change"
+        }
+      ]
+    }
+  ]
+}

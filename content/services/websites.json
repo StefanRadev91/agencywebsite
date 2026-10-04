@@ -1,0 +1,75 @@
+{
+  "slug": "websites",
+  "order": 1,
+  "title": {
+    "bg": "Бизнес уебсайтове",
+    "en": "Business websites"
+  },
+  "summary": {
+    "bg": "Бързи, достъпни и лесни за поддръжка сайтове, които представят бизнеса ви и носят запитвания.",
+    "en": "Fast, accessible, easy-to-maintain sites that represent your business and bring in enquiries."
+  },
+  "intro": {
+    "bg": "Сайт, който представя бизнеса ви ясно, зарежда се бързо и работи добре на всяко устройство.",
+    "en": "A website that presents your business clearly, loads fast and works well on every device."
+  },
+  "included": [
+    {
+      "bg": "Дизайн по вашата марка, а не шаблон",
+      "en": "Design built around your brand, not a template"
+    },
+    {
+      "bg": "Респонсив изглед от 360px до 1920px",
+      "en": "Responsive from 360px to 1920px"
+    },
+    {
+      "bg": "SEO основа: метаданни, sitemap, структурирани данни",
+      "en": "SEO foundation: metadata, sitemap, structured data"
+    },
+    {
+      "bg": "Достъпност по WCAG AA",
+      "en": "WCAG AA accessibility"
+    },
+    {
+      "bg": "Автоматизирани тестове и чеклист преди пускане",
+      "en": "Automated tests and a pre-launch checklist"
+    }
+  ],
+  "timeline": {
+    "bg": "2–4 седмици, според обема",
+    "en": "2–4 weeks, depending on scope"
+  },
+  "startingFrom": "[TODO]",
+  "faq": [
+    {
+      "question": {
+        "bg": "Колко време отнема един сайт?",
+        "en": "How long does a website take?"
+      },
+      "answer": {
+        "bg": "Обикновено 2–4 седмици след уточняване на обхвата. Точният срок е част от офертата.",
+        "en": "Usually 2–4 weeks once the scope is agreed. The exact timeline is part of the quote."
+      }
+    },
+    {
+      "question": {
+        "bg": "Мога ли сам да обновявам съдържанието?",
+        "en": "Can I update the content myself?"
+      },
+      "answer": {
+        "bg": "Уговаряме предварително как ще управлявате съдържанието — от прости промени през нас до удобен за вас начин за редакция.",
+        "en": "We agree upfront how you will manage content — from simple changes through us to an editing workflow that suits you."
+      }
+    },
+    {
+      "question": {
+        "bg": "Включени ли са тестове?",
+        "en": "Are tests included?"
+      },
+      "answer": {
+        "bg": "Да. Всеки проект идва с автоматизирани тестове за ключовите пътеки и чеклист преди пускане.",
+        "en": "Yes. Every project ships with automated tests for the key journeys and a pre-launch checklist."
+      }
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "slug": "ecommerce",
+  "order": 3,
+  "title": {
+    "bg": "Онлайн магазини",
+    "en": "E-commerce"
+  },
+  "summary": {
+    "bg": "Магазини, които зареждат бързо и продават — с плащания, наличности и доставки.",
+    "en": "Stores that load fast and sell — with payments, inventory and shipping."
+  },
+  "intro": {
+    "bg": "Онлайн магазини, които зареждат бързо, лесно се управляват и са удобни за купувачите.",
+    "en": "Online stores that load fast, are easy to manage and are pleasant for shoppers."
+  },
+  "included": [
+    {
+      "bg": "Каталог, категории, търсене и филтри",
+      "en": "Catalogue, categories, search and filters"
+    },
+    {
+      "bg": "Количка и поръчки",
+      "en": "Cart and orders"
+    },
+    {
+      "bg": "Плащания и доставки (по уговорка)",
+      "en": "Payments and delivery (as agreed)"
+    },
+    {
+      "bg": "Промоции и отстъпки",
+      "en": "Promotions and discounts"
+    },
+    {
+      "bg": "Тестове на пътя на поръчката",
+      "en": "Tests for the checkout journey"
+    }
+  ],
+  "timeline": {
+    "bg": "4–8 седмици, според обема",
+    "en": "4–8 weeks, depending on scope"
+  },
+  "startingFrom": "[TODO]",
+  "faq": [
+    {
+      "question": {
+        "bg": "Какви плащания поддържате?",
+        "en": "Which payment methods do you support?"
+      },
+      "answer": {
+        "bg": "Зависи от проекта — уговаряме с вас най-подходящите доставчици.",
+        "en": "It depends on the project — we agree on the most suitable providers with you."
+      }
+    },
+    {
+      "question": {
+        "bg": "Може ли да мигрирате съществуващ магазин?",
+        "en": "Can you migrate an existing store?"
+      },
+      "answer": {
+        "bg": "Да, оценяваме го на консултацията.",
+        "en": "Yes, we assess it during the consultation."
+      }
+    },
+    {
+      "question": {
+        "bg": "Какво става след пускане?",
+        "en": "What happens after launch?"
+      },
+      "answer": {
+        "bg": "Предлагаме поддръжка и развитие — вижте плановете в Цени.",
+        "en": "We offer maintenance and further development — see the plans on the Pricing page."
+      }
+    }
+  ]
+}
