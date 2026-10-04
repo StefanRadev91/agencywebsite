@@ -13,4 +13,11 @@ export const siteConfig = {
     linkedin: '',
     facebook: '',
   },
+  /** Legal entity details used in the Privacy Policy and Terms. Fill in once registered. */
+  legal: {
+    company: '[TODO]',
+    eik: '[TODO]',
+    address: '[TODO]',
+    lastUpdated: '[TODO]',
+  },
 } as const;

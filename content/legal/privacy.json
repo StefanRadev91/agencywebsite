@@ -1,0 +1,121 @@
+{
+  "slug": "privacy",
+  "title": {
+    "bg": "Политика за поверителност",
+    "en": "Privacy Policy"
+  },
+  "sections": [
+    {
+      "heading": {
+        "bg": "1. Кой сме ние",
+        "en": "1. Who we are"
+      },
+      "body": [
+        {
+          "bg": "Администратор на личните данни е {company}, ЕИК {eik}, със седалище и адрес на управление {address}. Контакти: {email}, {phone}.",
+          "en": "The data controller is {company}, company ID {eik}, registered at {address}. Contact: {email}, {phone}."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "2. Какви данни обработваме",
+        "en": "2. What data we process"
+      },
+      "body": [
+        {
+          "bg": "Когато изпратите запитване през формата за контакт, обработваме: име, имейл адрес, име на фирма (по желание), тип проект, бюджет, срок и текста на съобщението ви. Не събираме данни за плащане.",
+          "en": "When you send an enquiry through the contact form, we process: your name, email address, company name (optional), project type, budget, timeline and the text of your message. We do not collect payment data."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "3. Цели и правни основания",
+        "en": "3. Purposes and legal bases"
+      },
+      "body": [
+        {
+          "bg": "Използваме данните, за да отговорим на запитването ви и да уговорим консултация. Основанията са вашето съгласие (чл. 6, пар. 1, б. „а“ от GDPR) и предприемане на стъпки по ваше искане преди сключване на договор (чл. 6, пар. 1, б. „б“).",
+          "en": "We use the data to respond to your enquiry and arrange a consultation. The legal bases are your consent (Art. 6(1)(a) GDPR) and taking steps at your request before entering into a contract (Art. 6(1)(b))."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "4. Получатели на данните",
+        "en": "4. Recipients of data"
+      },
+      "body": [
+        {
+          "bg": "Запитването ви се изпраща по имейл чрез доставчика Resend, който действа като обработващ данни. Сайтът се предоставя чрез доставчик на хостинг. [TODO: потвърдете окончателния списък с доставчици.]",
+          "en": "Your enquiry is delivered by email through the provider Resend, which acts as a data processor. The site is delivered through a hosting provider. [TODO: confirm the final list of providers.]"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "5. Срок на съхранение",
+        "en": "5. Retention"
+      },
+      "body": [
+        {
+          "bg": "Съхраняваме данните толкова, колкото е необходимо за целите по т. 3. [TODO: определете конкретен срок.]",
+          "en": "We keep the data for as long as necessary for the purposes in section 3. [TODO: define a specific retention period.]"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "6. Бисквитки и статистика",
+        "en": "6. Cookies and analytics"
+      },
+      "body": [
+        {
+          "bg": "Сайтът не използва бисквитки за проследяване. Ако е включена статистика, тя е решение без бисквитки, което не идентифицира отделни посетители. [TODO: потвърдете избрания доставчик.]",
+          "en": "The site does not use tracking cookies. If analytics is enabled, it is a cookieless solution that does not identify individual visitors. [TODO: confirm the chosen provider.]"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "7. Прехвърляне извън ЕИП",
+        "en": "7. Transfers outside the EEA"
+      },
+      "body": [
+        {
+          "bg": "[TODO: проверете дали доставчиците прехвърлят данни извън ЕИП и на какво основание.]",
+          "en": "[TODO: check whether providers transfer data outside the EEA and on what basis.]"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "8. Вашите права",
+        "en": "8. Your rights"
+      },
+      "body": [
+        {
+          "bg": "Имате право на достъп, коригиране, изтриване, ограничаване на обработването, преносимост и възражение, както и да оттеглите съгласието си по всяко време. Можете да се свържете с нас на {email}.",
+          "en": "You have the right to access, rectification, erasure, restriction of processing, portability and objection, and to withdraw your consent at any time. You can contact us at {email}."
+        },
+        {
+          "bg": "Имате право и да подадете жалба до Комисията за защита на личните данни (www.cpdp.bg).",
+          "en": "You also have the right to lodge a complaint with the Bulgarian Commission for Personal Data Protection (www.cpdp.bg)."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "9. Промени",
+        "en": "9. Changes"
+      },
+      "body": [
+        {
+          "bg": "Можем да обновяваме тази политика. Датата на последната промяна е посочена в началото на страницата.",
+          "en": "We may update this policy. The date of the last change is shown at the top of the page."
+        }
+      ]
+    }
+  ]
+}

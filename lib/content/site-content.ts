@@ -1,3 +1,4 @@
+import { legalSchema } from '@/lib/schemas/legal';
 import { pricingSchema } from '@/lib/schemas/pricing';
 import { serviceSchema } from '@/lib/schemas/service';
 import { teamSchema } from '@/lib/schemas/team';
@@ -20,3 +21,6 @@ export const getTeam = () => loadJsonFile('team.json', teamSchema);
 export function realPrice(value: number | '[TODO]') {
   return isTodo(value) ? null : value;
 }
+
+export const getLegal = (slug: string) =>
+  loadJsonDir('legal', legalSchema).find((d) => d.slug === slug);

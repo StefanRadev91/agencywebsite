@@ -1,0 +1,133 @@
+{
+  "slug": "terms",
+  "title": {
+    "bg": "Общи условия",
+    "en": "Terms of Service"
+  },
+  "sections": [
+    {
+      "heading": {
+        "bg": "1. Общи положения",
+        "en": "1. General"
+      },
+      "body": [
+        {
+          "bg": "Тези условия уреждат ползването на сайта и предоставянето на услуги от {company}, ЕИК {eik}, адрес {address}.",
+          "en": "These terms govern the use of this website and the provision of services by {company}, company ID {eik}, address {address}."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "2. Услуги",
+        "en": "2. Services"
+      },
+      "body": [
+        {
+          "bg": "Предлагаме уебсайтове, уеб приложения, онлайн магазини, QA и автоматизация на тестове, хостинг и поддръжка. Конкретният обхват, цена и срок за всеки проект се уговарят писмено.",
+          "en": "We offer websites, web applications, online stores, QA and test automation, hosting and maintenance. The specific scope, price and timeline of each project are agreed in writing."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "3. Безплатен старт",
+        "en": "3. Free start"
+      },
+      "body": [
+        {
+          "bg": "Безплатната консултация и безплатният скелет с дизайн-преглед са с ограничен обхват и срок, които се записват писмено преди да започнем.",
+          "en": "The free consultation and the free skeleton with design preview have a limited scope and timeframe, which are put in writing before we begin."
+        },
+        {
+          "bg": "Резултатът от безплатния старт се показва само за преглед. Код и файлове не се предават, докато проектът не бъде уговорен.",
+          "en": "The result of the free start is shown for review only. Code and files are not handed over until the project is agreed."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "4. Оферта и плащане",
+        "en": "4. Quote and payment"
+      },
+      "body": [
+        {
+          "bg": "Цената се определя според сложността на проекта и се потвърждава в оферта. Условията за плащане са описани в договора за проекта. [TODO: срокове и начини на плащане.]",
+          "en": "The price is based on the complexity of the project and is confirmed in a quote. Payment terms are set out in the project agreement. [TODO: payment terms and methods.]"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "5. Права върху работата",
+        "en": "5. Rights to the work"
+      },
+      "body": [
+        {
+          "bg": "Правата върху дизайна и кода, създадени по уговорен проект, се прехвърлят на клиента при пълното плащане, освен ако не е уговорено друго. Използваните библиотеки с отворен код запазват своите лицензи.",
+          "en": "Rights to the design and code created for an agreed project transfer to the client upon full payment, unless agreed otherwise. Open-source libraries used keep their own licenses."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "6. Отговорности на клиента",
+        "en": "6. Client responsibilities"
+      },
+      "body": [
+        {
+          "bg": "Клиентът предоставя навреме необходимите материали, информация и обратна връзка и гарантира, че има права върху предоставеното съдържание.",
+          "en": "The client provides the necessary materials, information and feedback in a timely manner and guarantees that they hold the rights to the content provided."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "7. Поддръжка и хостинг",
+        "en": "7. Maintenance and hosting"
+      },
+      "body": [
+        {
+          "bg": "Поддръжката и хостингът се предоставят според избрания план и условията в договора.",
+          "en": "Maintenance and hosting are provided according to the chosen plan and the terms of the agreement."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "8. Ограничаване на отговорността",
+        "en": "8. Limitation of liability"
+      },
+      "body": [
+        {
+          "bg": "[TODO: уточнете с юрист.]",
+          "en": "[TODO: to be specified with legal counsel.]"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "9. Приложимо право",
+        "en": "9. Governing law"
+      },
+      "body": [
+        {
+          "bg": "Прилага се българското право. [TODO: компетентен съд.]",
+          "en": "Bulgarian law applies. [TODO: competent court.]"
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "10. Контакти",
+        "en": "10. Contact"
+      },
+      "body": [
+        {
+          "bg": "За въпроси: {email}, {phone}.",
+          "en": "For questions: {email}, {phone}."
+        }
+      ]
+    }
+  ]
+}

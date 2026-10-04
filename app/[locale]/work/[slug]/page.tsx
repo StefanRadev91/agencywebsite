@@ -9,6 +9,8 @@ import { Reveal } from '@/components/ui/reveal';
 import { Tag } from '@/components/ui/tag';
 import { Link } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
+import { siteConfig } from '@/lib/config';
+import { absoluteUrl, JsonLd } from '@/lib/json-ld';
 import { getNextProject, getProject, getProjects, pick } from '@/lib/content/projects';
 import { isTodo, isVisible, SHOW_TODO } from '@/lib/content/todo';
 
@@ -71,8 +73,22 @@ export default async function CaseStudyPage({ params }: Props) {
       </Reveal>
     );
 
+  const creativeWork = {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: title,
+    description: pick(project.summary, locale),
+    inLanguage: locale,
+    url: absoluteUrl(`/${locale}/work/${slug}`),
+    creator: { '@type': 'Organization', name: siteConfig.name },
+    ...(project.cover ? { image: absoluteUrl(project.cover.src) } : {}),
+    ...(Array.isArray(project.stack) ? { keywords: project.stack.join(', ') } : {}),
+    ...(liveUrl ? { sameAs: liveUrl } : {}),
+  };
+
   return (
     <article>
+      <JsonLd data={creativeWork} />
       <header className="container-page pt-12 pb-10 md:pt-20">
         <Link href="/work" className="text-muted hover:text-foreground text-sm">
           ← {tc('back')}

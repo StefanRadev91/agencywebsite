@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
+import { Analytics } from '@/components/analytics';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { Providers } from '@/components/providers';
@@ -26,6 +27,14 @@ export async function generateMetadata({ params }: Omit<Props, 'children'>): Pro
     metadataBase: new URL(siteConfig.url),
     title: t('title', { name: siteConfig.name }),
     description: t('description'),
+    applicationName: siteConfig.name,
+    openGraph: {
+      type: 'website',
+      siteName: siteConfig.name,
+      locale: locale === 'bg' ? 'bg_BG' : 'en_US',
+      alternateLocale: locale === 'bg' ? ['en_US'] : ['bg_BG'],
+    },
+    twitter: { card: 'summary_large_image' },
     alternates: {
       canonical: `/${locale}`,
       languages: Object.fromEntries(routing.locales.map((l) => [l, `/${l}`])),
@@ -57,6 +66,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <main id="main">{children}</main>
             <Footer />
           </Providers>
+          <Analytics />
         </NextIntlClientProvider>
       </body>
     </html>

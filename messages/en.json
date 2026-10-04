@@ -489,5 +489,16 @@
       "text": "We'll get in touch to arrange the free consultation.",
       "again": "Send another enquiry"
     }
+  },
+  "Legal": {
+    "updated": "Last updated: {date}",
+    "draftNote": "This document is a draft with placeholders ([TODO]) and must be reviewed by a lawyer before publishing."
+  },
+  "NotFound": {
+    "code": "Error",
+    "title": "This page doesn't exist.",
+    "text": "It may have moved or the address may be wrong. Go back home or get in touch.",
+    "home": "Back to home",
+    "contact": "Contact us"
   }
 }
