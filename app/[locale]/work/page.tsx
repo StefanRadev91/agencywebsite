@@ -30,7 +30,6 @@ export default async function WorkPage({ params }: Props) {
       <NextIntlClientProvider messages={pickMessages(await getMessages(), ['Work'])}>
         <WorkGrid items={items} />
       </NextIntlClientProvider>
-      <p className="text-muted mt-12 max-w-2xl text-sm">{t('page.legend')}</p>
     </Section>
   );
 }

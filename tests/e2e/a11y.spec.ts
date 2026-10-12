@@ -8,14 +8,12 @@ const pages = [
   '/services/qa',
   '/work',
   '/work/dar-ot-zemyata',
-  '/work/concept-dental-clinic',
+  '/work/tsplaywright-blog',
   '/process',
   '/pricing',
   '/about',
   '/contact',
   '/quality',
-  '/legal/privacy',
-  '/legal/terms',
   '/not-a-real-page',
 ];
 

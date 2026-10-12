@@ -100,7 +100,6 @@ export default async function CaseStudyPage({ params }: Props) {
         <div className="mt-8 flex flex-wrap gap-2">
           {isConcept && <Tag variant="accent">{t('conceptLabel')}</Tag>}
           {project.status === 'in-progress' && <Tag>{t('status.inProgress')}</Tag>}
-          {project.kind === 'internal' && <Tag>{t('status.ownProduct')}</Tag>}
           {project.categories.map((c) => (
             <Tag key={c} variant="outline">
               {t(`categories.${c}`)}

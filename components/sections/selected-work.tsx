@@ -20,7 +20,7 @@ export async function SelectedWork() {
       <ul className="grid gap-8 md:grid-cols-2">
         {items.map(({ slug, card }, i) => (
           <li key={slug}>
-            <Reveal delay={0.08 * (i % 2)}>
+            <Reveal delay={0.08 * (i % 2)} className="h-full">
               <ProjectCard {...card} />
             </Reveal>
           </li>

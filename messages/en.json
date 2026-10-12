@@ -140,8 +140,7 @@
   "Work": {
     "conceptLabel": "Concept",
     "status": {
-      "inProgress": "In progress",
-      "ownProduct": "Own product"
+      "inProgress": "In progress"
     },
     "categories": {
       "website": "Website",
@@ -151,7 +150,7 @@
     "page": {
       "eyebrow": "Work",
       "title": "Selected work",
-      "intro": "Real projects, our own products and clearly labeled concepts.",
+      "intro": "Projects we have built.",
       "filterLabel": "Filter by category",
       "filters": {
         "all": "All",
@@ -160,8 +159,7 @@
         "ecommerce": "E-commerce",
         "concept": "Concepts"
       },
-      "count": "{count, plural, one {# project} other {# projects}}",
-      "legend": "Labels are honest: \"Concept\" is a Studio Labs project with no real client, \"Own product\" is ours, and \"In progress\" projects are not finished yet."
+      "count": "{count, plural, one {# project} other {# projects}}"
     },
     "case": {
       "back": "All projects",
@@ -209,7 +207,7 @@
     "work": {
       "eyebrow": "Work",
       "title": "Selected work",
-      "intro": "Real projects, our own products and clearly labeled concepts.",
+      "intro": "Projects we have built.",
       "all": "All projects"
     },
     "process": {
@@ -379,10 +377,6 @@
       "github": "GitHub",
       "linkedin": "LinkedIn"
     },
-    "designer": {
-      "title": "And an experienced designer on the team",
-      "text": "When a project needs design and visual direction, an experienced designer joins us. Development, testing, hosting and support are our own work."
-    },
     "values": {
       "title": "Values",
       "items": {
@@ -392,7 +386,7 @@
         },
         "honest": {
           "title": "Honesty",
-          "text": "We say what's worth doing and what isn't, and clearly label what is a real project and what is a concept."
+          "text": "We say what's worth doing and what isn't."
         },
         "direct": {
           "title": "Direct contact",
@@ -440,7 +434,8 @@
       "message": "Message",
       "messageHint": "Briefly describe your idea, goals and anything that matters to you.",
       "honeypot": "Leave this field empty",
-      "consent": "I agree to my data being processed so you can get in touch, as described in the <privacy>Privacy Policy</privacy>.",
+      "consent": "I agree to my data being processed so you can get in touch.",
+      "consentPolicy": "I agree to my data being processed so you can get in touch, as described in the <privacy>Privacy Policy</privacy>.",
       "submit": "Send enquiry",
       "submitting": "Sending…"
     },
@@ -482,8 +477,8 @@
     },
     "status": {
       "fixErrors": "Please correct the highlighted fields.",
-      "error": "Something went wrong while sending. Try again or write to us directly at {email}.",
-      "rateLimited": "You have sent too many enquiries. Try again later or write to us at {email}."
+      "error": "Something went wrong while sending. Try again or call us on {phone}.",
+      "rateLimited": "You have sent too many enquiries. Try again later or call us on {phone}."
     },
     "success": {
       "title": "Thank you! Your enquiry has been sent.",

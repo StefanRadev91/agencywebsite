@@ -1,0 +1,58 @@
+{
+  "slug": "tsplaywright-blog",
+  "kind": "internal",
+  "status": "live",
+  "categories": ["website"],
+  "featured": true,
+  "order": 2,
+  "hue": 160,
+  "title": { "bg": "Playwright & TypeScript Academy", "en": "Playwright & TypeScript Academy" },
+  "summary": {
+    "bg": "Безплатна образователна платформа за автоматизирано тестване с Playwright и TypeScript.",
+    "en": "A free learning platform for test automation with Playwright and TypeScript."
+  },
+  "client": null,
+  "role": {
+    "bg": "Консултанти и изпълнител от край до край: от идеята и дизайна през разработката и хостинга до поддръжката",
+    "en": "Consultants and end-to-end delivery: from the idea and design through development and hosting to ongoing support"
+  },
+  "challenge": {
+    "bg": "Да поведем хора без опит в автоматизираното тестване до писане на тестове на ниво enterprise — на едно място, с ясна последователност и работещи примери.",
+    "en": "To take people with no test-automation experience all the way to enterprise-level tests — in one place, with a clear learning order and working examples."
+  },
+  "solution": {
+    "bg": "Учебна платформа със структурирани наръчници по TypeScript, Playwright, Page Object Model, QA в CI/CD, оценка на AI и тестване на производителността, с примери с код, ежедневен въпрос и регистрация.",
+    "en": "A learning platform with structured guides on TypeScript, Playwright, the Page Object Model, QA in CI/CD, AI evaluation and performance testing, with code examples, a daily question and user accounts."
+  },
+  "stack": ["Next.js", "TypeScript"],
+  "screens": [
+    {
+      "caption": {
+        "bg": "Начална страница",
+        "en": "Home page"
+      },
+      "hue": 160,
+      "image": { "src": "/projects/tsplaywright-blog/home.jpg", "width": 1440, "height": 900 }
+    },
+    {
+      "caption": {
+        "bg": "Наръчник „Playwright Basics“ със съдържание на страницата",
+        "en": "“Playwright Basics” guide with an on-page table of contents"
+      },
+      "hue": 160,
+      "image": { "src": "/projects/tsplaywright-blog/playwright.jpg", "width": 1440, "height": 900 }
+    },
+    {
+      "caption": {
+        "bg": "Мобилен изглед",
+        "en": "Mobile view"
+      },
+      "hue": 160,
+      "image": { "src": "/projects/tsplaywright-blog/mobile.jpg", "width": 390, "height": 844 }
+    }
+  ],
+  "results": "[TODO]",
+  "quality": "[TODO]",
+  "liveUrl": "https://www.tsplaywright.blog",
+  "cover": { "src": "/projects/tsplaywright-blog/home.jpg", "width": 1440, "height": 900 }
+}

@@ -41,7 +41,7 @@ export function ProjectCard({
     <Link
       href={href}
       className={cn(
-        'group border-border bg-surface shadow-card hover:border-accent-ink block overflow-hidden rounded-lg border transition-[border-color] duration-(--dur-base)',
+        'group border-border bg-surface shadow-card hover:border-accent-ink flex h-full flex-col overflow-hidden rounded-lg border transition-[border-color] duration-(--dur-base)',
         className,
       )}
     >
@@ -64,7 +64,7 @@ export function ProjectCard({
           </Tag>
         )}
       </div>
-      <div className="p-6">
+      <div className="flex-1 p-6">
         <p className="text-muted mb-2 font-mono text-xs tracking-wide uppercase">{category}</p>
         <div className="flex items-start justify-between gap-4">
           <Heading className="font-display text-h3 font-extrabold">{title}</Heading>

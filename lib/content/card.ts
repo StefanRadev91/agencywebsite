@@ -23,12 +23,7 @@ export function lighthouseFloor(project: Project) {
 export function toWorkItem(project: Project, locale: string, t: T): WorkItem {
   const isConcept = project.kind === 'concept';
   const floor = lighthouseFloor(project);
-  const statusKey =
-    project.status === 'in-progress'
-      ? 'inProgress'
-      : project.kind === 'internal'
-        ? 'ownProduct'
-        : undefined;
+  const statusKey = project.status === 'in-progress' ? 'inProgress' : undefined;
 
   const card: ProjectCardProps = {
     href: `/work/${project.slug}`,

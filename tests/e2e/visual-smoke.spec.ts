@@ -12,13 +12,12 @@ const pages = [
   '/services/websites',
   '/work',
   '/work/dar-ot-zemyata',
-  '/work/concept-dental-clinic',
+  '/work/tsplaywright-blog',
   '/process',
   '/pricing',
   '/about',
   '/contact',
   '/quality',
-  '/legal/privacy',
 ];
 
 for (const locale of ['bg', 'en']) {

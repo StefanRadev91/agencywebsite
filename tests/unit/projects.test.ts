@@ -36,10 +36,7 @@ describe('project content', () => {
 
   it('includes the required portfolio entries', () => {
     const slugs = projects.map((p) => p.slug);
-    expect(slugs).toEqual(
-      expect.arrayContaining(['dar-ot-zemyata', 'hotel-booking', 'price-monitoring']),
-    );
-    expect(projects.filter((p) => p.kind === 'concept').length).toBeGreaterThanOrEqual(3);
+    expect(slugs).toEqual(expect.arrayContaining(['dar-ot-zemyata', 'tsplaywright-blog']));
   });
 
   it('never gives a concept a client, live URL, metrics or results', () => {

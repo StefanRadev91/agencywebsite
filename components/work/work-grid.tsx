@@ -16,7 +16,7 @@ const loadFeatures = () =>
     .then(() => import('@/lib/motion-features'))
     .then((mod) => mod.default);
 
-const filters: FilterKey[] = ['all', 'website', 'webapp', 'ecommerce', 'concept'];
+const allFilters: FilterKey[] = ['all', 'website', 'webapp', 'ecommerce', 'concept'];
 
 function matches(item: WorkItem, filter: FilterKey) {
   if (filter === 'all') return true;
@@ -27,6 +27,8 @@ function matches(item: WorkItem, filter: FilterKey) {
 export function WorkGrid({ items }: { items: WorkItem[] }) {
   const t = useTranslations('Work.page');
   const [filter, setFilter] = useState<FilterKey>('all');
+  // The "Concepts" filter only exists while there is concept work to show.
+  const filters = allFilters.filter((key) => key !== 'concept' || items.some((i) => i.isConcept));
   const visible = items.filter((item) => matches(item, filter));
 
   return (
