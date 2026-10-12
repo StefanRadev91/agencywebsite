@@ -2,9 +2,10 @@
 export const siteConfig = {
   name: 'New Wave Web Intelligence',
   shortName: 'New Wave',
-  url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
-  /** Leave empty to hide the email everywhere until a real address exists. */
-  email: '' as string,
+  // Only read on the server. NEXT_SITE_URL works where a NEXT_PUBLIC_ name is not allowed.
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? process.env.NEXT_SITE_URL ?? 'http://localhost:3000',
+  /** Leave empty to hide the email everywhere. */
+  email: 'newwavedevelopement@gmail.com' as string,
   phone: '+359 897 269 135',
   location: { city: 'Sofia', country: 'Bulgaria' },
   founders: ['Martin Lichev', 'Stefan Radev'],
