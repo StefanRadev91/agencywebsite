@@ -96,7 +96,9 @@ export function ContactForm() {
         ref={resultRef}
         tabIndex={-1}
         role="status"
-        className="border-accent-ink bg-surface rounded-lg border p-8 outline-none"
+        // Don't stretch to the height of the form's grid row; the global focus ring would also double the border.
+        style={{ outline: 'none' }}
+        className="border-accent-ink bg-surface self-start rounded-lg border p-8"
       >
         <h2 className="font-display text-h3 font-extrabold">{t('success.title')}</h2>
         <p className="text-muted mt-3">{t('success.text')}</p>
@@ -118,7 +120,8 @@ export function ContactForm() {
           ref={resultRef}
           tabIndex={-1}
           role="alert"
-          className="border-danger text-danger rounded-md border p-4 text-sm outline-none"
+          style={{ outline: 'none' }}
+          className="border-danger text-danger rounded-md border p-4 text-sm"
         >
           {t(status === 'error' ? 'status.error' : 'status.rateLimited', {
             phone: siteConfig.phone,
