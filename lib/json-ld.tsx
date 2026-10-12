@@ -10,8 +10,6 @@ export function JsonLd({ data }: { data: Record<string, unknown> }) {
   );
 }
 
-const isPlaceholderEmail = siteConfig.email.endsWith('@example.com');
-
 export const absoluteUrl = (path: string) => new URL(path, siteConfig.url).toString();
 
 /** Organization / ProfessionalService data for the home page. */
@@ -25,8 +23,7 @@ export function professionalService(locale: string, description: string) {
     description,
     inLanguage: locale,
     telephone: siteConfig.phone,
-    // Don't publish the placeholder address in structured data.
-    ...(isPlaceholderEmail ? {} : { email: siteConfig.email }),
+    ...(siteConfig.email ? { email: siteConfig.email } : {}),
     address: {
       '@type': 'PostalAddress',
       addressLocality: siteConfig.location.city,

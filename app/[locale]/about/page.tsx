@@ -85,10 +85,6 @@ export default async function AboutPage({ params }: Props) {
             </li>
           ))}
         </ul>
-        <div className="border-border mt-10 max-w-3xl border-t pt-8">
-          <h3 className="font-display text-lg font-extrabold">{t('designer.title')}</h3>
-          <p className="text-muted mt-2">{t('designer.text')}</p>
-        </div>
       </Section>
 
       <Section title={t('values.title')} className="pt-0">

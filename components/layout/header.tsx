@@ -69,7 +69,7 @@ export function Header({ labels }: { labels: HeaderLabels }) {
               prefetch={false}
               aria-current={isActive(href) ? 'page' : undefined}
               className={cn(
-                'rounded-full px-4 py-2 text-sm font-medium transition-colors duration-(--dur-fast)',
+                'nav-link rounded-full px-4 py-2 text-sm font-medium transition-colors duration-(--dur-fast)',
                 isActive(href) ? 'text-accent-ink' : 'text-muted hover:text-foreground',
               )}
             >

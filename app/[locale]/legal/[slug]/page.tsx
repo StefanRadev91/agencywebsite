@@ -11,12 +11,13 @@ type Props = { params: Promise<{ locale: string; slug: string }> };
 const slugs = ['privacy', 'terms'] as const;
 
 export function generateStaticParams() {
+  if (!siteConfig.legalPublished) return [];
   return routing.locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const doc = getLegal(slug);
+  const doc = siteConfig.legalPublished ? getLegal(slug) : undefined;
   if (!doc) return {};
   return {
     title: pick(doc.title, locale),
@@ -42,7 +43,7 @@ function fill(text: string) {
 export default async function LegalPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const doc = getLegal(slug);
+  const doc = siteConfig.legalPublished ? getLegal(slug) : undefined;
   if (!doc) notFound();
   const t = await getTranslations('Legal');
 

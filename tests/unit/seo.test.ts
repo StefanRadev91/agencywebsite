@@ -52,11 +52,11 @@ describe('sitemap', () => {
     });
   });
 
-  it('includes services, projects and legal pages', () => {
+  it('includes services and projects, and no unpublished legal pages', () => {
     const urls = entries.map((e) => e.url);
     expect(urls.some((u) => u.endsWith('/bg/services/qa'))).toBe(true);
     expect(urls.some((u) => u.endsWith('/en/work/dar-ot-zemyata'))).toBe(true);
-    expect(urls.some((u) => u.endsWith('/bg/legal/privacy'))).toBe(true);
+    expect(urls.some((u) => u.includes('/legal/'))).toBe(false);
   });
 
   it('has no duplicate URLs', () => {

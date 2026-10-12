@@ -39,11 +39,13 @@ export async function Footer() {
         <div>
           <h2 className={headingClass}>{t('contact')}</h2>
           <ul className="space-y-2 text-sm">
-            <li>
-              <a href={`mailto:${siteConfig.email}`} className={linkClass}>
-                {siteConfig.email}
-              </a>
-            </li>
+            {siteConfig.email && (
+              <li>
+                <a href={`mailto:${siteConfig.email}`} className={linkClass}>
+                  {siteConfig.email}
+                </a>
+              </li>
+            )}
             <li>
               <a href={`tel:${siteConfig.phone.replace(/\s/g, '')}`} className={linkClass}>
                 {siteConfig.phone}
@@ -80,7 +82,7 @@ export async function Footer() {
                 {tNav('contact')}
               </Link>
             </li>
-            {legalLinks.map(({ key, href }) => (
+            {(siteConfig.legalPublished ? legalLinks : []).map(({ key, href }) => (
               <li key={key}>
                 <Link href={href} className={linkClass}>
                   {t(`legal.${key}`)}

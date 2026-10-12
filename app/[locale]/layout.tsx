@@ -82,6 +82,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             >
               {t('skip')}
             </a>
+            <div aria-hidden className="scroll-progress" />
             <Header labels={headerLabels} />
             <main id="main">{children}</main>
             <Footer />

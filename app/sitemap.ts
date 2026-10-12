@@ -13,8 +13,7 @@ const staticPaths = [
   '/about',
   '/contact',
   '/quality',
-  '/legal/privacy',
-  '/legal/terms',
+  ...(siteConfig.legalPublished ? ['/legal/privacy', '/legal/terms'] : []),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

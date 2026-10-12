@@ -28,14 +28,16 @@ export async function FinalCta() {
                 {t('primary')}
                 <ArrowRight />
               </Button>
-              <Button
-                href={`mailto:${siteConfig.email}`}
-                size="lg"
-                variant="ghost"
-                className="text-accent-foreground hover:text-accent-foreground underline underline-offset-4"
-              >
-                {siteConfig.email}
-              </Button>
+              {siteConfig.email && (
+                <Button
+                  href={`mailto:${siteConfig.email}`}
+                  size="lg"
+                  variant="ghost"
+                  className="text-accent-foreground hover:text-accent-foreground underline underline-offset-4"
+                >
+                  {siteConfig.email}
+                </Button>
+              )}
             </div>
           </div>
         </Reveal>

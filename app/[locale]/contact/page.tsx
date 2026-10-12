@@ -38,16 +38,18 @@ export default async function ContactPage({ params }: Props) {
         <p className="text-muted mt-5 text-lg text-pretty">{t('page.intro')}</p>
 
         <dl className="mt-10 space-y-5">
-          <div>
-            <dt className="text-muted font-mono text-xs tracking-wide uppercase">
-              {t('details.email')}
-            </dt>
-            <dd className="mt-1 text-lg">
-              <a href={`mailto:${siteConfig.email}`} className="hover:text-accent-ink">
-                {siteConfig.email}
-              </a>
-            </dd>
-          </div>
+          {siteConfig.email && (
+            <div>
+              <dt className="text-muted font-mono text-xs tracking-wide uppercase">
+                {t('details.email')}
+              </dt>
+              <dd className="mt-1 text-lg">
+                <a href={`mailto:${siteConfig.email}`} className="hover:text-accent-ink">
+                  {siteConfig.email}
+                </a>
+              </dd>
+            </div>
+          )}
           <div>
             <dt className="text-muted font-mono text-xs tracking-wide uppercase">
               {t('details.phone')}

@@ -16,13 +16,9 @@ test('unknown case study returns 404', async ({ page }) => {
   expect(response?.status()).toBe(404);
 });
 
-test('legal pages render in both languages', async ({ page }) => {
-  await page.goto('/bg/legal/privacy');
-  await expect(
-    page.getByRole('heading', { level: 1, name: 'Политика за поверителност' }),
-  ).toBeVisible();
-  await page.goto('/en/legal/terms');
-  await expect(page.getByRole('heading', { level: 1, name: 'Terms of Service' })).toBeVisible();
+test('unpublished legal pages return 404', async ({ page }) => {
+  expect((await page.goto('/bg/legal/privacy'))?.status()).toBe(404);
+  expect((await page.goto('/en/legal/terms'))?.status()).toBe(404);
 });
 
 test('home exposes canonical, hreflang, Open Graph and ProfessionalService JSON-LD', async ({
@@ -46,9 +42,9 @@ test('home exposes canonical, hreflang, Open Graph and ProfessionalService JSON-
 });
 
 test('case study exposes CreativeWork JSON-LD', async ({ page }) => {
-  await page.goto('/en/work/concept-dental-clinic');
+  await page.goto('/en/work/dar-ot-zemyata');
   const jsonLd = await page.locator('script[type="application/ld+json"]').first().textContent();
-  expect(JSON.parse(jsonLd!)).toMatchObject({ '@type': 'CreativeWork', name: 'Dental clinic' });
+  expect(JSON.parse(jsonLd!)).toMatchObject({ '@type': 'CreativeWork', name: 'Дар от Земята' });
 });
 
 test('robots.txt and sitemap.xml are served', async ({ request }) => {

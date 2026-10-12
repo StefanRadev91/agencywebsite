@@ -121,7 +121,7 @@ export function ContactForm() {
           className="border-danger text-danger rounded-md border p-4 text-sm outline-none"
         >
           {t(status === 'error' ? 'status.error' : 'status.rateLimited', {
-            email: siteConfig.email,
+            phone: siteConfig.phone,
           })}
         </div>
       )}
@@ -226,13 +226,17 @@ export function ContactForm() {
         checked={values.consent}
         onChange={set('consent')}
         error={err('consent')}
-        label={t.rich('form.consent', {
-          privacy: (chunks) => (
-            <Link href="/legal/privacy" className="underline underline-offset-4">
-              {chunks}
-            </Link>
-          ),
-        })}
+        label={
+          siteConfig.legalPublished
+            ? t.rich('form.consentPolicy', {
+                privacy: (chunks) => (
+                  <Link href="/legal/privacy" className="underline underline-offset-4">
+                    {chunks}
+                  </Link>
+                ),
+              })
+            : t('form.consent')
+        }
       />
 
       <div>

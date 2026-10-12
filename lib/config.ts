@@ -3,7 +3,8 @@ export const siteConfig = {
   name: 'New Wave Web Intelligence',
   shortName: 'New Wave',
   url: process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000',
-  email: 'hello@example.com', // TODO: real contact email
+  /** Leave empty to hide the email everywhere until a real address exists. */
+  email: '' as string,
   phone: '+359 897 269 135',
   location: { city: 'Sofia', country: 'Bulgaria' },
   founders: ['Martin Lichev', 'Stefan Radev'],
@@ -13,6 +14,8 @@ export const siteConfig = {
     linkedin: '',
     facebook: '',
   },
+  /** Privacy/Terms pages stay unpublished (404, no links, not in sitemap) until their [TODO] details are filled. */
+  legalPublished: false as boolean,
   /** Legal entity details used in the Privacy Policy and Terms. Fill in once registered. */
   legal: {
     company: '[TODO]',
