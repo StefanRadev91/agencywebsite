@@ -26,21 +26,27 @@ type Props = {
   chat: { labels: ChatLabels; contact: string };
 };
 
-const DEFER_MS = 1500;
+// The small cookie banner comes up almost at once; the heavier chat waits a little longer.
+const BANNER_DELAY_MS = 400;
+const CHAT_DELAY_MS = 1500;
 
 export function SiteWidgets({ locale, consent, chat }: Props) {
-  const [ready, setReady] = useState(false);
+  const [showBanner, setShowBanner] = useState(false);
+  const [showChat, setShowChat] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setReady(true), DEFER_MS);
-    return () => clearTimeout(timer);
+    const banner = setTimeout(() => setShowBanner(true), BANNER_DELAY_MS);
+    const chatTimer = setTimeout(() => setShowChat(true), CHAT_DELAY_MS);
+    return () => {
+      clearTimeout(banner);
+      clearTimeout(chatTimer);
+    };
   }, []);
 
-  if (!ready) return null;
   return (
     <>
-      <CookieBanner {...consent} />
-      <ChatWidget locale={locale} labels={chat.labels} contact={chat.contact} />
+      {showBanner && <CookieBanner {...consent} />}
+      {showChat && <ChatWidget locale={locale} labels={chat.labels} contact={chat.contact} />}
     </>
   );
 }

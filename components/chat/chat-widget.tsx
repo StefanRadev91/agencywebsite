@@ -55,7 +55,6 @@ function safeSession(action: 'get' | 'set') {
  * It is clearly labelled as automatic and always points to a human contact for anything else.
  */
 export function ChatWidget({ labels, locale, contact }: Props) {
-  const [ready, setReady] = useState(false);
   const [open, setOpen] = useState(false);
   const [teaser, setTeaser] = useState(false);
   const [bannerOpen, setBannerOpen] = useState(() => !getConsent());
@@ -78,14 +77,9 @@ export function ChatWidget({ labels, locale, contact }: Props) {
     timers.current.push(setTimeout(fn, ms));
   };
 
-  // The launcher itself arrives a moment after the page settles.
   useEffect(() => {
-    const timer = setTimeout(() => setReady(true), 1000);
     const pending = timers.current;
-    return () => {
-      clearTimeout(timer);
-      pending.forEach(clearTimeout);
-    };
+    return () => pending.forEach(clearTimeout);
   }, []);
 
   // Track the cookie banner so the invitation never competes with it.
@@ -102,13 +96,13 @@ export function ChatWidget({ labels, locale, contact }: Props) {
 
   // One friendly invitation per session, shortly after the visitor has settled in.
   useEffect(() => {
-    if (!ready || bannerOpen || open || safeSession('get')) return;
+    if (bannerOpen || open || safeSession('get')) return;
     const show = setTimeout(() => {
       safeSession('set');
       setTeaser(true);
     }, TEASER_DELAY);
     return () => clearTimeout(show);
-  }, [ready, bannerOpen, open]);
+  }, [bannerOpen, open]);
 
   useEffect(() => {
     if (!teaser) return;
@@ -217,8 +211,6 @@ export function ChatWidget({ labels, locale, contact }: Props) {
       .filter((e): e is FaqEntry => Boolean(e));
     reply(fillAnswer(entry.answer[locale], { contact }), entry.cta, follow);
   }
-
-  if (!ready) return null;
 
   const busy = typing || streaming;
 
