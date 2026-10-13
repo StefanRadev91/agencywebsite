@@ -463,8 +463,8 @@
         ]
       },
       "answer": {
-        "bg": "Ние сме New Wave Web Intelligence — малко студио от София. Основателите са Мартин Личев и Стефан Радев — и двамата с поне 10 години опит в създаването на софтуер, във всички етапи от идеята до поддръжката. Говорите директно с хората, които пишат кода, без посредници.",
-        "en": "We're New Wave Web Intelligence — a small studio in Sofia. The founders are Martin Lichev and Stefan Radev — both with at least 10 years of experience building software, across every stage from idea to maintenance. You talk directly to the people who write the code, with no middlemen."
+        "bg": "Ние сме New Wave Web Intelligence — малко студио от София. Основатели са Мартин Личев и Стефан Радев — и двамата с над 10 години опит в разработката на софтуер, във всички етапи от анализа до поддръжката. Говорите директно с хората, които пишат кода, без посредници.",
+        "en": "We're New Wave Web Intelligence — a small studio in Sofia. The founders are Martin Lichev and Stefan Radev — both with over 10 years of experience in software development, across every stage from analysis to maintenance. You talk directly to the people who write the code, with no middlemen."
       },
       "cta": false,
       "related": ["portfolio", "contact"]
