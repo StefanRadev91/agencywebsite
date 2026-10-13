@@ -35,7 +35,8 @@
       "terms": "Terms of Service"
     },
     "rights": "All rights reserved.",
-    "quality": "Quality"
+    "quality": "Quality",
+    "cookieSettings": "Cookie settings"
   },
   "Services": {
     "page": {
@@ -496,5 +497,40 @@
     "text": "It may have moved or the address may be wrong. Go back home or get in touch.",
     "home": "Back to home",
     "contact": "Contact us"
+  },
+  "Consent": {
+    "title": "Cookies",
+    "text": "We use necessary cookies to make the site work (language, theme, your choice). With your consent we also use anonymous analytics to improve it.",
+    "textBasic": "This site only uses necessary cookies and local storage — for language, theme and remembering your choice. We don't track visitors.",
+    "policy": "Privacy Policy",
+    "accept": "Accept all",
+    "reject": "Necessary only",
+    "customize": "Settings",
+    "save": "Save choice",
+    "ok": "Got it",
+    "necessaryTitle": "Necessary",
+    "necessaryText": "Language, theme and remembering your choice. The site doesn't work properly without them.",
+    "analyticsTitle": "Analytics",
+    "analyticsText": "Anonymous visit statistics, no advertising.",
+    "always": "Always on"
+  },
+  "Chat": {
+    "open": "Open chat",
+    "close": "Close chat",
+    "title": "{name} assistant",
+    "status": "Automatic assistant · replies instantly",
+    "disclaimer": "Automatic answers to common questions. For an exact quote or anything specific, get in touch with us.",
+    "welcome": "Hello! I'm the automatic assistant of {name}. I answer frequently asked questions about services, process, timelines and pricing. What would you like to know?",
+    "fallback": "I'm not sure I understood your question. Try asking about services, pricing, timelines or our process — or contact us directly at {contact}.",
+    "inputLabel": "Your message",
+    "placeholder": "Type a question…",
+    "send": "Send",
+    "chips": "Suggested questions",
+    "typing": "The assistant is typing",
+    "cta": "Free consultation",
+    "teaser": "Have a question? Ask our automatic assistant.",
+    "teaserOpen": "Open chat",
+    "teaserDismiss": "Dismiss notification",
+    "contactBoth": "{phone} or {email}"
   }
 }

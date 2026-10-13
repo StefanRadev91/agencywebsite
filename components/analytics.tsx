@@ -1,9 +1,9 @@
-import Script from 'next/script';
 import { resolveAnalytics } from '@/lib/analytics';
+import { AnalyticsLoader } from './analytics-loader';
 
-/** Cookieless analytics script; renders nothing unless env vars are set. */
+/** Cookieless analytics script; renders nothing unless env vars are set, and waits for consent. */
 export function Analytics() {
   const config = resolveAnalytics(process.env);
   if (!config) return null;
-  return <Script src={config.src} strategy="afterInteractive" defer {...config.attrs} />;
+  return <AnalyticsLoader src={config.src} attrs={config.attrs} />;
 }

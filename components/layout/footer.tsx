@@ -1,4 +1,5 @@
 import { getLocale, getTranslations } from 'next-intl/server';
+import { CookieSettingsButton } from '@/components/consent/cookie-settings-button';
 import { Link } from '@/i18n/navigation';
 import { siteConfig } from '@/lib/config';
 import { pick } from '@/lib/content/projects';
@@ -89,6 +90,12 @@ export async function Footer() {
                 </Link>
               </li>
             ))}
+            <li>
+              <CookieSettingsButton
+                label={t('cookieSettings')}
+                className={`${linkClass} text-left`}
+              />
+            </li>
           </ul>
         </div>
       </div>

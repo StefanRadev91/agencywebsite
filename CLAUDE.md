@@ -14,6 +14,7 @@ Next.js (App Router) + TypeScript strict, Tailwind v4 (tokens as CSS variables),
 - Sales model: free consultation → free skeleton + design preview → quote by complexity (see `FreeStart` section). CTAs say "Free consultation".
 - Next 16: routing middleware is `proxy.ts`, not `middleware.ts`. `params` are Promises.
 - Animate only transform/opacity; respect `prefers-reduced-motion`.
+- Cookie consent (`lib/consent.ts`, one `nw_consent` cookie) gates analytics; the banner is lazy-loaded and the footer "Cookie settings" link reopens it. Chat assistant answers come only from `content/faq.json` (zod-validated in `tests/unit/chat.test.ts`); never put invented prices, clients or guarantees in it. Both widgets load after ~1.5 s via `components/widgets/site-widgets.tsx` and must stay out of the critical path.
 - Concept projects must be labeled "Concept"; never invent clients, testimonials or metrics.
 - Conventional commits; one commit per phase at minimum.
 - ESLint is pinned to v9 (eslint-config-next is not yet compatible with v10).

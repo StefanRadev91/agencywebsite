@@ -3,11 +3,13 @@ import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { Analytics } from '@/components/analytics';
+import { SiteWidgets } from '@/components/widgets/site-widgets';
 import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { Providers } from '@/components/providers';
 import { routing } from '@/i18n/routing';
 import { siteConfig } from '@/lib/config';
+import { resolveAnalytics } from '@/lib/analytics';
 import { fontVariables } from '@/lib/fonts';
 import '../globals.css';
 
@@ -48,6 +50,55 @@ export default async function LocaleLayout({ children, params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations({ locale, namespace: 'Common' });
   const tNav = await getTranslations({ locale, namespace: 'Nav' });
+  const tChat = await getTranslations({ locale, namespace: 'Chat' });
+  const tConsent = await getTranslations({ locale, namespace: 'Consent' });
+  const analyticsAvailable = resolveAnalytics(process.env) !== null;
+  const chatName = { name: siteConfig.shortName };
+  const widgetProps = {
+    locale: locale as 'bg' | 'en',
+    consent: {
+      analyticsAvailable,
+      policyHref: siteConfig.legalPublished ? `/${locale}/legal/privacy` : null,
+      labels: {
+        title: tConsent('title'),
+        text: tConsent(analyticsAvailable ? 'text' : 'textBasic'),
+        policy: tConsent('policy'),
+        accept: tConsent('accept'),
+        reject: tConsent('reject'),
+        customize: tConsent('customize'),
+        save: tConsent('save'),
+        ok: tConsent('ok'),
+        necessaryTitle: tConsent('necessaryTitle'),
+        necessaryText: tConsent('necessaryText'),
+        analyticsTitle: tConsent('analyticsTitle'),
+        analyticsText: tConsent('analyticsText'),
+        always: tConsent('always'),
+      },
+    },
+    chat: {
+      contact: siteConfig.email
+        ? tChat('contactBoth', { phone: siteConfig.phone, email: siteConfig.email })
+        : siteConfig.phone,
+      labels: {
+        open: tChat('open'),
+        close: tChat('close'),
+        title: tChat('title', chatName),
+        status: tChat('status'),
+        disclaimer: tChat('disclaimer'),
+        welcome: tChat('welcome', chatName),
+        fallback: tChat('fallback', { contact: '{contact}' }),
+        inputLabel: tChat('inputLabel'),
+        placeholder: tChat('placeholder'),
+        send: tChat('send'),
+        chips: tChat('chips'),
+        typing: tChat('typing'),
+        cta: tChat('cta'),
+        teaser: tChat('teaser'),
+        teaserOpen: tChat('teaserOpen'),
+        teaserDismiss: tChat('teaserDismiss'),
+      },
+    },
+  };
   const headerLabels = {
     nav: {
       main: tNav('main'),
@@ -86,6 +137,7 @@ export default async function LocaleLayout({ children, params }: Props) {
             <Header labels={headerLabels} />
             <main id="main">{children}</main>
             <Footer />
+            <SiteWidgets {...widgetProps} />
           </Providers>
           <Analytics />
         </NextIntlClientProvider>

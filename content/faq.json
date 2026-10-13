@@ -1,0 +1,640 @@
+{
+  "entries": [
+    {
+      "id": "hello",
+      "suggested": false,
+      "question": {
+        "bg": "Здравейте",
+        "en": "Hello"
+      },
+      "keywords": {
+        "bg": [
+          "здрасти",
+          "здравей",
+          "здравейте",
+          "добър ден",
+          "добър вечер",
+          "хей",
+          "привет",
+          "ало"
+        ],
+        "en": ["hello", "hi", "hey", "good morning", "good evening"]
+      },
+      "answer": {
+        "bg": "Здравейте! Мога да ви помогна с въпроси за услугите, процеса, сроковете и цените ни. Какво ви интересува?",
+        "en": "Hello! I can help with questions about our services, process, timelines and pricing. What would you like to know?"
+      },
+      "cta": false,
+      "related": ["services", "pricing", "free-start"]
+    },
+    {
+      "id": "thanks",
+      "suggested": false,
+      "question": {
+        "bg": "Благодаря",
+        "en": "Thank you"
+      },
+      "keywords": {
+        "bg": ["благодаря", "мерси", "дзякуй", "чао", "довиждане"],
+        "en": ["thanks", "thank you", "bye", "goodbye", "cheers"]
+      },
+      "answer": {
+        "bg": "Моля! Ако ви хрумне друг въпрос, питайте. Може и да поискате безплатна консултация.",
+        "en": "You're welcome! If anything else comes up, just ask. You can also request a free consultation."
+      },
+      "cta": true,
+      "related": []
+    },
+    {
+      "id": "services",
+      "suggested": true,
+      "question": {
+        "bg": "Какви услуги предлагате?",
+        "en": "What services do you offer?"
+      },
+      "keywords": {
+        "bg": ["услуг", "предлагате", "правите", "какво правите", "занимавате", "върши"],
+        "en": ["service", "offer", "what do you do", "what do you build", "provide"]
+      },
+      "answer": {
+        "bg": "Предлагаме пет неща: бизнес уебсайтове, уеб приложения и системи по поръчка, онлайн магазини, QA и автоматизирани тестове, и хостинг с поддръжка. Работим от идеята до пускането и грижата след това.",
+        "en": "We offer five things: business websites, web apps and custom systems, online stores, QA and test automation, and hosting with maintenance. We work from the idea through launch and the care after it."
+      },
+      "cta": false,
+      "related": ["process", "pricing", "tech"]
+    },
+    {
+      "id": "pricing",
+      "suggested": true,
+      "question": {
+        "bg": "Колко струва един сайт?",
+        "en": "How much does a website cost?"
+      },
+      "keywords": {
+        "bg": [
+          "цена",
+          "цени",
+          "струва",
+          "струват",
+          "колко пари",
+          "бюджет",
+          "скъп",
+          "евтин",
+          "оферта",
+          "ценоразпис",
+          "платя",
+          "стой"
+        ],
+        "en": [
+          "price",
+          "pricing",
+          "cost",
+          "how much",
+          "budget",
+          "quote",
+          "expensive",
+          "cheap",
+          "rates"
+        ]
+      },
+      "answer": {
+        "bg": "Цената зависи от обема и сложността на проекта, затова не публикуваме фиксирани цени. Започваме с безплатна консултация, а при съгласие — и с безплатен скелет и дизайн-преглед. След като видите резултата, получавате точна оферта според сложността.",
+        "en": "The price depends on the scope and complexity of the project, so we don't publish fixed prices. We start with a free consultation and, if we agree, a free skeleton and design preview. Once you've seen the result, you get an exact quote based on complexity."
+      },
+      "cta": true,
+      "related": ["free-start", "timeline"]
+    },
+    {
+      "id": "free-start",
+      "suggested": true,
+      "question": {
+        "bg": "Какво е безплатният старт?",
+        "en": "What is the free start?"
+      },
+      "keywords": {
+        "bg": [
+          "безплатн",
+          "безплатно",
+          "скелет",
+          "дизайн-преглед",
+          "дизайн преглед",
+          "без ангажимент",
+          "консултация",
+          "без пари",
+          "пробвате"
+        ],
+        "en": [
+          "free",
+          "skeleton",
+          "preview",
+          "no obligation",
+          "consultation",
+          "free start",
+          "trial"
+        ]
+      },
+      "answer": {
+        "bg": "Първо правим безплатна консултация. Ако има съгласие, изграждаме безплатно скелет (структурата на сайта) и дизайн-преглед на ключови екрани. Едва тогава говорим за цена. Обхватът и срокът на прегледа се записват писмено предварително, а кодът и файловете не се предават, докато не се уговори проектът.",
+        "en": "First we hold a free consultation. If we agree, we build a free skeleton (the site structure) and a design preview of key screens. Only then do we talk about price. The scope and timeframe of the preview are agreed in writing beforehand, and code and files are not handed over until the project is agreed."
+      },
+      "cta": true,
+      "related": ["rights", "pricing"]
+    },
+    {
+      "id": "process",
+      "suggested": true,
+      "question": {
+        "bg": "Как протича работата?",
+        "en": "How does the work go?"
+      },
+      "keywords": {
+        "bg": [
+          "процес",
+          "етап",
+          "стъпк",
+          "как работите",
+          "как протича",
+          "как започва",
+          "работите",
+          "фаз"
+        ],
+        "en": [
+          "process",
+          "steps",
+          "stages",
+          "how do you work",
+          "how does it work",
+          "workflow",
+          "phases"
+        ]
+      },
+      "answer": {
+        "bg": "Работим на седем стъпки: първоначален разговор, изисквания и обхват, UX/UI дизайн, разработка, QA и автоматизирани тестове, пускане и хостинг, и поддръжка. На всяка стъпка знаете какво правим и какво получавате.",
+        "en": "We work in seven steps: discovery, requirements and scope, UX/UI design, development, QA and automated tests, launch and hosting, and support. At every step you know what we're doing and what you get."
+      },
+      "cta": false,
+      "related": ["timeline", "free-start"]
+    },
+    {
+      "id": "timeline",
+      "suggested": true,
+      "question": {
+        "bg": "За колко време става един сайт?",
+        "en": "How long does it take?"
+      },
+      "keywords": {
+        "bg": [
+          "срок",
+          "време",
+          "колко бързо",
+          "седмици",
+          "месец",
+          "докога",
+          "бързо",
+          "готов",
+          "дни"
+        ],
+        "en": [
+          "timeline",
+          "how long",
+          "weeks",
+          "deadline",
+          "how fast",
+          "time frame",
+          "duration",
+          "when ready"
+        ]
+      },
+      "answer": {
+        "bg": "Типично: бизнес уебсайт — 2–4 седмици, онлайн магазин — 4–8 седмици, уеб приложение или система — 6–12 седмици и повече, според сложността. Настройката на хостинг обикновено отнема няколко дни. Точен срок даваме след консултацията.",
+        "en": "Typically: a business website takes 2–4 weeks, an online store 4–8 weeks, and a web app or system 6–12+ weeks, depending on complexity. Hosting setup usually takes a few days. We give an exact timeline after the consultation."
+      },
+      "cta": true,
+      "related": ["process", "pricing"]
+    },
+    {
+      "id": "websites",
+      "suggested": false,
+      "question": {
+        "bg": "Правите ли бизнес уебсайтове?",
+        "en": "Do you build business websites?"
+      },
+      "keywords": {
+        "bg": [
+          "уебсайт",
+          "сайт",
+          "уеб сайт",
+          "страница",
+          "визитка",
+          "корпоративен",
+          "фирмен",
+          "landing"
+        ],
+        "en": ["website", "site", "web site", "landing page", "business site", "corporate"]
+      },
+      "answer": {
+        "bg": "Да. Правим бързи, достъпни и лесни за поддръжка сайтове, които представят бизнеса ви и носят запитвания — с респонсив дизайн, SEO основи и автоматизирани тестове преди пускане. Възможен е и двуезичен вариант (BG/EN).",
+        "en": "Yes. We build fast, accessible, easy-to-maintain sites that represent your business and bring in enquiries — with responsive design, SEO basics and automated tests before launch. A bilingual (BG/EN) version is possible too."
+      },
+      "cta": true,
+      "related": ["pricing", "timeline"]
+    },
+    {
+      "id": "webapps",
+      "suggested": false,
+      "question": {
+        "bg": "Правите ли уеб приложения и системи?",
+        "en": "Do you build web apps and systems?"
+      },
+      "keywords": {
+        "bg": [
+          "приложени",
+          "система",
+          "системи",
+          "табло",
+          "административ",
+          "резервации",
+          "портал",
+          "софтуер",
+          "по поръчка"
+        ],
+        "en": [
+          "web app",
+          "application",
+          "system",
+          "dashboard",
+          "admin panel",
+          "booking system",
+          "custom software",
+          "portal"
+        ]
+      },
+      "answer": {
+        "bg": "Да — системи за резервации, административни панели и табла, изградени около вашите процеси, а не по шаблон. Започваме с консултация, за да разберем какво точно ви трябва.",
+        "en": "Yes — booking systems, admin panels and dashboards built around your processes, not a template. We start with a consultation to understand exactly what you need."
+      },
+      "cta": true,
+      "related": ["process", "timeline"]
+    },
+    {
+      "id": "ecommerce",
+      "suggested": false,
+      "question": {
+        "bg": "Правите ли онлайн магазини?",
+        "en": "Do you build online stores?"
+      },
+      "keywords": {
+        "bg": [
+          "магазин",
+          "онлайн магазин",
+          "продава",
+          "поръчк",
+          "плащан",
+          "количка",
+          "електронна търговия",
+          "е-магазин"
+        ],
+        "en": [
+          "store",
+          "shop",
+          "e-commerce",
+          "ecommerce",
+          "sell online",
+          "payments",
+          "cart",
+          "checkout"
+        ]
+      },
+      "answer": {
+        "bg": "Да. Правим бързи онлайн магазини с плащания, наличности и доставки. Пример от практиката ни е „Дар от Земята“ — магазин за натурални продукти от български ферми.",
+        "en": "Yes. We build fast online stores with payments, inventory and shipping. An example from our work is “Дар от Земята”, a store for natural products from Bulgarian farms."
+      },
+      "cta": true,
+      "related": ["portfolio", "pricing"]
+    },
+    {
+      "id": "qa",
+      "suggested": true,
+      "question": {
+        "bg": "Какво е QA и автоматизирани тестове?",
+        "en": "What is QA and test automation?"
+      },
+      "keywords": {
+        "bg": [
+          "тест",
+          "qa",
+          "качеств",
+          "playwright",
+          "автоматиз",
+          "lighthouse",
+          "грешки",
+          "бъгове"
+        ],
+        "en": [
+          "test",
+          "qa",
+          "quality",
+          "playwright",
+          "automation",
+          "lighthouse",
+          "bugs",
+          "automated"
+        ]
+      },
+      "answer": {
+        "bg": "Качеството е вградено във всеки наш проект: автоматизирани Playwright тестове на ключовите пътеки, бюджети за производителност (Lighthouse ≥ 90, бърз LCP) и чеклист преди пускане. Предлагаме QA и като самостоятелна услуга — за наши и за ваши проекти.",
+        "en": "Quality is built into every project: automated Playwright tests of key journeys, performance budgets (Lighthouse ≥ 90, fast LCP) and a pre-launch checklist. We also offer QA as a standalone service — for our projects and yours."
+      },
+      "cta": true,
+      "related": ["process", "tech"]
+    },
+    {
+      "id": "hosting",
+      "suggested": true,
+      "question": {
+        "bg": "Предлагате ли хостинг и поддръжка?",
+        "en": "Do you offer hosting and maintenance?"
+      },
+      "keywords": {
+        "bg": [
+          "хостинг",
+          "поддръжк",
+          "домейн",
+          "мониторинг",
+          "обновлени",
+          "резервни",
+          "след пускан",
+          "след старта",
+          "поддържате",
+          "сигурност"
+        ],
+        "en": [
+          "hosting",
+          "maintenance",
+          "support",
+          "domain",
+          "monitoring",
+          "updates",
+          "backups",
+          "after launch"
+        ]
+      },
+      "answer": {
+        "bg": "Да. Настройваме домейн и хостинг, а след пускането оставаме до вас с планове за поддръжка — Basic (хостинг, мониторинг, обновления, резервни копия), Plus (плюс малки промени всеки месец и отчет) и Pro (приоритетна реакция и автоматизирани тестове след всяка промяна).",
+        "en": "Yes. We set up the domain and hosting, and after launch we stay with you through maintenance plans — Basic (hosting, monitoring, updates, backups), Plus (plus small monthly changes and a report) and Pro (priority response and automated tests after every change)."
+      },
+      "cta": true,
+      "related": ["pricing", "process"]
+    },
+    {
+      "id": "tech",
+      "suggested": false,
+      "question": {
+        "bg": "С какви технологии работите?",
+        "en": "What technologies do you use?"
+      },
+      "keywords": {
+        "bg": [
+          "технолог",
+          "стек",
+          "програмир",
+          "next",
+          "react",
+          "typescript",
+          "python",
+          "node",
+          "tailwind",
+          "vercel",
+          "език"
+        ],
+        "en": [
+          "technology",
+          "tech stack",
+          "stack",
+          "next.js",
+          "nextjs",
+          "react",
+          "typescript",
+          "python",
+          "node",
+          "tailwind",
+          "vercel",
+          "framework"
+        ]
+      },
+      "answer": {
+        "bg": "Основно Next.js, React и TypeScript, с Node.js (и при нужда Python) отзад, Tailwind CSS за стила, Playwright за тестовете и Vercel за хостинг.",
+        "en": "Mainly Next.js, React and TypeScript, with Node.js (and Python when needed) on the back end, Tailwind CSS for styling, Playwright for tests and Vercel for hosting."
+      },
+      "cta": false,
+      "related": ["qa", "hosting"]
+    },
+    {
+      "id": "team",
+      "suggested": true,
+      "question": {
+        "bg": "Кои сте вие?",
+        "en": "Who are you?"
+      },
+      "keywords": {
+        "bg": [
+          "кои сте",
+          "екип",
+          "основател",
+          "кой сте",
+          "за вас",
+          "студио",
+          "фирма",
+          "опит",
+          "мартин",
+          "стефан",
+          "хора"
+        ],
+        "en": [
+          "who are you",
+          "team",
+          "founder",
+          "about you",
+          "studio",
+          "experience",
+          "martin",
+          "stefan",
+          "people"
+        ]
+      },
+      "answer": {
+        "bg": "Ние сме New Wave Web Intelligence — малко студио от София. Основателите Мартин Личев и Стефан Радев са full-stack разработчици с около 10 години опит. Говорите директно с хората, които пишат кода, без посредници.",
+        "en": "We're New Wave Web Intelligence — a small studio in Sofia. The founders, Martin Lichev and Stefan Radev, are full-stack developers with about 10 years of experience each. You talk directly to the people who write the code, with no middlemen."
+      },
+      "cta": false,
+      "related": ["portfolio", "contact"]
+    },
+    {
+      "id": "portfolio",
+      "suggested": false,
+      "question": {
+        "bg": "Какви проекти сте правили?",
+        "en": "What projects have you built?"
+      },
+      "keywords": {
+        "bg": [
+          "проект",
+          "портфолио",
+          "примери",
+          "референци",
+          "работи",
+          "направили",
+          "клиент",
+          "сайтове които"
+        ],
+        "en": [
+          "project",
+          "portfolio",
+          "examples",
+          "references",
+          "work",
+          "clients",
+          "built",
+          "case study"
+        ]
+      },
+      "answer": {
+        "bg": "Можете да видите избрана работа в раздел „Проекти“: онлайн магазинът „Дар от Земята“, за който бяхме консултанти и изпълнител от идеята до поддръжката, и безплатната платформа Playwright & TypeScript Academy.",
+        "en": "You can see selected work in the “Work” section: the online store “Дар от Земята”, where we were consultants and delivered end to end from idea to support, and the free Playwright & TypeScript Academy platform."
+      },
+      "cta": true,
+      "related": ["ecommerce", "team"]
+    },
+    {
+      "id": "rights",
+      "suggested": false,
+      "question": {
+        "bg": "Чий е кодът и дизайнът?",
+        "en": "Who owns the code and design?"
+      },
+      "keywords": {
+        "bg": ["права", "собственост", "авторск", "чий е", "код", "файлове", "предава", "лиценз"],
+        "en": [
+          "rights",
+          "ownership",
+          "own the code",
+          "copyright",
+          "license",
+          "who owns",
+          "source code",
+          "files"
+        ]
+      },
+      "answer": {
+        "bg": "Правата върху дизайна и кода се прехвърлят при плащане по уговорения проект. По време на безплатния преглед показваме резултата за разглеждане, но код и файлове не се предават.",
+        "en": "Rights to the design and code transfer on payment for the agreed project. During the free preview we show the result for review, but code and files are not handed over."
+      },
+      "cta": false,
+      "related": ["free-start", "pricing"]
+    },
+    {
+      "id": "language",
+      "suggested": false,
+      "question": {
+        "bg": "Правите ли двуезични сайтове?",
+        "en": "Do you build bilingual sites?"
+      },
+      "keywords": {
+        "bg": [
+          "двуезичен",
+          "английски",
+          "български",
+          "езици",
+          "превод",
+          "мултиезичен",
+          "на два езика"
+        ],
+        "en": [
+          "bilingual",
+          "english",
+          "bulgarian",
+          "languages",
+          "translation",
+          "multilingual",
+          "two languages"
+        ]
+      },
+      "answer": {
+        "bg": "Да, двуезичен сайт (BG/EN) е част от пакет Business, а и самият ни сайт е на български и английски.",
+        "en": "Yes, a bilingual (BG/EN) site is part of the Business package, and our own site is in Bulgarian and English too."
+      },
+      "cta": true,
+      "related": ["pricing", "websites"]
+    },
+    {
+      "id": "data",
+      "suggested": false,
+      "question": {
+        "bg": "Какво правите с данните ми?",
+        "en": "What do you do with my data?"
+      },
+      "keywords": {
+        "bg": [
+          "данни",
+          "поверителност",
+          "лични данни",
+          "gdpr",
+          "бисквитк",
+          "cookies",
+          "информация за мен"
+        ],
+        "en": ["data", "privacy", "personal data", "gdpr", "cookies", "my information"]
+      },
+      "answer": {
+        "bg": "Данните от формата за контакт се използват само за да се свържем с вас. Бисквитките и статистиката можете да управлявате по всяко време от „Настройки на бисквитките“ в долния край на сайта.",
+        "en": "The data from the contact form is used only to get in touch with you. You can manage cookies and analytics at any time from “Cookie settings” at the bottom of the site."
+      },
+      "cta": false,
+      "related": ["contact"]
+    },
+    {
+      "id": "contact",
+      "suggested": true,
+      "question": {
+        "bg": "Как да се свържа с вас?",
+        "en": "How can I contact you?"
+      },
+      "keywords": {
+        "bg": [
+          "контакт",
+          "свържа",
+          "връзка",
+          "телефон",
+          "имейл",
+          "мейл",
+          "пишете",
+          "обадя",
+          "адрес",
+          "къде сте",
+          "офис",
+          "среща",
+          "говорим"
+        ],
+        "en": [
+          "contact",
+          "reach",
+          "phone",
+          "email",
+          "call",
+          "write",
+          "address",
+          "where are you",
+          "office",
+          "meeting",
+          "talk"
+        ]
+      },
+      "answer": {
+        "bg": "Можете да се свържете с нас на {contact}, или да попълните формата в раздел „Контакти“. Базирани сме в София. Ще се свържем с вас, за да уговорим безплатната консултация.",
+        "en": "You can reach us at {contact}, or fill in the form in the “Contact” section. We're based in Sofia. We'll get in touch to arrange the free consultation."
+      },
+      "cta": true,
+      "related": ["free-start"]
+    }
+  ]
+}

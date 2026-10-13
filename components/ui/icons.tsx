@@ -72,3 +72,28 @@ export function ArrowUpRight({ className }: { className?: string }) {
     </svg>
   );
 }
+
+export function ChatIcon({ className }: { className?: string }) {
+  return (
+    <svg {...svg} className={className} width={26} height={26}>
+      <path d="M21 12a8 8 0 0 1-11.6 7.1L4 20.5l1.5-4.6A8 8 0 1 1 21 12Z" />
+      <path d="M8.5 12h.01M12 12h.01M15.5 12h.01" />
+    </svg>
+  );
+}
+
+export function CloseIcon({ className }: { className?: string }) {
+  return (
+    <svg {...svg} className={className} width={20} height={20}>
+      <path d="M6 6l12 12M18 6L6 18" />
+    </svg>
+  );
+}
+
+export function SendIcon({ className }: { className?: string }) {
+  return (
+    <svg {...svg} className={className} width={18} height={18}>
+      <path d="M12 19V5M6 11l6-6 6 6" />
+    </svg>
+  );
+}
