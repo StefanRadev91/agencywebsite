@@ -32,7 +32,9 @@ describe('pricing content', () => {
 });
 
 describe('team content', () => {
-  it('lists both founders', () => {
-    expect(getTeam().members.map((m) => m.name)).toEqual(['Martin Lichev', 'Stefan Radev']);
+  it('lists both founders and one shared description', () => {
+    const team = getTeam();
+    expect(team.members.map((m) => m.name)).toEqual(['Martin Lichev', 'Stefan Radev']);
+    expect(team.experience.bg).toContain('10');
   });
 });

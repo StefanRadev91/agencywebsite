@@ -36,55 +36,54 @@ export default async function AboutPage({ params }: Props) {
   setRequestLocale(locale);
   const t = await getTranslations('About');
   const lang = await getLocale();
-  const { members } = getTeam();
+  const { members, role, experience, bio } = getTeam();
 
   return (
     <>
       <Section h1 eyebrow={t('eyebrow')} title={t('title')} intro={t('intro')}>
         <h2 className="font-display text-h3 mb-8 font-extrabold">{t('team.title')}</h2>
-        <ul className="grid gap-6 md:grid-cols-2">
-          {members.map((member, i) => (
-            <li key={member.slug}>
-              <Reveal delay={0.08 * i} className="h-full">
-                <Card className="flex h-full flex-col gap-6 sm:flex-row">
-                  <div
-                    role="img"
-                    aria-label={t('photoAlt', { name: member.name })}
-                    className="bg-surface-2 text-accent-ink font-display flex size-28 shrink-0 items-center justify-center rounded-lg text-3xl font-extrabold"
-                  >
-                    {initials(member.name)}
-                  </div>
-                  <div>
-                    <h3 className="font-display text-h3 font-extrabold">{member.name}</h3>
-                    <p className="text-accent-ink mt-1 font-mono text-sm">
-                      {pick(member.role, lang)}
-                    </p>
-                    <p className="text-muted mt-3">{pick(member.experience, lang)}</p>
-                    {!isTodo(member.bio) && (
-                      <p className="text-muted mt-3">{pick(member.bio, lang)}</p>
-                    )}
-                    <ul className="mt-4 flex gap-4 text-sm">
-                      {member.links.github && (
-                        <li>
-                          <a href={member.links.github} className="underline underline-offset-4">
-                            {t('links.github')}
-                          </a>
-                        </li>
-                      )}
-                      {member.links.linkedin && (
-                        <li>
-                          <a href={member.links.linkedin} className="underline underline-offset-4">
-                            {t('links.linkedin')}
-                          </a>
-                        </li>
-                      )}
-                    </ul>
-                  </div>
-                </Card>
-              </Reveal>
-            </li>
-          ))}
-        </ul>
+        <Reveal>
+          <Card className="flex flex-col gap-6 sm:flex-row sm:items-start">
+            <div className="flex shrink-0 gap-3">
+              {members.map((member) => (
+                <div
+                  key={member.slug}
+                  role="img"
+                  aria-label={t('photoAlt', { name: member.name })}
+                  className="bg-surface-2 text-accent-ink font-display flex size-24 items-center justify-center rounded-lg text-2xl font-extrabold sm:size-28 sm:text-3xl"
+                >
+                  {initials(member.name)}
+                </div>
+              ))}
+            </div>
+            <div>
+              <h3 className="font-display text-h3 font-extrabold">
+                {members.map((m) => m.name).join(' & ')}
+              </h3>
+              <p className="text-accent-ink mt-1 font-mono text-sm">{pick(role, lang)}</p>
+              <p className="mt-3 font-medium">{pick(experience, lang)}</p>
+              {!isTodo(bio) && <p className="text-muted mt-3 max-w-2xl">{pick(bio, lang)}</p>}
+              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                {members.flatMap((member) => [
+                  member.links.github && (
+                    <li key={member.slug + 'g'}>
+                      <a href={member.links.github} className="underline underline-offset-4">
+                        {member.name} · {t('links.github')}
+                      </a>
+                    </li>
+                  ),
+                  member.links.linkedin && (
+                    <li key={member.slug + 'l'}>
+                      <a href={member.links.linkedin} className="underline underline-offset-4">
+                        {member.name} · {t('links.linkedin')}
+                      </a>
+                    </li>
+                  ),
+                ])}
+              </ul>
+            </div>
+          </Card>
+        </Reveal>
       </Section>
 
       <Section title={t('values.title')} className="pt-0">

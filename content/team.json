@@ -1,17 +1,20 @@
 {
+  "role": {
+    "bg": "Съоснователи",
+    "en": "Co-founders"
+  },
+  "experience": {
+    "bg": "Поне 10 години опит всеки в създаването на софтуер",
+    "en": "At least 10 years of software experience each"
+  },
+  "bio": {
+    "bg": "Опитът ни обхваща целия живот на един софтуерен проект — идея и изисквания, дизайн, разработка, тестване, пускане и поддръжка. Работим с клиентите директно, без посредници, и ви показваме резултата рано, а не чак накрая.",
+    "en": "Our experience covers the whole life of a software project — idea and requirements, design, development, testing, launch and maintenance. We work with clients directly, with no middlemen, and show you the result early, not only at the end."
+  },
   "members": [
     {
       "slug": "martin-lichev",
       "name": "Martin Lichev",
-      "role": {
-        "bg": "Съосновател",
-        "en": "Co-founder"
-      },
-      "experience": {
-        "bg": "Работи в сферата от 12 години",
-        "en": "Has worked in the field for 12 years"
-      },
-      "bio": "[TODO]",
       "links": {
         "github": null,
         "linkedin": null
@@ -20,15 +23,6 @@
     {
       "slug": "stefan-radev",
       "name": "Stefan Radev",
-      "role": {
-        "bg": "Съосновател",
-        "en": "Co-founder"
-      },
-      "experience": {
-        "bg": "Работи в сферата от 10 години",
-        "en": "Has worked in the field for 10 years"
-      },
-      "bio": "[TODO]",
       "links": {
         "github": null,
         "linkedin": null
