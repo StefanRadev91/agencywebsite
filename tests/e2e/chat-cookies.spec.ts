@@ -26,6 +26,8 @@ test.describe('cookie banner', () => {
   });
 });
 
+// Bot answers are matched on the visible chat bubble (a paragraph). The same text is also announced
+// in a screen-reader-only live region, so a bare getByText() can match twice depending on timing.
 test.describe('chat assistant', () => {
   test('answers a frequent question and points to a human contact', async ({ page }) => {
     await page.goto('/en');
@@ -36,7 +38,9 @@ test.describe('chat assistant', () => {
 
     await panel.getByLabel('Your message').fill('How much does a website cost?');
     await panel.getByLabel('Your message').press('Enter');
-    await expect(panel.getByText(/depends on the scope and complexity/)).toBeVisible({
+    await expect(
+      panel.getByRole('paragraph').filter({ hasText: /depends on the scope and complexity/ }),
+    ).toBeVisible({
       timeout: 8000,
     });
     await expect(panel.getByRole('link', { name: 'Free consultation' })).toHaveAttribute(
@@ -51,8 +55,10 @@ test.describe('chat assistant', () => {
     const panel = page.getByRole('dialog', { name: /assistant/i });
     await panel.getByLabel('Your message').fill('qwerty zxcvb');
     await panel.getByLabel('Your message').press('Enter');
-    await expect(panel.getByText(/not sure I understood/)).toBeVisible({ timeout: 8000 });
-    await expect(panel.getByText(/\+359/)).toBeVisible();
+    await expect(
+      panel.getByRole('paragraph').filter({ hasText: /not sure I understood/ }),
+    ).toBeVisible({ timeout: 8000 });
+    await expect(panel.getByRole('paragraph').filter({ hasText: /\+359/ })).toBeVisible();
   });
 
   test('suggested questions work and Escape closes the chat', async ({ page }) => {
@@ -60,7 +66,9 @@ test.describe('chat assistant', () => {
     await page.getByRole('button', { name: 'Open chat' }).click();
     const panel = page.getByRole('dialog', { name: /assistant/i });
     await panel.getByRole('button', { name: 'What services do you offer?' }).click();
-    await expect(panel.getByText(/five things/)).toBeVisible({ timeout: 8000 });
+    await expect(panel.getByRole('paragraph').filter({ hasText: /five things/ })).toBeVisible({
+      timeout: 8000,
+    });
     await page.keyboard.press('Escape');
     await expect(panel).toBeHidden();
   });

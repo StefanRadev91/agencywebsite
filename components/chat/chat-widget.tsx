@@ -153,7 +153,7 @@ export function ChatWidget({ labels, locale, contact }: Props) {
     setOpen((value) => !value);
   };
 
-  function reply(answer: string, cta: boolean, follow: FaqEntry[]) {
+  function reply(answer: string, cta: boolean, follow: FaqEntry[], pool: FaqEntry[] = entries) {
     const id = nextId.current++;
     const words = answer.split(' ');
     const instant = reducedMotion();
@@ -189,11 +189,11 @@ export function ChatWidget({ labels, locale, contact }: Props) {
     function finish() {
       setStreaming(false);
       setAnnounce(answer);
-      setChips(follow.length ? follow : entries.filter((e) => e.suggested).slice(0, MAX_CHIPS));
+      setChips(follow.length ? follow : pool.filter((e) => e.suggested).slice(0, MAX_CHIPS));
     }
   }
 
-  function ask(text: string, direct?: FaqEntry) {
+  async function ask(text: string, direct?: FaqEntry) {
     const question = text.trim();
     if (!question || typing || streaming) return;
     stickToBottom.current = true;
@@ -201,15 +201,25 @@ export function ChatWidget({ labels, locale, contact }: Props) {
     setInput('');
     setChips([]);
 
-    const entry = direct ?? findAnswer(question, entries, locale);
+    // The FAQ is loaded lazily when the chat opens. If the visitor asks before it has arrived,
+    // wait for it (instead of wrongly answering "I don't know").
+    let pool = entries;
+    if (pool.length === 0) {
+      setTyping(true);
+      pool = await loadFaq().catch(() => [] as FaqEntry[]);
+      setEntries(pool);
+      setTyping(false);
+    }
+
+    const entry = direct ?? findAnswer(question, pool, locale);
     if (!entry) {
-      reply(fillAnswer(labels.fallback, { contact }), true, []);
+      reply(fillAnswer(labels.fallback, { contact }), true, [], pool);
       return;
     }
     const follow = entry.related
-      .map((id) => entries.find((e) => e.id === id))
+      .map((id) => pool.find((e) => e.id === id))
       .filter((e): e is FaqEntry => Boolean(e));
-    reply(fillAnswer(entry.answer[locale], { contact }), entry.cta, follow);
+    reply(fillAnswer(entry.answer[locale], { contact }), entry.cta, follow, pool);
   }
 
   const busy = typing || streaming;

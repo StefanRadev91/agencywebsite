@@ -37,6 +37,20 @@ export default async function AboutPage({ params }: Props) {
   const t = await getTranslations('About');
   const lang = await getLocale();
   const { members, role, experience, bio } = getTeam();
+  const links = members
+    .flatMap((member) => [
+      member.links.github && {
+        key: member.slug + '-github',
+        href: member.links.github,
+        label: member.name + ' · ' + t('links.github'),
+      },
+      member.links.linkedin && {
+        key: member.slug + '-linkedin',
+        href: member.links.linkedin,
+        label: member.name + ' · ' + t('links.linkedin'),
+      },
+    ])
+    .filter((link): link is { key: string; href: string; label: string } => Boolean(link));
 
   return (
     <>
@@ -63,24 +77,17 @@ export default async function AboutPage({ params }: Props) {
               <p className="text-accent-ink mt-1 font-mono text-sm">{pick(role, lang)}</p>
               <p className="mt-3 font-medium">{pick(experience, lang)}</p>
               {!isTodo(bio) && <p className="text-muted mt-3 max-w-2xl">{pick(bio, lang)}</p>}
-              <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
-                {members.flatMap((member) => [
-                  member.links.github && (
-                    <li key={member.slug + 'g'}>
-                      <a href={member.links.github} className="underline underline-offset-4">
-                        {member.name} · {t('links.github')}
+              {links.length > 0 && (
+                <ul className="mt-4 flex flex-wrap gap-x-6 gap-y-2 text-sm">
+                  {links.map((link) => (
+                    <li key={link.key}>
+                      <a href={link.href} className="underline underline-offset-4">
+                        {link.label}
                       </a>
                     </li>
-                  ),
-                  member.links.linkedin && (
-                    <li key={member.slug + 'l'}>
-                      <a href={member.links.linkedin} className="underline underline-offset-4">
-                        {member.name} · {t('links.linkedin')}
-                      </a>
-                    </li>
-                  ),
-                ])}
-              </ul>
+                  ))}
+                </ul>
+              )}
             </div>
           </Card>
         </Reveal>
