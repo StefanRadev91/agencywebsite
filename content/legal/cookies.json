@@ -32,10 +32,6 @@
           "en": "NEXT_LOCALE (cookie, until the end of the session): remembers the language you chose. It is necessary."
         },
         {
-          "bg": "theme (локално съхранение): помни избраната светла или тъмна тема. Съхранява се само във вашия браузър.",
-          "en": "theme (local storage): remembers your light or dark theme choice. It is stored only in your browser."
-        },
-        {
           "bg": "nw_chat_teaser (съхранение за сесията): пази, че известието за чата вече е показано, за да не се повтаря. Изчезва при затваряне на раздела.",
           "en": "nw_chat_teaser (session storage): records that the chat invitation was already shown so it does not repeat. It disappears when you close the tab."
         }

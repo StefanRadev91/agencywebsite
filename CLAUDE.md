@@ -8,6 +8,7 @@ Next.js (App Router) + TypeScript strict, Tailwind v4 (tokens as CSS variables),
 
 ## Conventions
 
+- The site is dark-only: there is no light theme or theme toggle. Do not reintroduce one without asking.
 - Studio identity (name, contacts, socials) lives only in `lib/config.ts`.
 - All UI strings go in `messages/bg.json` and `messages/en.json` — always update both.
 - Content lives in `content/` (projects, services, pricing.json, team.json) and is validated by zod schemas in `lib/schemas/`. Prices are `[TODO]` until decided and render as "price after consultation".

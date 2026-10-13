@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { hasLocale, NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
@@ -15,8 +15,8 @@ import '../globals.css';
 
 type Props = { children: React.ReactNode; params: Promise<{ locale: string }> };
 
-/** Applies the saved theme before first paint to avoid a flash. */
-const themeScript = `try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t}catch(e){}`;
+// Dark-only site: tell browsers (form controls, scrollbars, mobile address bar) to match.
+export const viewport: Viewport = { colorScheme: 'dark', themeColor: '#0a0a0b' };
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -115,14 +115,10 @@ export default async function LocaleLayout({ children, params }: Props) {
       label: t('language'),
       names: { bg: t('languageName.bg'), en: t('languageName.en') },
     },
-    theme: { toLight: t('switchToLight'), toDark: t('switchToDark') },
   };
 
   return (
-    <html lang={locale} className={fontVariables} suppressHydrationWarning>
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: themeScript }} />
-      </head>
+    <html lang={locale} className={fontVariables}>
       <body>
         {/* Client components get their strings as props; pages add the namespaces they need. */}
         <NextIntlClientProvider messages={{}}>

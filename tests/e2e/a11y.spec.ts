@@ -40,18 +40,6 @@ for (const locale of ['bg', 'en']) {
   }
 }
 
-test('axe: both themes keep the home page accessible', async ({ page }) => {
-  for (const theme of ['light', 'dark']) {
-    await page.goto('/en');
-    await page.evaluate((t) => (document.documentElement.dataset.theme = t), theme);
-    await page.waitForTimeout(900);
-    const results = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa'])
-      .analyze();
-    expect(results.violations.map((v) => `${theme}:${v.id}`)).toEqual([]);
-  }
-});
-
 test('keyboard: skip link and mobile menu are operable', async ({ page, isMobile }) => {
   await page.goto('/en');
   await page.keyboard.press('Tab');

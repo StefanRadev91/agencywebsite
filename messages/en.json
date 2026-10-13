@@ -9,9 +9,7 @@
     "languageName": {
       "bg": "Български",
       "en": "English"
-    },
-    "switchToLight": "Switch to light theme",
-    "switchToDark": "Switch to dark theme"
+    }
   },
   "Nav": {
     "main": "Main navigation",
@@ -501,8 +499,8 @@
   },
   "Consent": {
     "title": "Cookies",
-    "text": "We use necessary cookies to make the site work (language, theme, your choice). With your consent we also use anonymous analytics to improve it.",
-    "textBasic": "This site only uses necessary cookies and local storage — for language, theme and remembering your choice. We don't track visitors.",
+    "text": "We use necessary cookies to make the site work (language, your choice). With your consent we also use anonymous analytics to improve it.",
+    "textBasic": "This site only uses necessary cookies and local storage — for language and remembering your choice. We don't track visitors.",
     "policy": "Cookie Policy",
     "accept": "Accept all",
     "reject": "Necessary only",
@@ -510,7 +508,7 @@
     "save": "Save choice",
     "ok": "Got it",
     "necessaryTitle": "Necessary",
-    "necessaryText": "Language, theme and remembering your choice. The site doesn't work properly without them.",
+    "necessaryText": "Language and remembering your choice. The site doesn't work properly without them.",
     "analyticsTitle": "Analytics",
     "analyticsText": "Anonymous visit statistics, no advertising.",
     "always": "Always on"

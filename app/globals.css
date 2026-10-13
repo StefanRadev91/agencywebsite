@@ -3,8 +3,7 @@
 
 /* ==========================================================================
    Design tokens
-   Dark is the default theme. Light applies via [data-theme='light'] (set by
-   ThemeToggle / the inline script in the locale layout).
+   The site is dark-only (there is no light theme).
    ========================================================================== */
 :root {
   color-scheme: dark;
@@ -34,21 +33,6 @@
   --dur-fast: 150ms;
   --dur-base: 300ms;
   --dur-slow: 700ms;
-}
-
-[data-theme='light'] {
-  color-scheme: light;
-  --background: #fafaf7;
-  --surface: #ffffff;
-  --surface-2: #f0f0ea;
-  --foreground: #0a0a0b;
-  --muted: #52525b;
-  --border: #d9d9d0;
-  --accent-ink: #4d6b00; /* AA on light backgrounds (≈6:1) */
-  --danger: #b91c1c;
-  --success: #166534;
-  --shadow-color: rgb(10 10 11 / 0.18);
-  --glow: 0 0 0 1px rgb(77 107 0 / 0.35), 0 8px 30px -10px rgb(77 107 0 / 0.35);
 }
 
 @theme inline {

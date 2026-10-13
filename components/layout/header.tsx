@@ -7,12 +7,10 @@ import { navItems } from '@/lib/site-nav';
 import { cn } from '@/lib/utils/cn';
 import { LanguageSwitcher, type LanguageLabels } from './language-switcher';
 import { Logo } from './logo';
-import { ThemeToggle, type ThemeLabels } from './theme-toggle';
 
 export type HeaderLabels = {
   nav: Record<'main' | 'cta' | 'openMenu' | 'closeMenu' | (typeof navItems)[number]['key'], string>;
   language: LanguageLabels;
-  theme: ThemeLabels;
 };
 
 /** Labels come from the server so this client component needs no i18n runtime (keeps JS small). */
@@ -81,7 +79,6 @@ export function Header({ labels }: { labels: HeaderLabels }) {
         <div className="flex items-center gap-3">
           <div className="hidden items-center gap-3 lg:flex">
             <LanguageSwitcher labels={labels.language} />
-            <ThemeToggle labels={labels.theme} />
             <Button href="/contact" prefetch={false}>
               {t('cta')}
             </Button>
@@ -144,7 +141,6 @@ export function Header({ labels }: { labels: HeaderLabels }) {
                 {t('cta')}
               </Button>
               <LanguageSwitcher labels={labels.language} />
-              <ThemeToggle labels={labels.theme} />
             </div>
           </nav>
         </div>

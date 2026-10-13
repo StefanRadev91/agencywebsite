@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { LanguageSwitcher } from '@/components/layout/language-switcher';
-import { ThemeToggle } from '@/components/layout/theme-toggle';
 import { Accordion } from '@/components/ui/accordion';
 import { AnimatedHeadline } from '@/components/ui/animated-headline';
 import { Button } from '@/components/ui/button';
@@ -61,7 +60,6 @@ export default async function StyleguidePage({ params }: { params: Promise<{ loc
               names: { bg: t('languageName.bg'), en: t('languageName.en') },
             }}
           />
-          <ThemeToggle labels={{ toLight: t('switchToLight'), toDark: t('switchToDark') }} />
         </div>
       </div>
 
