@@ -16,8 +16,15 @@ test('unknown case study returns 404', async ({ page }) => {
   expect(response?.status()).toBe(404);
 });
 
-test('unpublished legal pages return 404', async ({ page }) => {
-  expect((await page.goto('/bg/legal/privacy'))?.status()).toBe(404);
+test('privacy and cookie policies are live, terms stay hidden until finished', async ({ page }) => {
+  await page.goto('/bg/legal/privacy');
+  await expect(
+    page.getByRole('heading', { level: 1, name: 'Политика за поверителност' }),
+  ).toBeVisible();
+  await expect(page.getByText('[TODO]')).toHaveCount(0);
+  await page.goto('/en/legal/cookies');
+  await expect(page.getByRole('heading', { level: 1, name: 'Cookie Policy' })).toBeVisible();
+  await expect(page.getByText('[TODO]')).toHaveCount(0);
   expect((await page.goto('/en/legal/terms'))?.status()).toBe(404);
 });
 

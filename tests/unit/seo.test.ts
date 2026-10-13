@@ -33,6 +33,15 @@ describe('analytics config', () => {
     });
   });
 
+  it('supports Vercel Web Analytics and the non-public variable names', () => {
+    const vercel = { src: '/_vercel/insights/script.js', attrs: {} };
+    expect(resolveAnalytics({ ANALYTICS_PROVIDER: 'vercel' })).toEqual(vercel);
+    expect(resolveAnalytics({ NEXT_PUBLIC_ANALYTICS_PROVIDER: 'vercel' })).toEqual(vercel);
+    expect(
+      resolveAnalytics({ ANALYTICS_PROVIDER: 'plausible', ANALYTICS_DOMAIN: 'example.com' }),
+    ).toMatchObject({ attrs: { 'data-domain': 'example.com' } });
+  });
+
   it('ignores unknown providers', () => {
     expect(
       resolveAnalytics({ NEXT_PUBLIC_ANALYTICS_PROVIDER: 'ga', NEXT_PUBLIC_ANALYTICS_DOMAIN: 'x' }),
@@ -52,11 +61,13 @@ describe('sitemap', () => {
     });
   });
 
-  it('includes services and projects, and no unpublished legal pages', () => {
+  it('includes services and projects, and only the published legal pages', () => {
     const urls = entries.map((e) => e.url);
     expect(urls.some((u) => u.endsWith('/bg/services/qa'))).toBe(true);
     expect(urls.some((u) => u.endsWith('/en/work/dar-ot-zemyata'))).toBe(true);
-    expect(urls.some((u) => u.includes('/legal/'))).toBe(false);
+    expect(urls.some((u) => u.endsWith('/bg/legal/privacy'))).toBe(true);
+    expect(urls.some((u) => u.endsWith('/en/legal/cookies'))).toBe(true);
+    expect(urls.some((u) => u.includes('/legal/terms'))).toBe(false);
   });
 
   it('has no duplicate URLs', () => {
@@ -74,7 +85,7 @@ describe('robots', () => {
 });
 
 describe('legal content', () => {
-  it.each(['privacy', 'terms'])('%s exists in both languages', (slug) => {
+  it.each(['privacy', 'terms', 'cookies'])('%s exists in both languages', (slug) => {
     const doc = getLegal(slug);
     expect(doc).toBeDefined();
     expect(doc!.sections.length).toBeGreaterThan(3);

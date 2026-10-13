@@ -10,6 +10,8 @@ const pages = [
   '/work/dar-ot-zemyata',
   '/work/tsplaywright-blog',
   '/process',
+  '/legal/privacy',
+  '/legal/cookies',
   '/pricing',
   '/about',
   '/contact',

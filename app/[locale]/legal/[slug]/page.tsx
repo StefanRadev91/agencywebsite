@@ -2,22 +2,23 @@ import type { Metadata } from 'next';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
-import { siteConfig } from '@/lib/config';
+import { isLegalPublished, siteConfig } from '@/lib/config';
 import { pick } from '@/lib/content/projects';
 import { getLegal } from '@/lib/content/site-content';
 
 type Props = { params: Promise<{ locale: string; slug: string }> };
 
-const slugs = ['privacy', 'terms'] as const;
+const slugs = ['privacy', 'terms', 'cookies'] as const;
 
 export function generateStaticParams() {
-  if (!siteConfig.legalPublished) return [];
-  return routing.locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
+  return routing.locales.flatMap((locale) =>
+    slugs.filter(isLegalPublished).map((slug) => ({ locale, slug })),
+  );
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
-  const doc = siteConfig.legalPublished ? getLegal(slug) : undefined;
+  const doc = isLegalPublished(slug) ? getLegal(slug) : undefined;
   if (!doc) return {};
   return {
     title: pick(doc.title, locale),
@@ -28,22 +29,38 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-/** Fills {company}, {eik}, … from siteConfig so details are edited in one place. */
+const hasDetail = (value: string) => value !== '[TODO]';
+
+/** Fills {controller}, {contact}, … from siteConfig so details are edited in one place. */
 function fill(text: string) {
+  const { company, eik, address } = siteConfig.legal;
+  const registered = [company, eik, address].every(hasDetail);
+  const contact = [siteConfig.email, siteConfig.phone].filter(Boolean).join(', ');
   const values: Record<string, string> = {
-    company: siteConfig.legal.company,
-    eik: siteConfig.legal.eik,
-    address: siteConfig.legal.address,
+    // Until the company details are filled in, the studio name stands in as the controller.
+    controller: registered ? `${company}, ЕИК ${eik}, ${address}` : siteConfig.name,
+    company,
+    eik,
+    address,
     email: siteConfig.email,
     phone: siteConfig.phone,
+    contact,
   };
   return text.replace(/\{(\w+)\}/g, (match, key: string) => values[key] ?? match);
+}
+
+function formatDate(value: string, locale: string) {
+  const date = new Date(value);
+  if (Number.isNaN(date.getTime())) return value;
+  return new Intl.DateTimeFormat(locale === 'bg' ? 'bg-BG' : 'en-GB', { dateStyle: 'long' }).format(
+    date,
+  );
 }
 
 export default async function LegalPage({ params }: Props) {
   const { locale, slug } = await params;
   setRequestLocale(locale);
-  const doc = siteConfig.legalPublished ? getLegal(slug) : undefined;
+  const doc = isLegalPublished(slug) ? getLegal(slug) : undefined;
   if (!doc) notFound();
   const t = await getTranslations('Legal');
 
@@ -53,11 +70,13 @@ export default async function LegalPage({ params }: Props) {
         {pick(doc.title, locale)}
       </h1>
       <p className="text-muted mt-4 font-mono text-sm">
-        {t('updated', { date: siteConfig.legal.lastUpdated })}
+        {t('updated', { date: formatDate(siteConfig.legal.lastUpdated, locale) })}
       </p>
-      <p className="border-border bg-surface mt-8 rounded-md border p-4 text-sm">
-        {t('draftNote')}
-      </p>
+      {JSON.stringify(doc).includes('[TODO]') && (
+        <p className="border-border bg-surface mt-8 rounded-md border p-4 text-sm">
+          {t('draftNote')}
+        </p>
+      )}
 
       <div className="mt-12 space-y-10">
         {doc.sections.map((section) => (

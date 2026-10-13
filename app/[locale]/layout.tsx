@@ -8,7 +8,7 @@ import { Footer } from '@/components/layout/footer';
 import { Header } from '@/components/layout/header';
 import { Providers } from '@/components/providers';
 import { routing } from '@/i18n/routing';
-import { siteConfig } from '@/lib/config';
+import { isLegalPublished, siteConfig } from '@/lib/config';
 import { resolveAnalytics } from '@/lib/analytics';
 import { fontVariables } from '@/lib/fonts';
 import '../globals.css';
@@ -58,7 +58,7 @@ export default async function LocaleLayout({ children, params }: Props) {
     locale: locale as 'bg' | 'en',
     consent: {
       analyticsAvailable,
-      policyHref: siteConfig.legalPublished ? `/${locale}/legal/privacy` : null,
+      policyHref: isLegalPublished('cookies') ? `/${locale}/legal/cookies` : null,
       labels: {
         title: tConsent('title'),
         text: tConsent(analyticsAvailable ? 'text' : 'textBasic'),

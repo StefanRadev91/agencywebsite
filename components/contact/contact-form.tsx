@@ -5,7 +5,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Checkbox, Input, Select, Textarea } from '@/components/ui/form-fields';
 import { Link } from '@/i18n/navigation';
-import { siteConfig } from '@/lib/config';
+import { isLegalPublished, siteConfig } from '@/lib/config';
 import { validateContact } from '@/lib/contact-validation';
 import { budgets, projectTypes, timelines } from '@/lib/schemas/contact-options';
 
@@ -230,7 +230,7 @@ export function ContactForm() {
         onChange={set('consent')}
         error={err('consent')}
         label={
-          siteConfig.legalPublished
+          isLegalPublished('privacy')
             ? t.rich('form.consentPolicy', {
                 privacy: (chunks) => (
                   <Link href="/legal/privacy" className="underline underline-offset-4">

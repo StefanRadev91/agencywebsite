@@ -7,13 +7,13 @@
   "sections": [
     {
       "heading": {
-        "bg": "1. Кой сме ние",
+        "bg": "1. Кои сме ние",
         "en": "1. Who we are"
       },
       "body": [
         {
-          "bg": "Администратор на личните данни е {company}, ЕИК {eik}, със седалище и адрес на управление {address}. Контакти: {email}, {phone}.",
-          "en": "The data controller is {company}, company ID {eik}, registered at {address}. Contact: {email}, {phone}."
+          "bg": "Администратор на личните данни е {controller}. Контакти: {contact}.",
+          "en": "The data controller is {controller}. Contact: {contact}."
         }
       ]
     },
@@ -26,30 +26,42 @@
         {
           "bg": "Когато изпратите запитване през формата за контакт, обработваме: име, имейл адрес, име на фирма (по желание), тип проект, бюджет, срок и текста на съобщението ви. Не събираме данни за плащане.",
           "en": "When you send an enquiry through the contact form, we process: your name, email address, company name (optional), project type, budget, timeline and the text of your message. We do not collect payment data."
+        },
+        {
+          "bg": "Като на всеки уебсайт, хостинг доставчикът ни обработва технически данни за заявките (например IP адрес, браузър, час на достъп) за доставяне и сигурност на сайта.",
+          "en": "As with any website, our hosting provider processes technical request data (for example IP address, browser and time of access) to deliver and secure the site."
+        },
+        {
+          "bg": "Чатът с автоматичния асистент работи изцяло във вашия браузър. Съобщенията, които пишете в него, не се изпращат до нас и не се записват.",
+          "en": "The automatic assistant chat runs entirely in your browser. The messages you type into it are not sent to us and are not stored."
         }
       ]
     },
     {
       "heading": {
-        "bg": "3. Цели и правни основания",
+        "bg": "3. Цели и основания",
         "en": "3. Purposes and legal bases"
       },
       "body": [
         {
-          "bg": "Използваме данните, за да отговорим на запитването ви и да уговорим консултация. Основанията са вашето съгласие (чл. 6, пар. 1, б. „а“ от GDPR) и предприемане на стъпки по ваше искане преди сключване на договор (чл. 6, пар. 1, б. „б“).",
-          "en": "We use the data to respond to your enquiry and arrange a consultation. The legal bases are your consent (Art. 6(1)(a) GDPR) and taking steps at your request before entering into a contract (Art. 6(1)(b))."
+          "bg": "Използваме данните от формата, за да отговорим на запитването ви и да уговорим консултация. Основанията са вашето съгласие (чл. 6, пар. 1, б. „а“ от GDPR) и предприемане на стъпки по ваше искане преди сключване на договор (чл. 6, пар. 1, б. „б“).",
+          "en": "We use the form data to respond to your enquiry and arrange a consultation. The legal bases are your consent (Art. 6(1)(a) GDPR) and taking steps at your request before entering into a contract (Art. 6(1)(b))."
+        },
+        {
+          "bg": "Техническите данни се обработват на основание нашия легитимен интерес да поддържаме сайта сигурен и достъпен (чл. 6, пар. 1, б. „е“). Статистика за посещенията се събира само ако дадете съгласие.",
+          "en": "Technical data is processed on the basis of our legitimate interest in keeping the site secure and available (Art. 6(1)(f)). Visit statistics are collected only if you consent."
         }
       ]
     },
     {
       "heading": {
-        "bg": "4. Получатели на данните",
+        "bg": "4. Получатели на данни",
         "en": "4. Recipients of data"
       },
       "body": [
         {
-          "bg": "Запитването ви се изпраща по имейл чрез доставчика Resend, който действа като обработващ данни. Сайтът се предоставя чрез доставчик на хостинг. [TODO: потвърдете окончателния списък с доставчици.]",
-          "en": "Your enquiry is delivered by email through the provider Resend, which acts as a data processor. The site is delivered through a hosting provider. [TODO: confirm the final list of providers.]"
+          "bg": "Запитването ви се изпраща по имейл чрез доставчика Resend, а сайтът се предоставя чрез хостинг доставчика Vercel. И двамата действат като обработващи данни от наше име. Ако включим статистика, тя се предоставя от Vercel Web Analytics. Не продаваме данни и не ги използваме за реклама.",
+          "en": "Your enquiry is delivered by email through the provider Resend, and the site is delivered through the hosting provider Vercel. Both act as data processors on our behalf. If we enable analytics, it is provided by Vercel Web Analytics. We do not sell data or use it for advertising."
         }
       ]
     },
@@ -60,8 +72,8 @@
       },
       "body": [
         {
-          "bg": "Съхраняваме данните толкова, колкото е необходимо за целите по т. 3. [TODO: определете конкретен срок.]",
-          "en": "We keep the data for as long as necessary for the purposes in section 3. [TODO: define a specific retention period.]"
+          "bg": "Запитванията се съхраняват до 12 месеца след последния контакт с вас, освен ако не сключим договор. Тогава данните се пазят толкова, колкото изисква законът за договорната и счетоводната документация.",
+          "en": "Enquiries are kept for up to 12 months after our last contact with you, unless we enter into a contract. In that case the data is kept for as long as the law requires for contractual and accounting records."
         }
       ]
     },
@@ -72,20 +84,20 @@
       },
       "body": [
         {
-          "bg": "Сайтът не използва бисквитки за проследяване. Ако е включена статистика, тя е решение без бисквитки, което не идентифицира отделни посетители. [TODO: потвърдете избрания доставчик.]",
-          "en": "The site does not use tracking cookies. If analytics is enabled, it is a cookieless solution that does not identify individual visitors. [TODO: confirm the chosen provider.]"
+          "bg": "Използваме само необходими бисквитки и локално съхранение. Статистика се включва само с вашето съгласие. Подробности има в Политиката за бисквитките.",
+          "en": "We only use necessary cookies and local storage. Analytics is switched on only with your consent. Details are in the Cookie Policy."
         }
       ]
     },
     {
       "heading": {
-        "bg": "7. Прехвърляне извън ЕИП",
+        "bg": "7. Предаване извън ЕИП",
         "en": "7. Transfers outside the EEA"
       },
       "body": [
         {
-          "bg": "[TODO: проверете дали доставчиците прехвърлят данни извън ЕИП и на какво основание.]",
-          "en": "[TODO: check whether providers transfer data outside the EEA and on what basis.]"
+          "bg": "Resend и Vercel са доставчици със седалище в САЩ, затова данните могат да бъдат обработвани извън Европейското икономическо пространство. Това става при гаранциите, които доставчиците предоставят за такива трансфери, като стандартни договорни клаузи или рамката за защита на данните ЕС–САЩ.",
+          "en": "Resend and Vercel are providers based in the United States, so data may be processed outside the European Economic Area. This happens under the safeguards the providers offer for such transfers, such as standard contractual clauses or the EU–US Data Privacy Framework."
         }
       ]
     },
@@ -96,8 +108,8 @@
       },
       "body": [
         {
-          "bg": "Имате право на достъп, коригиране, изтриване, ограничаване на обработването, преносимост и възражение, както и да оттеглите съгласието си по всяко време. Можете да се свържете с нас на {email}.",
-          "en": "You have the right to access, rectification, erasure, restriction of processing, portability and objection, and to withdraw your consent at any time. You can contact us at {email}."
+          "bg": "Имате право на достъп, коригиране, изтриване, ограничаване на обработването, преносимост и възражение, както и да оттеглите съгласието си по всяко време. Можете да се свържете с нас на {contact}.",
+          "en": "You have the right to access, rectification, erasure, restriction of processing, portability and objection, and to withdraw your consent at any time. You can contact us at {contact}."
         },
         {
           "bg": "Имате право и да подадете жалба до Комисията за защита на личните данни (www.cpdp.bg).",

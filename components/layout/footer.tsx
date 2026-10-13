@@ -1,7 +1,7 @@
 import { getLocale, getTranslations } from 'next-intl/server';
 import { CookieSettingsButton } from '@/components/consent/cookie-settings-button';
 import { Link } from '@/i18n/navigation';
-import { siteConfig } from '@/lib/config';
+import { isLegalPublished, siteConfig } from '@/lib/config';
 import { pick } from '@/lib/content/projects';
 import { getServices } from '@/lib/content/site-content';
 import { legalLinks } from '@/lib/site-nav';
@@ -83,13 +83,15 @@ export async function Footer() {
                 {tNav('contact')}
               </Link>
             </li>
-            {(siteConfig.legalPublished ? legalLinks : []).map(({ key, href }) => (
-              <li key={key}>
-                <Link href={href} className={linkClass}>
-                  {t(`legal.${key}`)}
-                </Link>
-              </li>
-            ))}
+            {legalLinks
+              .filter(({ key }) => isLegalPublished(key))
+              .map(({ key, href }) => (
+                <li key={key}>
+                  <Link href={href} className={linkClass}>
+                    {t(`legal.${key}`)}
+                  </Link>
+                </li>
+              ))}
             <li>
               <CookieSettingsButton
                 label={t('cookieSettings')}

@@ -13,6 +13,7 @@ export type ServiceSlug = (typeof serviceSlugs)[number];
 export const legalLinks = [
   { key: 'privacy', href: '/legal/privacy' },
   { key: 'terms', href: '/legal/terms' },
+  { key: 'cookies', href: '/legal/cookies' },
 ] as const;
 
 /** "Built with" strip. Names only — these are products, not translated. */

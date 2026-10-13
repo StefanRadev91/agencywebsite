@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { localized } from './common';
 
 export const legalSchema = z.object({
-  slug: z.enum(['privacy', 'terms']),
+  slug: z.enum(['privacy', 'terms', 'cookies']),
   title: localized,
   sections: z.array(z.object({ heading: localized, body: z.array(localized).min(1) })).min(1),
 });

@@ -134,9 +134,11 @@ export function ChatWidget({ labels, locale, contact }: Props) {
     inputRef.current?.focus();
   }, [open, ensureFaq, labels.welcome]);
 
+  // Follow new text, but never yank the visitor back down while they are reading earlier messages.
+  const stickToBottom = useRef(true);
   useEffect(() => {
     const list = listRef.current;
-    if (list) list.scrollTo({ top: list.scrollHeight, behavior: 'auto' });
+    if (list && stickToBottom.current) list.scrollTo({ top: list.scrollHeight, behavior: 'auto' });
   }, [messages, typing]);
 
   const close = useCallback(() => {
@@ -200,6 +202,7 @@ export function ChatWidget({ labels, locale, contact }: Props) {
   function ask(text: string, direct?: FaqEntry) {
     const question = text.trim();
     if (!question || typing || streaming) return;
+    stickToBottom.current = true;
     setMessages((m) => [...m, { id: nextId.current++, role: 'user', text: question }]);
     setInput('');
     setChips([]);
@@ -252,7 +255,13 @@ export function ChatWidget({ labels, locale, contact }: Props) {
 
           <div
             ref={listRef}
-            className="flex-1 space-y-3 overflow-y-auto px-4 py-4"
+            // Lenis (smooth scroll) otherwise captures the wheel and the list cannot be scrolled.
+            data-lenis-prevent
+            onScroll={(event) => {
+              const el = event.currentTarget;
+              stickToBottom.current = el.scrollHeight - el.scrollTop - el.clientHeight < 48;
+            }}
+            className="flex-1 space-y-3 overflow-y-auto overscroll-contain px-4 py-4"
             aria-live="off"
             tabIndex={0}
             aria-label={labels.title}

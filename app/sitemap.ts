@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next';
 import { routing } from '@/i18n/routing';
-import { siteConfig } from '@/lib/config';
+import { isLegalPublished, siteConfig } from '@/lib/config';
 import { getProjects } from '@/lib/content/projects';
 import { getServices } from '@/lib/content/site-content';
 
@@ -13,7 +13,7 @@ const staticPaths = [
   '/about',
   '/contact',
   '/quality',
-  ...(siteConfig.legalPublished ? ['/legal/privacy', '/legal/terms'] : []),
+  ...['privacy', 'terms', 'cookies'].filter(isLegalPublished).map((slug) => `/legal/${slug}`),
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

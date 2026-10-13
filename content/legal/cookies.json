@@ -1,0 +1,85 @@
+{
+  "slug": "cookies",
+  "title": {
+    "bg": "Политика за бисквитките",
+    "en": "Cookie Policy"
+  },
+  "sections": [
+    {
+      "heading": {
+        "bg": "1. Какво са бисквитките",
+        "en": "1. What cookies are"
+      },
+      "body": [
+        {
+          "bg": "Бисквитките са малки файлове, които сайтът записва във вашия браузър. Подобна роля има и локалното съхранение (localStorage и sessionStorage). Използваме ги с минимална цел и не за реклама.",
+          "en": "Cookies are small files a site saves in your browser. Local storage (localStorage and sessionStorage) plays a similar role. We use them for minimal purposes and never for advertising."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "2. Какво използваме",
+        "en": "2. What we use"
+      },
+      "body": [
+        {
+          "bg": "nw_consent (бисквитка, 6 месеца): помни избора ви от банера за бисквитки. Необходима е и не изисква съгласие.",
+          "en": "nw_consent (cookie, 6 months): remembers your choice from the cookie banner. It is necessary and does not require consent."
+        },
+        {
+          "bg": "NEXT_LOCALE (бисквитка, до края на сесията): помни избрания език. Необходима е.",
+          "en": "NEXT_LOCALE (cookie, until the end of the session): remembers the language you chose. It is necessary."
+        },
+        {
+          "bg": "theme (локално съхранение): помни избраната светла или тъмна тема. Съхранява се само във вашия браузър.",
+          "en": "theme (local storage): remembers your light or dark theme choice. It is stored only in your browser."
+        },
+        {
+          "bg": "nw_chat_teaser (съхранение за сесията): пази, че известието за чата вече е показано, за да не се повтаря. Изчезва при затваряне на раздела.",
+          "en": "nw_chat_teaser (session storage): records that the chat invitation was already shown so it does not repeat. It disappears when you close the tab."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "3. Статистика",
+        "en": "3. Analytics"
+      },
+      "body": [
+        {
+          "bg": "Статистика за посещенията се зарежда само ако я приемете от банера. Използваме Vercel Web Analytics, който не записва бисквитки и не следи посетителите между различни сайтове. Ако не я приемете или не е включена, не се зарежда никаква статистика.",
+          "en": "Visit statistics load only if you accept them in the banner. We use Vercel Web Analytics, which does not set cookies and does not track visitors across sites. If you decline, or it is not enabled, no analytics is loaded."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "4. Как да управлявате избора си",
+        "en": "4. How to manage your choice"
+      },
+      "body": [
+        {
+          "bg": "Можете да промените избора си по всяко време от „Настройки на бисквитките“ в долния край на всяка страница.",
+          "en": "You can change your choice at any time from “Cookie settings” at the bottom of every page."
+        },
+        {
+          "bg": "Можете също да изтриете бисквитките и локалното съхранение от настройките на браузъра си. Тогава сайтът ще ви попита отново.",
+          "en": "You can also delete cookies and local storage in your browser settings. The site will then ask you again."
+        }
+      ]
+    },
+    {
+      "heading": {
+        "bg": "5. Контакти",
+        "en": "5. Contact"
+      },
+      "body": [
+        {
+          "bg": "За въпроси относно бисквитките: {contact}. Повече за обработването на лични данни има в Политиката за поверителност.",
+          "en": "For questions about cookies: {contact}. More about how we process personal data is in the Privacy Policy."
+        }
+      ]
+    }
+  ]
+}

@@ -15,13 +15,15 @@ export const siteConfig = {
     linkedin: '',
     facebook: '',
   },
-  /** Privacy/Terms pages stay unpublished (404, no links, not in sitemap) until their [TODO] details are filled. */
-  legalPublished: false as boolean,
+  /** Legal pages that are live. A page stays out (404, no links, not in sitemap) until its text has no [TODO] left. */
+  legalPublished: ['privacy', 'cookies'] as string[],
   /** Legal entity details used in the Privacy Policy and Terms. Fill in once registered. */
   legal: {
     company: '[TODO]',
     eik: '[TODO]',
     address: '[TODO]',
-    lastUpdated: '[TODO]',
+    lastUpdated: '2026-10-13',
   },
 } as const;
+
+export const isLegalPublished = (slug: string) => siteConfig.legalPublished.includes(slug);

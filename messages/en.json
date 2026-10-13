@@ -32,7 +32,8 @@
     "company": "Company",
     "legal": {
       "privacy": "Privacy Policy",
-      "terms": "Terms of Service"
+      "terms": "Terms of Service",
+      "cookies": "Cookie Policy"
     },
     "rights": "All rights reserved.",
     "quality": "Quality",
@@ -502,7 +503,7 @@
     "title": "Cookies",
     "text": "We use necessary cookies to make the site work (language, theme, your choice). With your consent we also use anonymous analytics to improve it.",
     "textBasic": "This site only uses necessary cookies and local storage — for language, theme and remembering your choice. We don't track visitors.",
-    "policy": "Privacy Policy",
+    "policy": "Cookie Policy",
     "accept": "Accept all",
     "reject": "Necessary only",
     "customize": "Settings",
