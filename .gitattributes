@@ -1,0 +1,11 @@
+# Keep line endings identical on every machine (Windows/macOS/Linux).
+* text=auto eol=lf
+
+# Never touch binary assets.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
+*.woff binary
+*.woff2 binary
